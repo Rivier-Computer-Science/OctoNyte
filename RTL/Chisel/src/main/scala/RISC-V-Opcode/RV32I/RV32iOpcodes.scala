@@ -34,7 +34,7 @@ object RV32IDecode {
     val imm      = UInt(32.W)
   }
 
-  // Sign-extend utilities
+  // Sign-extension utilities (synthesizable to standard cells)
   def signExt12(value: UInt): UInt = {
     val sign = value(11)
     Cat(Fill(20, sign), value)
@@ -52,118 +52,95 @@ object RV32IDecode {
     Cat(Fill(11, sign), value)
   }
 
-  /** Main decode function */
+  /** Main decode function – all signals are generated in parallel. */
   def decodeInstr(instr: UInt): DecodeSignals = {
     val dec = Wire(new DecodeSignals)
-    dec := 0.U.asTypeOf(new DecodeSignals)
+    // Default assignments for ASIC reliability:
+    dec.isALU    := false.B
+    dec.isLoad   := false.B
+    dec.isStore  := false.B
+    dec.isBranch := false.B
+    dec.isJAL    := false.B
+    dec.isJALR   := false.B
+    dec.isLUI    := false.B
+    dec.isAUIPC  := false.B
+    dec.isSystem := false.B
+    dec.isFence  := false.B
+    dec.aluOp    := 0.U
+    dec.imm      := 0.U
 
+    // Extract instruction fields.
     val opcode = instr(6,0)
     val funct3 = instr(14,12)
     val funct7 = instr(31,25)
 
-    switch(opcode) {
-      // R-type
-      is(OP_R) {
-        dec.isALU := true.B
-        when(funct3 === "b000".U) {
-          when(funct7 === "b0100000".U) {
-            dec.aluOp := 1.U // SUB
-          }.otherwise {
-            dec.aluOp := 0.U // ADD
-          }
-        }.elsewhen(funct3 === "b001".U) { dec.aluOp := 2.U } // SLL
-         .elsewhen(funct3 === "b010".U) { dec.aluOp := 3.U } // SLT
-         .elsewhen(funct3 === "b011".U) { dec.aluOp := 4.U } // SLTU
-         .elsewhen(funct3 === "b100".U) { dec.aluOp := 5.U } // XOR
-         .elsewhen(funct3 === "b101".U) {
-           when(funct7 === "b0100000".U) {
-             dec.aluOp := 7.U // SRA
-           }.otherwise {
-             dec.aluOp := 6.U // SRL
-           }
-         }
-         .elsewhen(funct3 === "b110".U) { dec.aluOp := 8.U } // OR
-         .elsewhen(funct3 === "b111".U) { dec.aluOp := 9.U } // AND
-      }
+    // --- Boolean Flag Generation (combinational, parallel) ---
+    dec.isALU    := (opcode === OP_R) || (opcode === OP_I)
+    dec.isLoad   := (opcode === LOAD)
+    dec.isStore  := (opcode === STORE)
+    dec.isBranch := (opcode === BRANCH)
+    dec.isJAL    := (opcode === JAL)
+    dec.isJALR   := (opcode === JALR)
+    dec.isLUI    := (opcode === LUI)
+    dec.isAUIPC  := (opcode === AUIPC)
+    dec.isSystem := (opcode === SYSTEM)
+    dec.isFence  := (opcode === FENCE)
 
-      // I-type ALU
-      is(OP_I) {
-        dec.isALU := true.B
-        val immI = signExt12(instr(31,20))
-        dec.imm := immI
-        switch(funct3) {
-          is("b000".U) { dec.aluOp := 0.U } // ADDI
-          is("b010".U) { dec.aluOp := 3.U } // SLTI
-          is("b011".U) { dec.aluOp := 4.U } // SLTIU
-          is("b100".U) { dec.aluOp := 5.U } // XORI
-          is("b110".U) { dec.aluOp := 8.U } // ORI
-          is("b111".U) { dec.aluOp := 9.U } // ANDI
-          is("b001".U) { dec.aluOp := 2.U } // SLLI
-          is("b101".U) {
-            when(instr(30) === 1.U) {
-              dec.aluOp := 7.U // SRAI
-            }.otherwise {
-              dec.aluOp := 6.U // SRLI
-            }
-          }
-        }
-      }
+    // --- ALU Operation Decoding ---
+    // R-type: Combine funct7 and funct3 as key.
+    val aluOpR = MuxLookup(Cat(funct7, funct3), 0.U(5.W), Array(
+      Cat("b0000000".U, "b000".U) -> 0.U,  // ADD
+      Cat("b0100000".U, "b000".U) -> 1.U,  // SUB
+      Cat("b0000000".U, "b001".U) -> 2.U,  // SLL
+      Cat("b0000000".U, "b010".U) -> 3.U,  // SLT
+      Cat("b0000000".U, "b011".U) -> 4.U,  // SLTU
+      Cat("b0000000".U, "b100".U) -> 5.U,  // XOR
+      Cat("b0000000".U, "b101".U) -> 6.U,  // SRL
+      Cat("b0100000".U, "b101".U) -> 7.U,  // SRA
+      Cat("b0000000".U, "b110".U) -> 8.U,  // OR
+      Cat("b0000000".U, "b111".U) -> 9.U   // AND
+    ))
 
-      // Loads
-      is(LOAD) {
-        dec.isLoad := true.B
-        dec.imm := signExt12(instr(31,20))
-      }
+    // I-type: Use bit 30 for distinguishing SRLI/SRAI when funct3 is "101".
+    val aluOpI = MuxLookup(Cat(Mux(funct3 === "b101".U, instr(30), 0.U(1.W)), funct3), 0.U(5.W), Array(
+      Cat(0.U(1.W), "b000".U) -> 0.U,   // ADDI
+      Cat(0.U(1.W), "b010".U) -> 3.U,   // SLTI
+      Cat(0.U(1.W), "b011".U) -> 4.U,   // SLTIU
+      Cat(0.U(1.W), "b100".U) -> 5.U,   // XORI
+      Cat(0.U(1.W), "b110".U) -> 8.U,   // ORI
+      Cat(0.U(1.W), "b111".U) -> 9.U,   // ANDI
+      Cat(0.U(1.W), "b001".U) -> 2.U,   // SLLI
+      Cat(1.U(1.W), "b101".U) -> 7.U,   // SRAI
+      Cat(0.U(1.W), "b101".U) -> 6.U    // SRLI
+    ))
 
-      // Stores
-      is(STORE) {
-        dec.isStore := true.B
-        val storeImm = Cat(instr(31,25), instr(11,7))
-        dec.imm := signExt12(storeImm)
-      }
+    // Select ALU operation based on opcode.
+    dec.aluOp := Mux(opcode === OP_R, aluOpR,
+                  Mux(opcode === OP_I, aluOpI, 0.U(5.W)))
 
-      // Branch
-      is(BRANCH) {
-        dec.isBranch := true.B
-        val branchImm = Cat(instr(31), instr(7), instr(30,25), instr(11,8), 0.U(1.W))
-        dec.imm := signExt13(branchImm(12,1))
-      }
+    // --- Immediate Generation ---
+    // Compute immediates in parallel.
+    val immI        = signExt12(instr(31,20))
+    val storeImm    = Cat(instr(31,25), instr(11,7))
+    val immLoad     = signExt12(instr(31,20))
+    val branchImm   = Cat(instr(31), instr(7), instr(30,25), instr(11,8), 0.U(1.W))
+    val immBranch   = signExt13(branchImm) // 13-bit immediate.
+    val jumpImm     = Cat(instr(31), instr(19,12), instr(20), instr(30,21), 0.U(1.W))
+    val immJAL      = signExt21(jumpImm)
+    val immJALR     = signExt12(instr(31,20))
+    val immLUI_AUIPC = Cat(instr(31,12), Fill(12, 0.U))
 
-      // JAL
-      is(JAL) {
-        dec.isJAL := true.B
-        val jumpImm = Cat(instr(31), instr(19,12), instr(20), instr(30,21), 0.U(1.W))
-        dec.imm := signExt21(jumpImm(20,0))
-      }
-
-      // JALR
-      is(JALR) {
-        dec.isJALR := true.B
-        dec.imm := signExt12(instr(31,20))
-      }
-
-      // LUI
-      is(LUI) {
-        dec.isLUI := true.B
-        dec.imm   := Cat(instr(31,12), Fill(12, 0.U))
-      }
-
-      // AUIPC
-      is(AUIPC) {
-        dec.isAUIPC := true.B
-        dec.imm     := Cat(instr(31,12), Fill(12, 0.U))
-      }
-
-      // SYSTEM
-      is(SYSTEM) {
-        dec.isSystem := true.B
-      }
-
-      // FENCE
-      is(FENCE) {
-        dec.isFence := true.B
-      }
-    }
+    // Select the appropriate immediate.
+    dec.imm := MuxCase(0.U(32.W), Array(
+      (opcode === OP_I)   -> immI,
+      (opcode === LOAD)   -> immLoad,
+      (opcode === STORE)  -> signExt12(storeImm),
+      (opcode === BRANCH) -> immBranch,
+      (opcode === JAL)    -> immJAL,
+      (opcode === JALR)   -> immJALR,
+      (opcode === LUI)    -> immLUI_AUIPC,
+      (opcode === AUIPC)  -> immLUI_AUIPC
+    ))
 
     dec
   }
