@@ -1,20 +1,25 @@
-package RISCVOpcodes
+package TetraNyte
 
 import chisel3._
 import chisel3.util._
+import RV32IOpcodes._
 
-object RV32IDecode {
-
+object RV32IDecoder {
   
-
-  
-
-
-
-
   /** Helper signals for controlling the pipeline. */
   class DecodeSignals extends Bundle {
+    // ALU
     val isALU    = Bool()
+    val isImm    = Bool()
+    val isAdder  = Bool()
+    val isSub    = Bool()
+    val isLogic  = Bool()
+    val isShift  = Bool()
+    val aluOp    = UInt(5.W)
+    val a        = UInt(32.W)
+    val b        = UInt(32.W)
+    val imm      = UInt(32.W)
+
     val isLoad   = Bool()
     val isStore  = Bool()
     val isBranch = Bool()
@@ -24,13 +29,10 @@ object RV32IDecode {
     val isAUIPC  = Bool()
     val isSystem = Bool()
     val isFence  = Bool()
-
-    val aluOp    = UInt(5.W)
-    val imm      = UInt(32.W)
   }
 
   // Sign-extension utilities (synthesizable to standard cells)
-  // Sign bit for immediates is always in bit 31 and always sign extended
+  // Sign bit for immediates is always in bit 31 and immediates are always sign extended
   def signExt12(value: UInt): UInt = {
     val sign = value(11)
     Cat(Fill(20, sign), value)
@@ -48,172 +50,9 @@ object RV32IDecode {
     Cat(Fill(11, sign), value)
   }
 
-
-
- // Instruction Types from opcode field
-object Itype {
-  val OP_R    = "b0110011".U(7.W)
-  val OP_I    = "b0010011".U(7.W)
-  val LOAD    = "b0000011".U(7.W)
-  val STORE   = "b0100011".U(7.W)
-  val BRANCH  = "b1100011".U(7.W)
-  val JAL     = "b1101111".U(7.W)
-  val JALR    = "b1100111".U(7.W)
-  val LUI     = "b0110111".U(7.W)
-  val AUIPC   = "b0010111".U(7.W)
-  val SYSTEM  = "b1110011".U(7.W)
-  val FENCE   = "b0001111".U(7.W)
-}
-
-
-// instr = funct7      + funct3 + opcode
-// alu   = funct7(6,5) + funct3
-case class ROpcodes(
-  instr   : UInt, // Using all the instruction fields
-  alu     : UInt, // Alu opcode bits
-  isAdder : Bool,
-  isSub   : Bool,
-  isLogic : Bool,
-  isShift : Bool,
-)
-
-object OpcodeR {    
-  val ADD  = ROpcodes ( // Signed 32-bit add
-            instr   = Cat("b0000000".U(7.W), "b000".U(3.W), Itype.OP_R),
-            alu     = Cat("b00".U(2.W), "b000".U(3.W)),
-            isAdder = true.B, isSub = false.B,
-            isLogic = false.B, isShift = false.B)
-
-  val SUB  = ROpcodes( // Signed 32-bit subtract
-            instr   = Cat("b0100000".U(7.W), "b000".U(3.W), Itype.OP_R),
-            alu     = Cat("b01".U(2.W), "b000".U(3.W)),
-            isAdder = true.B, isSub = true.B,
-            isLogic = false.B, isShift = false.B)
-      
-  val SLL  = ROpcodes( // Shift Left Logical
-            instr   = Cat("b0000000".U(7.W), "b001".U(3.W), Itype.OP_R),
-            alu     = Cat("b00".U(2.W), "b001".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = false.B, isShift = true.B)
-  
-  val SLT  = ROpcodes(  // Set Less Than Signed
-            instr   = Cat("b0000000".U(7.W), "b010".U(3.W), Itype.OP_R),
-            alu     = Cat("b00".U(2.W), "b010".U(3.W)),
-            isAdder = true.B, isSub = true.B,
-            isLogic = false.B, isShift = false.B)
-
-  val SLTU = ROpcodes (  // Set Less Than Unsigned
-            instr   = Cat("b0000000".U(7.W), "b011".U(3.W), Itype.OP_R),
-            alu     = Cat("b00".U(2.W), "b011".U(3.W)),
-            isAdder = true.B, isSub = true.B,
-            isLogic = false.B, isShift = false.B)
-
-  val XOR  = ROpcodes(  // exclusive OR
-            instr   = Cat("b0000000".U(7.W), "b100".U(3.W), Itype.OP_R),
-            alu     = Cat("b00".U(2.W), "b100".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = true.B, isShift = false.B)
-
-  val SRL  = ROpcodes(  // Shift Right Logical
-            instr   = Cat("b0000000".U(7.W), "b101".U(3.W), Itype.OP_R),
-            alu     = Cat("b00".U(2.W), "b101".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = false.B, isShift = true.B)
-
-  val SRA  = ROpcodes(  //Shift Right Arithmetic
-            instr   = Cat("b0100000".U(7.W), "b101".U(3.W), Itype.OP_R),
-            alu     = Cat("b01".U(2.W), "b101".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = false.B, isShift = true.B)
-
-  val OR   = ROpcodes(  // logical OR
-            instr   = Cat("b0000000".U(7.W), "b110".U(3.W), Itype.OP_R),
-            alu     = Cat("b01".U(2.W), "b110".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = true.B, isShift = false.B)
-
-  val AND  = ROpcodes(  // Logical AND
-            instr   = Cat("b0000000".U(7.W), "b111".U(3.W), Itype.OP_R),
-            alu     = Cat("b01".U(2.W), "b111".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = true.B, isShift = false.B)
-}
-
-// I-type: Use bit 30 for distinguishing SRLI/SRAI when funct3 is "101".
-// instr = funct7      + funct3 + opcode
-// alu   = funct7(6,5) + funct3
-case class IOpcodes(
-  instr   : BitPat, // Using all the instruction fields
-  alu     : UInt, // Alu opcode bits
-  isAdder : Bool,
-  isSub   : Bool,
-  isLogic : Bool,
-  isShift : Bool,
-)
-
-object OpcodeI {    
-  val ADDI  = IOpcodes ( // Signed 32-bit add immediate
-            instr   = Cat(BitPat("b???????"), "b000".U(3.W), Itype.OP_I),
-            alu     = Cat("b00".U(2.W), "b000".U(3.W)),
-            isAdder = true.B, isSub = false.B,
-            isLogic = false.B, isShift = false.B)
-      
-  // SUBI doesn't exist in RISC-V
-
-  val SLLI = IOpcodes( // Shift Left Logical Immediate
-            instr   = Cat("b0000000".U(7.W), "b001".U(3.W), Itype.OP_I),
-            alu     = Cat("b00".U(2.W), "b001".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = false.B, isShift = true.B)
-  
-  // FIXME: Continue here. Not alu encodings must also be provided.
-
-  val SLT  = IOpcodes(  // Set Less Than Signed
-            instr   = Cat("b0000000".U(7.W), "b010".U(3.W), Itype.OP_I),
-            alu     = Cat("b00".U(2.W), "b010".U(3.W)),
-            isAdder = true.B, isSub = true.B,
-            isLogic = false.B, isShift = false.B)
-
-  val SLTU = IOpcodes (  // Set Less Than Unsigned
-            instr   = Cat("b0000000".U(7.W), "b011".U(3.W), Itype.OP_I),
-            alu     = Cat("b00".U(2.W), "b011".U(3.W)),
-            isAdder = true.B, isSub = true.B,
-            isLogic = false.B, isShift = false.B)
-
-  val XOR  = IOpcodes(  // exclusive OR
-            instr   = Cat("b0000000".U(7.W), "b100".U(3.W), Itype.OP_I),
-            alu     = Cat("b00".U(2.W), "b100".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = true.B, isShift = false.B)
-
-  val SRL  = IOpcodes(  // Shift Right Logical
-            instr   = Cat("b0000000".U(7.W), "b101".U(3.W), Itype.OP_I),
-            alu     = Cat("b00".U(2.W), "b101".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = false.B, isShift = true.B)
-
-  val SRA  = IOpcodes(  //Shift Right Arithmetic
-            instr   = Cat("b0100000".U(7.W), "b101".U(3.W), Itype.OP_I),
-            alu     = Cat("b01".U(2.W), "b101".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = false.B, isShift = true.B)
-
-  val OR   = IOpcodes(  // logical OR
-            instr   = Cat("b0000000".U(7.W), "b110".U(3.W), Itype.OP_I),
-            alu     = Cat("b01".U(2.W), "b110".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = true.B, isShift = false.B)
-
-  val AND  = IOpcodes(  // Logical AND
-            instr   = Cat("b0000000".U(7.W), "b111".U(3.W), Itype.OP_I),
-            alu     = Cat("b01".U(2.W), "b111".U(3.W)),
-            isAdder = false.B, isSub = false.B,
-            isLogic = true.B, isShift = false.B)
-}
-
-
-
-  /** Main decode function – all signals are generated in parallel. */
+  //*****************************************************************
+  //* Main decode function – all signals are generated in parallel. 
+  //*****************************************************************
   def decodeInstr(instr: UInt): DecodeSignals = {
     val dec = Wire(new DecodeSignals)
 
@@ -258,29 +97,6 @@ object OpcodeI {
     dec.isFence  := (opcode === FENCE)
 
 
-
-
-    val instructionKey: UInt = Cat(funct7,     funct3, opcode)
-    val aluOpKey:       UInt = Cat(funct7(6,5) funct3)
-
-    io.aluOp := MuxLookup(instructionKey, aluOpKey, Seq(
-      Opcode.ADD  -> ALUOps.ADD)
-
-
-
-
-    // I-type: Use bit 30 for distinguishing SRLI/SRAI when funct3 is "101".
-    val aluOpI = MuxLookup(Cat(Mux(funct3 === "b101".U, instr(30), 0.U(1.W)), funct3), 0.U(5.W), Array(
-      Cat(0.U(1.W), "b000".U) -> 0.U,   // ADDI
-      Cat(0.U(1.W), "b010".U) -> 3.U,   // SLTI
-      Cat(0.U(1.W), "b011".U) -> 4.U,   // SLTIU
-      Cat(0.U(1.W), "b100".U) -> 5.U,   // XORI
-      Cat(0.U(1.W), "b110".U) -> 8.U,   // ORI
-      Cat(0.U(1.W), "b111".U) -> 9.U,   // ANDI
-      Cat(0.U(1.W), "b001".U) -> 2.U,   // SLLI
-      Cat(1.U(1.W), "b101".U) -> 7.U,   // SRAI
-      Cat(0.U(1.W), "b101".U) -> 6.U    // SRLI
-    ))
 
     // Select ALU operation based on opcode.
     dec.aluOp := Mux(opcode === OP_R, aluOpR,
