@@ -53,4 +53,6 @@ lazy val root = (project in file("."))
     //   "-Dorg.slf4j.simpleLogger.showDateTime=true",    
     //   "-Dorg.slf4j.simpleLogger.dateTimeFormat=yyyy-MM-dd HH:mm:ss" 
     // )
+Compile / unmanagedSources := (Compile / unmanagedSources).value.filterNot(_.getName == "ALU32.scala")
   )
+Compile / unmanagedSources := (Compile / unmanagedSources).value.filterNot(_.getName == "ALU32.scala")

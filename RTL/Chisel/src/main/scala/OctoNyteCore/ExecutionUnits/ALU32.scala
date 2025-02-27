@@ -1,64 +1,63 @@
-// Licensed under the BSD 3-Clause License. 
-// See https://opensource.org/licenses/BSD-3-Clause for details.
+#include "verilated.h"
+#ifdef TRACE
+#include "verilated_vcd_c.h"
+#endif
+#include "VALU32.h"    // The generated header for the ALU32 module
 
-package OctoNyte.ExecutionUnits
+#include <iostream>
 
-import chisel3._
-import chisel3.util._
+int main(int argc, char **argv) {
+    Verilated::commandArgs(argc, argv);
+    
+#ifdef TRACE
+    VerilatedVcdC* tfp = new VerilatedVcdC;
+    
+#endif
 
+    // Instantiate the top-level module
+    VALU32* top = new VALU32;
 
-////Test Adding repository to SP25 branch
-// Opcodes
-object ALU32 {
-  object Opcode {
-    val ADD  = "b00000".U
-    val SUB  = "b00001".U
-    val XOR  = "b01000".U
-    val OR   = "b01100".U
-    val AND  = "b01110".U
-    val SLL  = "b00010".U
-    val SRL  = "b01010".U
-    val SRA  = "b01011".U
-    val SLT  = "b00100".U  
-    val SLTU = "b00110".U
+#ifdef TRACE
+    // Enable waveform tracing
+    top->trace(tfp, 99);  // Trace 99 levels of hierarchy (adjust as needed)
+    tfp->open("wave.vcd");
+#endif
 
-  }
-}
+    // Test case 1: ADD operation
+    // For ADD, opcode lower nibble should be "0000"
+    top->io_a = 10;
+    top->io_b = 5;
+    top->io_opcode = 0x00;  // Opcode corresponding to ADD
+    top->eval();            // Evaluate the model
+#ifdef TRACE
+    tfp->dump(0);           // Dump trace at time 0
+#endif
+    std::cout << "ADD Test: " << top->io_a << " + " << top->io_b
+              << " = " << top->io_result << std::endl;
 
-class ALU32 extends Module {
-  val io = IO(new Bundle {
-    val a = Input(UInt(32.W))
-    val b = Input(UInt(32.W))
-    val result = Output(UInt(32.W))
-    val opcode = Input(UInt(6.W)) 
-  })
+    // Test case 2: SUB operation
+    // For SUB, opcode lower nibble should be "0001"
+    top->io_a = 10;
+    top->io_b = 5;
+    top->io_opcode = 0x01;  // Opcode corresponding to SUB
+    top->eval();
+#ifdef TRACE
+    tfp->dump(10);          // Dump trace at time 10
+#endif
+    std::cout << "SUB Test: " << top->io_a << " - " << top->io_b
+              << " = " << top->io_result << std::endl;
 
-  val printDebugInfo = false
+    // Add additional test cases as needed, for example:
+    // XOR, OR, AND, SLL, SRL, SRA, SLT, SLTU
+    // Ensure you set the inputs (io_a, io_b) and proper io_opcode values
+    // according to your Chisel ALU32 definition.
 
-  // Debug internals of ALU
-  if(printDebugInfo) printf(p"[Inside ALU32] --\n") 
+#ifdef TRACE
+    tfp->close();
+    delete tfp;
+#endif
 
-  //********************
-  //  operations
-  //********************
-  val result = MuxCase(0.U(32.W), Seq(
-    (io.opcode(3, 0) === "b0000".U) -> (io.a.asSInt +& io.b.asSInt).asUInt, // Signed ADD
-    (io.opcode(3, 0) === "b0001".U) -> (io.a.asSInt -& io.b.asSInt).asUInt, // Signed SUB
-    (io.opcode(3, 0) === "b1000".U) -> (io.a ^ io.b), // XOR
-    (io.opcode(3, 0) === "b1100".U) -> (io.a | io.b), // OR
-    (io.opcode(3, 0) === "b1110".U) -> (io.a & io.b), // AND
-    (io.opcode(3, 0) === "b0010".U) -> (io.a << io.b(5, 0)), // SLL
-    (io.opcode(3, 0) === "b1010".U) -> (io.a >> io.b(5, 0)), // SRL
-    (io.opcode(3, 0) === "b1011".U) -> (io.a.asSInt >> io.b(5, 0)).asUInt, // SRA
-    (io.opcode(3, 0) === "b0100".U) -> Mux(io.a.asSInt < io.b.asSInt, 1.U, 0.U), // SLT
-    (io.opcode(3, 0) === "b0110".U) -> Mux(io.a < io.b, 1.U, 0.U) // SLTU
-  ))
-
-  if(printDebugInfo) printf(p"  result =     0x${Hexadecimal(result)}\n")
-
-  //**************************
-  // Assign results to outputs
-  //**************************
-  io.result := result
-
+    top->final();
+    delete top;
+    return 0;
 }

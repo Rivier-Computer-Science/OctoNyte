@@ -2511,7 +2511,7 @@ module {
     %24 = sv.read_inout %io_out : !hw.inout<i32>
     hw.output %24 : i32
   }
-  hw.module private @instrMem_1024x32(in %R0_addr : i10, in %R0_en : i1, in %R0_clk : i1, out R0_data : i32, in %W0_addr : i10, in %W0_en : i1, in %W0_clk : i1, in %W0_data : i32) attributes {comment = "VCS coverage exclude_file"} {
+  hw.module private @instrMem_1024x32(in %R0_addr : i10, in %R0_en : i1, in %R0_clk : i1, out R0_data : i32, in %W0_addr : i10, in %W0_en : i1, in %W0_clk : i1, in %W0_data : i32) attributes {comment = "VCS coverage exclude_file", emit.fragments = [@RANDOM_INIT_REG_FRAGMENT, @RANDOM_INIT_MEM_FRAGMENT, @RANDOM_INIT_FRAGMENT]} {
     %Memory = sv.reg {hw.verilogName = "Memory"} : !hw.inout<uarray<1024xi32>> 
     %_R0_en_d0 = sv.reg sym @_R0_en_d0 {hw.verilogName = "_R0_en_d0"} : !hw.inout<i1> 
     %_R0_addr_d0 = sv.reg sym @_R0_addr_d0 {hw.verilogName = "_R0_addr_d0"} : !hw.inout<i10> 
@@ -2562,7 +2562,7 @@ module {
     }
     hw.output %4 : i32
   }
-  hw.module @TetraNyteCore(in %clock : i1, in %reset : i1, out io_memAddr : i32, out io_memWdata : i32, in %io_memRdata : i32, out io_memWe : i1, in %io_instrWriteEnable : i1, in %io_instrWriteAddr : i10, in %io_instrWriteData : i32, in %io_debug : i1) attributes {emit.fragments = [@RANDOM_INIT_REG_FRAGMENT, @RANDOM_INIT_MEM_FRAGMENT, @RANDOM_INIT_FRAGMENT]} {
+  hw.module @TetraNyteCore(in %clock : i1, in %reset : i1, out io_memAddr : i32, out io_memWdata : i32, in %io_memRdata : i32, out io_memWe : i1, in %io_instrWriteEnable : i1, in %io_instrWriteAddr : i10, in %io_instrWriteData : i32, in %io_debug : i1) attributes {emit.fragments = [@RANDOM_INIT_REG_FRAGMENT, @RANDOM_INIT_FRAGMENT]} {
     %io_memRdata_0 = sv.wire sym @sym_1 name "io_memRdata" {hw.verilogName = "io_memRdata_0"} : !hw.inout<i32>
     sv.assign %io_memRdata_0, %io_memRdata : i32
     %io_instrWriteEnable_1 = sv.wire sym @sym_3 name "io_instrWriteEnable" {hw.verilogName = "io_instrWriteEnable_0"} : !hw.inout<i1>
