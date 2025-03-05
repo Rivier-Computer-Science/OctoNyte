@@ -19,7 +19,7 @@ import java.io.OutputStream
 // If yes, it uses the installed version
 // If no, it falls back to Chisel supplied tools
 
-object GenerateHardware extends App {
+object GenerateHierarchicalRTL extends App {
   
   val shouldDeleteIntermediateFiles = true
 
@@ -40,9 +40,9 @@ object GenerateHardware extends App {
     //  (() => new scabook.addersubtractors.MultifunctionAdderSubtractor64, "MultifunctionAdderSubtractor64"), 
     //  (() => new OctoNyte.ExecutionUnits.RISCVAdderSubtractor32, "RISCVAdderSubtractor32"),
     //  (() => new TetraNyte.RegFileMT2R1WVec, "RegFileMT2R1WVec"),
-    (() => new TetraNyte.TetraNyteCore, "TetraNyteCore"),
     (() => new OctoNyte.ExecutionUnits.ALU32, "ALU32"),
     (() => new OctoNyte.LoadUnits.LoadUnit, "LoadUnit"),
+    (() => new TetraNyte.TetraNyteCore, "TetraNyteCore"),
     //(() => new scabook.ALUs.ALU64, "ALU64"), 
   )
 
@@ -82,11 +82,12 @@ object GenerateHardware extends App {
 
       //firtools generates SystemVerilog when --verilog is used
       generateFIRRTLandSystemVerilog(module, moduleName)
-      convertSystemVerilogToVerilog(module, moduleName)
-      synthesizeNetlist(module, moduleName, optimizeForASIC)
+      generateHierarchicalVerilog(module, moduleName)
+      //convertSystemVerilogToVerilog(module, moduleName)
+      //synthesizeNetlist(module, moduleName, optimizeForASIC)
       //generateSVG(module, moduleName)
       //convertSVGtoPNG(module, moduleName, convertSVGcommand)
-      if(shouldDeleteIntermediateFiles) deleteIntermediateFiles(module, moduleName)
+      //if(shouldDeleteIntermediateFiles) deleteIntermediateFiles(module, moduleName)
       //printHelp()
     
     } catch {
@@ -174,14 +175,16 @@ object GenerateHardware extends App {
       
       val firrtlCommand = Seq(
         "firtool",
-        "--target", "verilog",
+        //"--target", "verilog",
+        "--verilog",
         //"-O=debug", // Compiler set to debug
         //"-g",   // Enable debug information
         "-o", vFile.getAbsolutePath,
         s"--output-annotation-file=${annotationFile.getAbsolutePath()}",  
-        "--preserve-aggregate", "all",
+        "--preserve-aggregate=all", 
         //"--split-aggregate",
-        "--preserve-values", "all",        
+        "--preserve-values", "all",
+        "--disable-all-randomization",   // May break semantics        
         "--format=fir",  //input file format
          firFile.getAbsolutePath, 
       )
@@ -200,6 +203,10 @@ object GenerateHardware extends App {
     } else {
       println("firtool not installed. See: https://github.com/llvm/circt/releases")
       println("Falling back to Chisel supplied firtool")
+       val firrtlBaseArgs = Array("--target", "firrtl",
+                               "--dump-fir",  // Contains all suggestNames()
+                               "--preserve-aggregate", "all",
+                               "--target-dir", generatedFirRTLPath)
       (new ChiselStage).execute(
         firrtlBaseArgs,
         Seq(chisel3.stage.ChiselGeneratorAnnotation(chiselModule)) 
