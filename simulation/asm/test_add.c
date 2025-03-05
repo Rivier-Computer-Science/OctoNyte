@@ -80,11 +80,6 @@ void load_register_dump(RegisterDump *dump, const char *filename) {
     fclose(file);
 }
 
-
-
-
-
-
 // Function to fetch register values using RISC-V inline assembly
 void get_registers(RegisterState *regs) {
     /* Max of 30 input operands in a single asm statement */
@@ -153,7 +148,6 @@ int main() {
     RegisterDump regs;
     regs.count = 0;
 
-
     // Initializing RegisterState 
     int i = 0;
      RegisterState state = { .ra = i, .sp = i + 1, .gp = i + 2, .tp = i + 3,
@@ -164,22 +158,43 @@ int main() {
                                 .s9 = i + 24, .s10 = i + 25, .s11 = i + 26, .t3 = i + 27, .t4 = i + 28,
                                 .t5 = i + 29, .t6 = i + 30 };
 
-    
-
     printf("Initial register state:\n");
     get_registers(&state);
     regs.states[regs.count++] = state;
 
-    /* First inline assembly block: modify some registers */
+    
     __asm__ volatile (
-	"xor  t1, t1, t1\n"    // t1 = 0
-        "addi t2, t1, 0xAB\n"  // t2 = t0 + t1
+	    "xor  t1, t1, t1\n"    // t1 = 0
+        "xor  s2, s2, s2\n"    // s2 = 0
+        "xor  s3, s3, s3\n"    // s3 = 0
     );
+    printf("Set registers to 0:\n");
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    __asm__ volatile (
+        "addi s2, s2, 0x01\n"  // s2 = 0 + 1 = 1
+    );
+    printf("addi s2, s2, 0x01  // s2 = 0 + 1 = 1\n");
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    __asm__ volatile (
+        "addi  s3, s2, 0x01\n"  // s3 = 1 + 1 = 2
+    );
+    printf("addi  s3, s2, 0x01  // s3 = 1 + 1 = 2\n");
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    __asm__ volatile (
+        "add   s4, s2, s3\n"  // s4 = 1 + 2 = 3
+    );
+    printf("add   s4, s2, s3\n  // s4 = 1 + 2 = 3\n");
     get_registers(&state);
     regs.states[regs.count++] = state;
 
     // Save and load the register dump
-    save_register_dump(&regs, "../test_compare/test_addi_dump.txt");
+    save_register_dump(&regs, "../test_compare/test_add_dump.txt");
 
     return 0;
-}
+} 
