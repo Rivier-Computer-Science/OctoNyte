@@ -49,7 +49,10 @@ object GenerateHierarchicalRTL extends App {
   // Default paths when running from toplevel RTL/Chisel
   val generatedFirRTLPath = "generators/generated/firrtl"     //*.fir and *.fir.mlir
 
-  val generatedVerilogHierarchicalAnnotatedPath = "generators/generated/verilog_hierarchical_annotated"
+  val generatedSystemVerilogHierarchicalPath = "generators/generated/systemverilog_hierarchical_rtl"
+  val generatedSv2vHierarchicalPath = "generators/generated/verilog_sv2v_hierarchical"  
+  val generatedVerilogHierarchicalTimedRTLPath = "generators/generated/verilog_hierarchical_timed_rtl"
+
   val generatedSystemVerilogAnnotatedPath = "generators/generated/systemverilog_annotated" 
   val generatedHierarchicalVerilogAnnotatedPath = "generators/generated/verilog_hierarchical_annotated" 
 
@@ -82,9 +85,9 @@ object GenerateHierarchicalRTL extends App {
 
       //firtools generates SystemVerilog when --verilog is used
       generateFIRRTLandSystemVerilog(module, moduleName)
-      generateHierarchicalVerilog(module, moduleName)
-      //convertSystemVerilogToVerilog(module, moduleName)
-      //synthesizeNetlist(module, moduleName, optimizeForASIC)
+      generateHierarchicalSystemVerilog(module, moduleName)
+      convertSystemVerilogToVerilog(module, moduleName)
+      synthesizeTimedHierarchicalVerilogRTL(module, moduleName, optimizeForASIC)
       //generateSVG(module, moduleName)
       //convertSVGtoPNG(module, moduleName, convertSVGcommand)
       //if(shouldDeleteIntermediateFiles) deleteIntermediateFiles(module, moduleName)
@@ -162,7 +165,7 @@ object GenerateHierarchicalRTL extends App {
     }
   }
 
-  def generateHierarchicalVerilog(chiselModule: () => chisel3.Module, moduleName: String): Unit = {
+  def generateHierarchicalSystemVerilog(chiselModule: () => chisel3.Module, moduleName: String): Unit = {
     println(s"${moduleName}: generateHierarchicalVerilog")
     
     // Use the dumped fir file to produce final mlir and annotated SystemVerilog files
@@ -170,8 +173,8 @@ object GenerateHierarchicalRTL extends App {
       val firtoolPath = getCmdPath("firtool") 
 
       val firFile = new File( generatedFirRTLPath + "/" + moduleName + ".fir")
-      val vFile   = new File( generatedHierarchicalVerilogAnnotatedPath + "/" + moduleName + ".sv")
-      val annotationFile =  new File( generatedHierarchicalVerilogAnnotatedPath + "/" + moduleName + "_annotations.txt")
+      val vFile   = new File( generatedSystemVerilogHierarchicalPath + "/" + moduleName + ".sv")
+      val annotationFile =  new File( generatedSystemVerilogHierarchicalPath + "/" + moduleName + "_annotations.txt")
       
       val firrtlCommand = Seq(
         "firtool",
@@ -196,7 +199,7 @@ object GenerateHierarchicalRTL extends App {
       if (result != 0) {
         println(s"Error: firtool execution failed with code $result")
       } else {
-        println("Annotated SystemVerilog generated successfully!")
+        println("Hierarchical Verilog generated successfully!")
       }
 
       //println(s"$moduleName: Successfully generated fir file")
@@ -217,14 +220,14 @@ object GenerateHierarchicalRTL extends App {
   def convertSystemVerilogToVerilog(chiselModule: () => chisel3.Module, moduleName: String): Unit = {
     println(s"${moduleName}: convertSystemVerilogToVerilog")
     if ( isCmdInstalled("sv2v")) {      
-      val systemVerilogAnnotatedFile = new File( generatedSystemVerilogAnnotatedPath + "/" + moduleName + ".sv")
-      val systemVerilogAnnotatedFilePath = systemVerilogAnnotatedFile.getAbsolutePath()
+      val systemVerilogFile = new File( generatedSystemVerilogHierarchicalPath + "/" + moduleName + ".sv")
+      val systemVerilogFilePath = systemVerilogFile.getAbsolutePath()
 
-      val verilogSv2vFile = new File( generatedSv2vPath + "/" + moduleName + ".v")
-      val verilogSv2vFilePath = verilogSv2vFile.getAbsolutePath()
+      val verilogSv2vHierarchicalFile = new File( generatedSv2vHierarchicalPath + "/" + moduleName + ".v")
+      val verilogSv2vHierarchicalFilePath = verilogSv2vHierarchicalFile.getAbsolutePath()
 
-      val sv2vCommand = Seq("sv2v", systemVerilogAnnotatedFilePath)
-      val result = (sv2vCommand #> new File(verilogSv2vFilePath)).!
+      val sv2vCommand = Seq("sv2v", systemVerilogFilePath)
+      val result = (sv2vCommand #> new File(verilogSv2vHierarchicalFilePath)).!
 
       if (result != 0) {
         println(s"Error: sv2v execution failed with code $result")
@@ -236,29 +239,15 @@ object GenerateHierarchicalRTL extends App {
     }    
   }
 
-  def synthesizeNetlist(chiselModule: () => chisel3.Module, moduleName: String, optimizeForASIC: Boolean): Unit = {
+  def synthesizeTimedHierarchicalVerilogRTL(chiselModule: () => chisel3.Module, moduleName: String, optimizeForASIC: Boolean): Unit = {
     println(s"${moduleName}: generateNetlist")
     if ( isCmdInstalled("yosys")) {      
-      val systemVerilogInFile = new File( generatedSv2vPath + "/" + moduleName + ".v")
-      val verilogOutFile = new File( generatedVerilogElaboratedPath + "/" + moduleName + ".v")
-      val verilogOutFileFlat = new File( generatedVerilogElaboratedFlatPath + "/" + moduleName + "_flat" + ".v")
-
-      val verilogOutSynthFile = new File( generatedVerilogElaboratedPath + "/" + moduleName + "_synth" + ".v")
-      val verilogOutSynthFileFlat = new File( generatedVerilogElaboratedFlatPath + "/" + moduleName + "_synth_flat" + ".v")
-
-
-      val edifFile = new File( generatedNetlistPath + "/" + moduleName + ".edif")
-      val edifSynthFile = new File( generatedNetlistPath + "/" + moduleName + "_synth" + ".edif")
-
-      val jsonFile = new File( generatedNetlistPath + "/" + moduleName + ".json")
-      val jsonSynthFile = new File( generatedNetlistPath + "/" + moduleName + "_synth" + ".json")
-
-      val jsonFileFlattened = new File( generatedNetlistPath + "/" + moduleName + "_flat" + ".json")
-      val jsonSynthFileFlattened = new File( generatedNetlistPath + "/" + moduleName + "_synth_flat" + ".json")
-  
+      val verilogInFile = new File( generatedSv2vHierarchicalPath + "/" + moduleName + ".v")
+      val verilogOutFile = new File( generatedVerilogHierarchicalTimedRTLPath + "/" + moduleName + ".v")
 
       // Generate synthesized (elaborated) verilog file
       //Aggressive flags: "read_verilog your_design.v; synth -flatten -abc2; opt -purge; abc -script +resyn2;  opt_clean; write_verilog optimized_design.v;"
+      // synth -top $moduleName; 
       val yosysVerilogcommand =
         if (optimizeForASIC) {
           Seq(
@@ -266,36 +255,23 @@ object GenerateHierarchicalRTL extends App {
             "-p",
             s"""
             read_liberty -lib $skywaterPdkLib; 
-            read_verilog -sv $systemVerilogInFile; 
-            prep -top $moduleName;             
-            synth -top $moduleName; 
-            abc -liberty $skywaterPdkLib; 
-            techmap;  
-            opt_clean
-            write_verilog -noattr $verilogOutSynthFile
-            write_json $jsonSynthFile
+            read_verilog -sv $verilogInFile; 
+            proc;
+            hierarchy -check;
+            prep -top $moduleName;                         
+            techmap;
+            dfflibmap -liberty $skywaterPdkLib; 
+            abc -liberty $skywaterPdkLib;   
+            opt_clean;
+            stat;
+            write_verilog -noattr $verilogOutFile
             """
           )
-          // Use this Seq to generate exact library mappings
-          // Seq(
-          //   "yosys",
-          //   "-p",
-          //   s"""
-          //   read_liberty -lib $skywaterPdkLib; 
-          //   read_verilog -sv $systemVerilogInFile; 
-          //   prep -top $moduleName; 
-          //   synth -top $moduleName; 
-          //   dfflibmap -liberty $skywaterPdkLib; 
-          //   abc -liberty $skywaterPdkLib; 
-          //   opt_clean; 
-          //   write_verilog -noattr $verilogOutSynthFile
-          //   """
-          // )
         } else {
           Seq(
             "yosys",
             "-p",
-            s" read_verilog -sv $systemVerilogInFile; synth -top $moduleName; write_verilog $verilogOutFile"
+            s" read_verilog -sv $verilogInFile; synth -top $moduleName; write_verilog $verilogOutFile"
           )
         }
 
@@ -307,68 +283,6 @@ object GenerateHierarchicalRTL extends App {
       } else {
         println("yosys synthesized (elaborated) verilog file generated successfully!")
       }
-
-      // Synthesize flattened verilog
-      //Aggressive flags: "read_verilog your_design.v; synth -flatten -abc2; opt -purge; abc -script +resyn2;  opt_clean; write_verilog optimized_design.v;"
-      val yosysVerilogCommandFlat = 
-        if (optimizeForASIC) {
-            Seq(
-            "yosys",
-            "-p",
-            s"""
-            read_liberty -lib $skywaterPdkLib; 
-            read_verilog -sv $systemVerilogInFile;   
-            flatten;         
-            rename $moduleName ${moduleName}_flat; 
-            prep -top ${moduleName}_flat; 
-            synth -top ${moduleName}_flat; 
-            opt_clean; 
-            techmap;
-            write_verilog -noattr $verilogOutSynthFileFlat; 
-            write_json $jsonSynthFileFlattened
-            """
-          )
-          // show -format svg -prefix /home/jglossner/${moduleName}_flat.svg
-
-          // Use this Seq to generate exact library mappings
-          //           Seq(
-          //   "yosys",
-          //   "-p",
-          //   s"""
-          //   read_liberty -lib $skywaterPdkLib; 
-          //   read_verilog -sv $systemVerilogInFile;   
-          //   flatten;         
-          //   rename $moduleName ${moduleName}_flat; 
-          //   prep -top ${moduleName}_flat; 
-          //   synth -top ${moduleName}_flat; 
-          //   dfflibmap -liberty $skywaterPdkLib; 
-          //   abc -liberty $skywaterPdkLib; 
-          //   opt_clean; 
-          //   write_verilog -noattr $verilogOutSynthFileFlat
-          //   """
-          // )
-        } else {
-            Seq(
-            "yosys",
-            "-p",
-            s"""
-            read_verilog -sv $systemVerilogInFile; 
-            flatten -top $moduleName; 
-            rename $moduleName ${moduleName}_flat"; 
-            synth -top $moduleName;             
-            write_verilog $verilogOutFileFlat"
-            """
-          )
-        }
-        
-      
-      val yosysVerilogFlatResult = yosysVerilogCommandFlat.!  
-      if (yosysVerilogFlatResult != 0) {
-        println(s"Error: yosys execution failed with code $yosysVerilogFlatResult")
-      } else {
-        println("yosys synthesized (elaborated) verilog file generated successfully!")
-      }
-
 
     } else {
       println("yosys not installed. See: https://github.com/YosysHQ/yosys and install it from https://github.com/YosysHQ/oss-cad-suite-build/releases")
