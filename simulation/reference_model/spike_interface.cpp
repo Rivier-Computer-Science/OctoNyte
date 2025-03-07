@@ -4,6 +4,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <cstring>  // ✅ Fix: For strerror()
 
 #define PIPE_NAME "../pipe/spike_rtl_pipe"
 
@@ -15,7 +16,7 @@ void log_message(const std::string& msg) {
 void create_fifo() {
     if (mkfifo(PIPE_NAME, 0666) == -1) {
         if (errno != EEXIST) {
-            std::cerr << "Failed to create FIFO: " << strerror(errno) << std::endl;
+            std::cerr << "Failed to create FIFO: " << strerror(errno) << std::endl;  // ✅ Now strerror() is recognized
             log_message("Failed to create FIFO");
             exit(1);
         }
