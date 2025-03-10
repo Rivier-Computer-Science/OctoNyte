@@ -733,6 +733,7 @@ module instrMem_1024x32 (
 	always @(posedge W0_clk)
 		if (W0_en & 1'h1)
 			Memory[W0_addr] <= W0_data;
+	reg [31:0] _RANDOM_MEM;
 	assign R0_data = (_R0_en_d0 ? Memory[_R0_addr_d0] : 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 endmodule
 module TetraNyteCore (

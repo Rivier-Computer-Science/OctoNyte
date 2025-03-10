@@ -41,6 +41,8 @@ object GenerateHardware extends App {
     //  (() => new OctoNyte.ExecutionUnits.RISCVAdderSubtractor32, "RISCVAdderSubtractor32"),
     //  (() => new TetraNyte.RegFileMT2R1WVec, "RegFileMT2R1WVec"),
     (() => new TetraNyte.TetraNyteCore, "TetraNyteCore"),
+    (() => new OctoNyte.ExecutionUnits.ALU32, "ALU32"),
+    (() => new OctoNyte.LoadUnits.LoadUnit, "LoadUnit"),
     //(() => new scabook.ALUs.ALU64, "ALU64"), 
   )
 

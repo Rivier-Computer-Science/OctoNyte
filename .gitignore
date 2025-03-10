@@ -19,6 +19,11 @@ RTL/Chisel/.bsp/sbt.json
 # ignore all openlane runs directories
 **/runs/
 
+# verilator output
+simulation/runs/
+simulation/run/
+simulation/asm/bin
+
 # Scala-IDE specific
 .scala-build
 .scala_dependencies
@@ -32,3 +37,6 @@ settings.json
 
 .DS_Store
 .vscode/tasks.json
+
+output/.~lock.rtl_timed_results.xlsx#
+

@@ -1,0 +1,10 @@
+read_verilog -sv my_design.v
+read_liberty -lib $env(SKY130_PDK_PATH)/sky130_fd_sc_hd/tech/sky130_fd_sc_hd_tt_025C_1v80.lib
+synth -top my_design
+opt
+dfflibmap -liberty $env(SKY130_PDK_PATH)/sky130_fd_sc_hd/tech/sky130_fd_sc_hd_tt_025C_1v80.lib
+abc -liberty $env(SKY130_PDK_PATH)/sky130_fd_sc_hd/tech/sky130_fd_sc_hd_tt_025C_1v80.lib
+clean
+stat
+write_verilog -noattr my_design_synth.v
+tee -o reports/synthesis_report.txt stat

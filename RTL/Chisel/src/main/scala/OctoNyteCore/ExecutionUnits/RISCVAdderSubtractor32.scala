@@ -13,32 +13,25 @@ import chisel3.util._
 // b1b0: 8/16/32/64 bits
 object RISCVAdderSubtractor32 {
 
+  // Define Opcodes within the companion object
   object Opcode {
-    object Opcode {
-    val ADD  = "b00000".U
-    val SUB  = "b00001".U
-    val XOR  = "b01000".U
-    val OR   = "b01100".U
-    val AND  = "b01110".U
-    val SLL  = "b00010".U
-    val SRL  = "b01010".U
-    val SRA  = "b01011".U
-    val SLT  = "b00100".U
-
-    val SLTU = "b00110".U
-
-    // Immediate Type
-    val ADDI  = "b10000".U
-    val XORI  = "b11000".U
-    val ORI   = "b11100".U
-    val ANDI  = "b11110".U
-    val SLLI  = "b10010".U
-    val SRAL  = "b11010".U
-    val SRAI  = "b11011".U
-    val SLTI  = "b10100".U
-    val SLTUI = "b10110".U
+    val ADD_U8  = "b0000".U
+    val ADD_U16 = "b0001".U
+    val ADD_U32 = "b0010".U
+    //val ADD_U64 = "b0011".U
+    val SUB_U8  = "b1000".U
+    val SUB_U16 = "b1001".U
+    val SUB_U32 = "b1010".U
+    //val SUB_U64 = "b1011".U
+    val ADD_S8  = "b0100".U
+    val ADD_S16 = "b0101".U
+    val ADD_S32 = "b0110".U
+    //val ADD_S64 = "b0111".U
+    val SUB_S8  = "b1100".U
+    val SUB_S16 = "b1101".U
+    val SUB_S32 = "b1110".U
+    //val SUB_S64 = "b1111".U
   }
-}
 
   // Companion object 
   def apply(
