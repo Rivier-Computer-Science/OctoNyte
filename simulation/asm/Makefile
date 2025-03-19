@@ -6,10 +6,14 @@ CFLAGS = -static -O2 -Wall
 
 # List of target executables
 #TARGETS = reg_state test_addi asm_example
-TARGETS = test_addi 
+TARGETS = test_add test_addi 
 
 # Default target: build both executables
 all: $(TARGETS)
+
+# Build reg_state from test_add.c
+test_add: test_add.c
+	$(CC) $(CFLAGS) -o bin/test_add test_add.c
 
 # Build reg_state from test_addi.c
 test_addi: test_addi.c
