@@ -7,6 +7,8 @@ package generators
 
 import circt.stage.ChiselStage 
 import sys.process._  
+
+
 import java.io.File   
 import java.nio.file.{Files, Paths, StandardCopyOption, NoSuchFileException} 
 
@@ -77,7 +79,7 @@ object RunSynthesis extends App {
             read_verilog -sv $systemVerilogInFile; 
             prep -top $moduleName;             
             synth -top $moduleName; 
-            abc -liberty $skywaterPdkLib; 
+            -yosys-synth-liberty $skywaterPdkLib; 
             techmap;  
             opt_clean
             write_verilog -noattr $verilogOutSynthFile
