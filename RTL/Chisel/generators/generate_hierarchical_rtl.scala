@@ -261,7 +261,7 @@ object GenerateHierarchicalRTL extends App {
             prep -top $moduleName;                         
             techmap;
             dfflibmap -liberty $skywaterPdkLib; 
-            abc -liberty $skywaterPdkLib -script +abc_map_new_area;   
+            abc -liberty $skywaterPdkLib-script +abc_map_new_area.script;
             opt_clean;
             stat;
             write_verilog -noattr $verilogOutFile

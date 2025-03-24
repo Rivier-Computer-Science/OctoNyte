@@ -56,791 +56,156 @@ module RegFileMT2R1WVec(	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:
                 io_src2data	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:38:14
 );
 
-  wire [1:0]         io_threadID_0 = io_threadID;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-  wire [4:0]         io_src1_0 = io_src1;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-  wire [4:0]         io_src2_0 = io_src2;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-  wire [4:0]         io_dst1_0 = io_dst1;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-  wire               io_wen_0 = io_wen;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-  wire [31:0]        io_dst1data_0 = io_dst1data;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-  wire [31:0]        _regs_WIRE_0 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_1 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_2 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_3 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_4 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_5 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_6 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_7 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_8 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_9 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_10 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_11 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_12 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_13 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_14 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_15 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_16 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_17 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_18 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_19 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_20 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_21 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_22 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_23 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_24 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_25 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_26 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_27 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_28 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_29 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_30 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_31 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_32 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_33 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_34 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_35 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_36 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_37 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_38 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_39 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_40 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_41 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_42 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_43 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_44 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_45 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_46 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_47 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_48 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_49 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_50 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_51 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_52 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_53 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_54 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_55 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_56 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_57 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_58 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_59 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_60 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_61 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_62 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_63 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_64 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_65 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_66 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_67 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_68 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_69 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_70 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_71 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_72 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_73 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_74 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_75 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_76 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_77 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_78 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_79 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_80 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_81 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_82 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_83 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_84 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_85 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_86 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_87 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_88 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_89 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_90 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_91 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_92 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_93 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_94 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_95 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_96 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_97 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_98 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_99 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_100 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_101 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_102 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_103 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_104 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_105 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_106 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_107 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_108 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_109 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_110 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_111 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_112 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_113 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_114 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_115 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_116 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_117 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_118 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_119 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_120 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_121 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_122 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_123 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_124 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_125 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_126 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  wire [31:0]        _regs_WIRE_127 = 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
-  reg  [31:0]        regs_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_1;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_2;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_3;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_4;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_5;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_6;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_7;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_8;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_9;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_10;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_11;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_12;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_13;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_14;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_15;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_16;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_17;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_18;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_19;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_20;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_21;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_22;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_23;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_24;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_25;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_26;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_27;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_28;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_29;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_30;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_31;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_32;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_33;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_34;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_35;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_36;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_37;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_38;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_39;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_40;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_41;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_42;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_43;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_44;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_45;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_46;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_47;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_48;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_49;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_50;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_51;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_52;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_53;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_54;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_55;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_56;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_57;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_58;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_59;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_60;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_61;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_62;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_63;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_64;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_65;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_66;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_67;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_68;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_69;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_70;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_71;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_72;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_73;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_74;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_75;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_76;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_77;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_78;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_79;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_80;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_81;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_82;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_83;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_84;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_85;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_86;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_87;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_88;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_89;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_90;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_91;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_92;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_93;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_94;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_95;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_96;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_97;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_98;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_99;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_100;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_101;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_102;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_103;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_104;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_105;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_106;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_107;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_108;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_109;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_110;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_111;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_112;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_113;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_114;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_115;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_116;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_117;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_118;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_119;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_120;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_121;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_122;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_123;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_124;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_125;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_126;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  reg  [31:0]        regs_127;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-  wire [6:0]         effectiveSrc1 = {io_threadID_0, io_src1_0};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :54:26
-  wire [6:0]         effectiveSrc2 = {io_threadID_0, io_src2_0};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :55:26
-  wire [6:0]         effectiveDst1 = {io_threadID_0, io_dst1_0};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :56:26
-  wire [127:0][31:0] _GEN =
-    {{regs_127},
-     {regs_126},
-     {regs_125},
-     {regs_124},
-     {regs_123},
-     {regs_122},
-     {regs_121},
-     {regs_120},
-     {regs_119},
-     {regs_118},
-     {regs_117},
-     {regs_116},
-     {regs_115},
-     {regs_114},
-     {regs_113},
-     {regs_112},
-     {regs_111},
-     {regs_110},
-     {regs_109},
-     {regs_108},
-     {regs_107},
-     {regs_106},
-     {regs_105},
-     {regs_104},
-     {regs_103},
-     {regs_102},
-     {regs_101},
-     {regs_100},
-     {regs_99},
-     {regs_98},
-     {regs_97},
-     {regs_96},
-     {regs_95},
-     {regs_94},
-     {regs_93},
-     {regs_92},
-     {regs_91},
-     {regs_90},
-     {regs_89},
-     {regs_88},
-     {regs_87},
-     {regs_86},
-     {regs_85},
-     {regs_84},
-     {regs_83},
-     {regs_82},
-     {regs_81},
-     {regs_80},
-     {regs_79},
-     {regs_78},
-     {regs_77},
-     {regs_76},
-     {regs_75},
-     {regs_74},
-     {regs_73},
-     {regs_72},
-     {regs_71},
-     {regs_70},
-     {regs_69},
-     {regs_68},
-     {regs_67},
-     {regs_66},
-     {regs_65},
-     {regs_64},
-     {regs_63},
-     {regs_62},
-     {regs_61},
-     {regs_60},
-     {regs_59},
-     {regs_58},
-     {regs_57},
-     {regs_56},
-     {regs_55},
-     {regs_54},
-     {regs_53},
-     {regs_52},
-     {regs_51},
-     {regs_50},
-     {regs_49},
-     {regs_48},
-     {regs_47},
-     {regs_46},
-     {regs_45},
-     {regs_44},
-     {regs_43},
-     {regs_42},
-     {regs_41},
-     {regs_40},
-     {regs_39},
-     {regs_38},
-     {regs_37},
-     {regs_36},
-     {regs_35},
-     {regs_34},
-     {regs_33},
-     {regs_32},
-     {regs_31},
-     {regs_30},
-     {regs_29},
-     {regs_28},
-     {regs_27},
-     {regs_26},
-     {regs_25},
-     {regs_24},
-     {regs_23},
-     {regs_22},
-     {regs_21},
-     {regs_20},
-     {regs_19},
-     {regs_18},
-     {regs_17},
-     {regs_16},
-     {regs_15},
-     {regs_14},
-     {regs_13},
-     {regs_12},
-     {regs_11},
-     {regs_10},
-     {regs_9},
-     {regs_8},
-     {regs_7},
-     {regs_6},
-     {regs_5},
-     {regs_4},
-     {regs_3},
-     {regs_2},
-     {regs_1},
-     {regs_0}};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21, :64:15
-  wire [31:0]        io_src1data_0 = _GEN[effectiveSrc1];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :54:26, :64:15
-  wire [31:0]        io_src2data_0 = _GEN[effectiveSrc2];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :55:26, :64:15, :65:15
+  wire [127:0][31:0] _regs_WIRE =
+    '{32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0,
+      32'h0};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:29
+  wire
+    struct packed {logic [1:0] threadID; logic [4:0] src1; logic [4:0] src2; logic [4:0] dst1; logic wen; logic [31:0] dst1data; logic [31:0] src1data; logic [31:0] src2data; }
+    io;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
+  reg  [127:0][31:0] regs;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
+  wire [6:0]         effectiveSrc1 = {io.threadID, io.src1};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :54:26
+  wire [6:0]         effectiveSrc2 = {io.threadID, io.src2};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :55:26
+  wire [6:0]         effectiveDst1 = {io.threadID, io.dst1};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :56:26
+  assign io =
+    '{threadID: io_threadID,
+      src1: io_src1,
+      src2: io_src2,
+      dst1: io_dst1,
+      wen: io_wen,
+      dst1data: io_dst1data,
+      src1data: regs[effectiveSrc1],
+      src2data: regs[effectiveSrc2]};	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :54:26, :55:26, :64:15, :65:15
   always @(posedge clock) begin	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-    if (reset) begin	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-      regs_0 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_1 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_2 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_3 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_4 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_5 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_6 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_7 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_8 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_9 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_10 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_11 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_12 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_13 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_14 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_15 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_16 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_17 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_18 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_19 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_20 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_21 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_22 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_23 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_24 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_25 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_26 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_27 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_28 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_29 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_30 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_31 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_32 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_33 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_34 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_35 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_36 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_37 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_38 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_39 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_40 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_41 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_42 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_43 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_44 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_45 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_46 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_47 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_48 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_49 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_50 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_51 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_52 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_53 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_54 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_55 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_56 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_57 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_58 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_59 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_60 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_61 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_62 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_63 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_64 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_65 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_66 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_67 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_68 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_69 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_70 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_71 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_72 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_73 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_74 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_75 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_76 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_77 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_78 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_79 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_80 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_81 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_82 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_83 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_84 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_85 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_86 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_87 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_88 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_89 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_90 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_91 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_92 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_93 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_94 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_95 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_96 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_97 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_98 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_99 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_100 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_101 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_102 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_103 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_104 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_105 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_106 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_107 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_108 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_109 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_110 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_111 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_112 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_113 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_114 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_115 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_116 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_117 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_118 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_119 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_120 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_121 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_122 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_123 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_124 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_125 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_126 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-      regs_127 <= 32'h0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:21
-    end
-    else begin	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-      if (io_wen_0 & effectiveDst1 == 7'h0)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_0 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h1)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_1 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h2)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_2 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h3)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_3 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h4)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_4 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h5)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_5 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h6)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_6 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h7)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_7 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h8)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_8 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h9)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_9 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'hA)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_10 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'hB)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_11 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'hC)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_12 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'hD)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_13 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'hE)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_14 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'hF)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_15 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h10)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_16 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h11)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_17 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h12)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_18 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h13)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_19 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h14)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_20 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h15)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_21 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h16)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_22 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h17)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_23 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h18)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_24 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h19)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_25 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h1A)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_26 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h1B)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_27 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h1C)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_28 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h1D)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_29 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h1E)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_30 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h1F)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_31 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h20)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_32 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h21)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_33 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h22)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_34 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h23)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_35 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h24)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_36 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h25)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_37 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h26)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_38 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h27)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_39 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h28)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_40 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h29)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_41 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h2A)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_42 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h2B)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_43 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h2C)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_44 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h2D)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_45 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h2E)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_46 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h2F)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_47 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h30)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_48 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h31)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_49 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h32)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_50 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h33)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_51 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h34)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_52 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h35)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_53 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h36)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_54 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h37)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_55 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h38)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_56 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h39)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_57 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h3A)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_58 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h3B)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_59 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h3C)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_60 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h3D)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_61 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h3E)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_62 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h3F)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_63 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h40)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_64 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h41)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_65 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h42)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_66 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h43)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_67 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h44)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_68 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h45)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_69 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h46)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_70 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h47)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_71 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h48)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_72 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h49)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_73 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h4A)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_74 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h4B)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_75 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h4C)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_76 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h4D)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_77 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h4E)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_78 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h4F)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_79 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h50)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_80 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h51)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_81 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h52)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_82 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h53)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_83 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h54)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_84 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h55)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_85 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h56)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_86 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h57)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_87 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h58)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_88 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h59)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_89 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h5A)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_90 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h5B)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_91 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h5C)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_92 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h5D)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_93 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h5E)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_94 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h5F)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_95 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h60)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_96 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h61)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_97 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h62)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_98 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h63)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_99 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h64)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_100 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h65)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_101 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h66)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_102 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h67)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_103 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h68)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_104 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h69)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_105 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h6A)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_106 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h6B)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_107 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h6C)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_108 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h6D)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_109 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h6E)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_110 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h6F)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_111 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h70)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_112 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h71)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_113 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h72)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_114 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h73)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_115 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h74)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_116 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h75)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_117 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h76)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_118 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h77)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_119 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h78)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_120 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h79)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_121 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h7A)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_122 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h7B)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_123 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h7C)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_124 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h7D)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_125 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & effectiveDst1 == 7'h7E)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_126 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-      if (io_wen_0 & (&effectiveDst1))	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26, :59:16, :60:25
-        regs_127 <= io_dst1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-    end
+    if (reset)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
+      regs <= _regs_WIRE;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:51:{21,29}
+    else if (io.wen)	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
+      regs[effectiveDst1] <= io.dst1data;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21, :56:26
   end // always @(posedge)
   `ifdef ENABLE_INITIAL_REG_	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
     `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
@@ -855,142 +220,142 @@ module RegFileMT2R1WVec(	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:
         for (logic [7:0] i = 8'h0; i < 8'h80; i += 8'h1) begin
           _RANDOM[i[6:0]] = `RANDOM;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
         end	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-        regs_0 = _RANDOM[7'h0];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_1 = _RANDOM[7'h1];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_2 = _RANDOM[7'h2];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_3 = _RANDOM[7'h3];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_4 = _RANDOM[7'h4];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_5 = _RANDOM[7'h5];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_6 = _RANDOM[7'h6];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_7 = _RANDOM[7'h7];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_8 = _RANDOM[7'h8];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_9 = _RANDOM[7'h9];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_10 = _RANDOM[7'hA];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_11 = _RANDOM[7'hB];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_12 = _RANDOM[7'hC];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_13 = _RANDOM[7'hD];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_14 = _RANDOM[7'hE];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_15 = _RANDOM[7'hF];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_16 = _RANDOM[7'h10];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_17 = _RANDOM[7'h11];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_18 = _RANDOM[7'h12];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_19 = _RANDOM[7'h13];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_20 = _RANDOM[7'h14];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_21 = _RANDOM[7'h15];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_22 = _RANDOM[7'h16];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_23 = _RANDOM[7'h17];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_24 = _RANDOM[7'h18];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_25 = _RANDOM[7'h19];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_26 = _RANDOM[7'h1A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_27 = _RANDOM[7'h1B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_28 = _RANDOM[7'h1C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_29 = _RANDOM[7'h1D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_30 = _RANDOM[7'h1E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_31 = _RANDOM[7'h1F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_32 = _RANDOM[7'h20];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_33 = _RANDOM[7'h21];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_34 = _RANDOM[7'h22];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_35 = _RANDOM[7'h23];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_36 = _RANDOM[7'h24];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_37 = _RANDOM[7'h25];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_38 = _RANDOM[7'h26];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_39 = _RANDOM[7'h27];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_40 = _RANDOM[7'h28];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_41 = _RANDOM[7'h29];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_42 = _RANDOM[7'h2A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_43 = _RANDOM[7'h2B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_44 = _RANDOM[7'h2C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_45 = _RANDOM[7'h2D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_46 = _RANDOM[7'h2E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_47 = _RANDOM[7'h2F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_48 = _RANDOM[7'h30];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_49 = _RANDOM[7'h31];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_50 = _RANDOM[7'h32];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_51 = _RANDOM[7'h33];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_52 = _RANDOM[7'h34];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_53 = _RANDOM[7'h35];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_54 = _RANDOM[7'h36];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_55 = _RANDOM[7'h37];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_56 = _RANDOM[7'h38];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_57 = _RANDOM[7'h39];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_58 = _RANDOM[7'h3A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_59 = _RANDOM[7'h3B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_60 = _RANDOM[7'h3C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_61 = _RANDOM[7'h3D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_62 = _RANDOM[7'h3E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_63 = _RANDOM[7'h3F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_64 = _RANDOM[7'h40];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_65 = _RANDOM[7'h41];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_66 = _RANDOM[7'h42];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_67 = _RANDOM[7'h43];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_68 = _RANDOM[7'h44];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_69 = _RANDOM[7'h45];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_70 = _RANDOM[7'h46];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_71 = _RANDOM[7'h47];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_72 = _RANDOM[7'h48];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_73 = _RANDOM[7'h49];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_74 = _RANDOM[7'h4A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_75 = _RANDOM[7'h4B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_76 = _RANDOM[7'h4C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_77 = _RANDOM[7'h4D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_78 = _RANDOM[7'h4E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_79 = _RANDOM[7'h4F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_80 = _RANDOM[7'h50];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_81 = _RANDOM[7'h51];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_82 = _RANDOM[7'h52];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_83 = _RANDOM[7'h53];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_84 = _RANDOM[7'h54];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_85 = _RANDOM[7'h55];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_86 = _RANDOM[7'h56];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_87 = _RANDOM[7'h57];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_88 = _RANDOM[7'h58];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_89 = _RANDOM[7'h59];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_90 = _RANDOM[7'h5A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_91 = _RANDOM[7'h5B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_92 = _RANDOM[7'h5C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_93 = _RANDOM[7'h5D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_94 = _RANDOM[7'h5E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_95 = _RANDOM[7'h5F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_96 = _RANDOM[7'h60];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_97 = _RANDOM[7'h61];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_98 = _RANDOM[7'h62];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_99 = _RANDOM[7'h63];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_100 = _RANDOM[7'h64];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_101 = _RANDOM[7'h65];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_102 = _RANDOM[7'h66];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_103 = _RANDOM[7'h67];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_104 = _RANDOM[7'h68];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_105 = _RANDOM[7'h69];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_106 = _RANDOM[7'h6A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_107 = _RANDOM[7'h6B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_108 = _RANDOM[7'h6C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_109 = _RANDOM[7'h6D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_110 = _RANDOM[7'h6E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_111 = _RANDOM[7'h6F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_112 = _RANDOM[7'h70];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_113 = _RANDOM[7'h71];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_114 = _RANDOM[7'h72];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_115 = _RANDOM[7'h73];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_116 = _RANDOM[7'h74];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_117 = _RANDOM[7'h75];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_118 = _RANDOM[7'h76];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_119 = _RANDOM[7'h77];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_120 = _RANDOM[7'h78];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_121 = _RANDOM[7'h79];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_122 = _RANDOM[7'h7A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_123 = _RANDOM[7'h7B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_124 = _RANDOM[7'h7C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_125 = _RANDOM[7'h7D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_126 = _RANDOM[7'h7E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
-        regs_127 = _RANDOM[7'h7F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h0] = _RANDOM[7'h0];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h1] = _RANDOM[7'h1];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h2] = _RANDOM[7'h2];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h3] = _RANDOM[7'h3];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h4] = _RANDOM[7'h4];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h5] = _RANDOM[7'h5];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h6] = _RANDOM[7'h6];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h7] = _RANDOM[7'h7];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h8] = _RANDOM[7'h8];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h9] = _RANDOM[7'h9];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'hA] = _RANDOM[7'hA];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'hB] = _RANDOM[7'hB];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'hC] = _RANDOM[7'hC];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'hD] = _RANDOM[7'hD];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'hE] = _RANDOM[7'hE];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'hF] = _RANDOM[7'hF];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h10] = _RANDOM[7'h10];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h11] = _RANDOM[7'h11];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h12] = _RANDOM[7'h12];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h13] = _RANDOM[7'h13];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h14] = _RANDOM[7'h14];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h15] = _RANDOM[7'h15];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h16] = _RANDOM[7'h16];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h17] = _RANDOM[7'h17];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h18] = _RANDOM[7'h18];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h19] = _RANDOM[7'h19];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h1A] = _RANDOM[7'h1A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h1B] = _RANDOM[7'h1B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h1C] = _RANDOM[7'h1C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h1D] = _RANDOM[7'h1D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h1E] = _RANDOM[7'h1E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h1F] = _RANDOM[7'h1F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h20] = _RANDOM[7'h20];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h21] = _RANDOM[7'h21];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h22] = _RANDOM[7'h22];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h23] = _RANDOM[7'h23];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h24] = _RANDOM[7'h24];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h25] = _RANDOM[7'h25];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h26] = _RANDOM[7'h26];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h27] = _RANDOM[7'h27];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h28] = _RANDOM[7'h28];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h29] = _RANDOM[7'h29];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h2A] = _RANDOM[7'h2A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h2B] = _RANDOM[7'h2B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h2C] = _RANDOM[7'h2C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h2D] = _RANDOM[7'h2D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h2E] = _RANDOM[7'h2E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h2F] = _RANDOM[7'h2F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h30] = _RANDOM[7'h30];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h31] = _RANDOM[7'h31];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h32] = _RANDOM[7'h32];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h33] = _RANDOM[7'h33];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h34] = _RANDOM[7'h34];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h35] = _RANDOM[7'h35];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h36] = _RANDOM[7'h36];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h37] = _RANDOM[7'h37];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h38] = _RANDOM[7'h38];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h39] = _RANDOM[7'h39];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h3A] = _RANDOM[7'h3A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h3B] = _RANDOM[7'h3B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h3C] = _RANDOM[7'h3C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h3D] = _RANDOM[7'h3D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h3E] = _RANDOM[7'h3E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h3F] = _RANDOM[7'h3F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h40] = _RANDOM[7'h40];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h41] = _RANDOM[7'h41];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h42] = _RANDOM[7'h42];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h43] = _RANDOM[7'h43];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h44] = _RANDOM[7'h44];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h45] = _RANDOM[7'h45];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h46] = _RANDOM[7'h46];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h47] = _RANDOM[7'h47];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h48] = _RANDOM[7'h48];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h49] = _RANDOM[7'h49];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h4A] = _RANDOM[7'h4A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h4B] = _RANDOM[7'h4B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h4C] = _RANDOM[7'h4C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h4D] = _RANDOM[7'h4D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h4E] = _RANDOM[7'h4E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h4F] = _RANDOM[7'h4F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h50] = _RANDOM[7'h50];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h51] = _RANDOM[7'h51];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h52] = _RANDOM[7'h52];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h53] = _RANDOM[7'h53];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h54] = _RANDOM[7'h54];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h55] = _RANDOM[7'h55];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h56] = _RANDOM[7'h56];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h57] = _RANDOM[7'h57];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h58] = _RANDOM[7'h58];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h59] = _RANDOM[7'h59];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h5A] = _RANDOM[7'h5A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h5B] = _RANDOM[7'h5B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h5C] = _RANDOM[7'h5C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h5D] = _RANDOM[7'h5D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h5E] = _RANDOM[7'h5E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h5F] = _RANDOM[7'h5F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h60] = _RANDOM[7'h60];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h61] = _RANDOM[7'h61];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h62] = _RANDOM[7'h62];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h63] = _RANDOM[7'h63];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h64] = _RANDOM[7'h64];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h65] = _RANDOM[7'h65];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h66] = _RANDOM[7'h66];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h67] = _RANDOM[7'h67];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h68] = _RANDOM[7'h68];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h69] = _RANDOM[7'h69];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h6A] = _RANDOM[7'h6A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h6B] = _RANDOM[7'h6B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h6C] = _RANDOM[7'h6C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h6D] = _RANDOM[7'h6D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h6E] = _RANDOM[7'h6E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h6F] = _RANDOM[7'h6F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h70] = _RANDOM[7'h70];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h71] = _RANDOM[7'h71];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h72] = _RANDOM[7'h72];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h73] = _RANDOM[7'h73];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h74] = _RANDOM[7'h74];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h75] = _RANDOM[7'h75];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h76] = _RANDOM[7'h76];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h77] = _RANDOM[7'h77];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h78] = _RANDOM[7'h78];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h79] = _RANDOM[7'h79];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h7A] = _RANDOM[7'h7A];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h7B] = _RANDOM[7'h7B];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h7C] = _RANDOM[7'h7C];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h7D] = _RANDOM[7'h7D];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h7E] = _RANDOM[7'h7E];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
+        regs[7'h7F] = _RANDOM[7'h7F];	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7, :51:21
       `endif // RANDOMIZE_REG_INIT
     end // initial
     `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
       `FIRRTL_AFTER_INITIAL	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign io_src1data = io_src1data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
-  assign io_src2data = io_src2data_0;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
+  assign io_src1data = io.src1data;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
+  assign io_src2data = io.src2data;	// src/main/scala/TetraNyteCore/RegFileMT2R1WVec.scala:28:7
 endmodule
 
 module TetraNyteCore_Anon(	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24
@@ -1000,18 +365,20 @@ module TetraNyteCore_Anon(	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:6
   output [31:0] io_out	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:66:16
 );
 
-  wire [31:0] io_a_0 = io_a;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24
-  wire [31:0] io_b_0 = io_b;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24
-  wire [4:0]  io_fn_0 = io_fn;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24
-  wire [32:0] _GEN = {1'h0, io_a_0};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24, :70:26
-  wire [32:0] _GEN_0 = {1'h0, io_b_0};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24, :70:26
+  wire struct packed {logic [31:0] a; logic [31:0] b; logic [4:0] fn; logic [31:0] out; }
+    io;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24
+  wire [32:0] _GEN = {1'h0, io.a};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24, :70:26
+  wire [32:0] _GEN_0 = {1'h0, io.b};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24, :70:26
   wire [32:0] _io_out_T = _GEN + _GEN_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:70:26
   wire [31:0] _io_out_T_1 = _io_out_T[31:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:70:26
   wire [32:0] _io_out_T_2 = _GEN - _GEN_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:70:26, :71:26
   wire [31:0] _io_out_T_3 = _io_out_T_2[31:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:71:26
-  wire [31:0] io_out_0 =
-    io_fn_0 == 5'h0 ? _io_out_T_1 : io_fn_0 == 5'h1 ? _io_out_T_3 : 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24, :68:9, :69:16, :70:{21,26}, :71:{21,26}
-  assign io_out = io_out_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24
+  assign io =
+    '{a: io_a,
+      b: io_b,
+      fn: io_fn,
+      out: (io.fn == 5'h0 ? _io_out_T_1 : io.fn == 5'h1 ? _io_out_T_3 : 32'h0)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24, :68:9, :69:16, :70:{21,26}, :71:{21,26}
+  assign io_out = io.out;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:24
 endmodule
 
 
@@ -1086,2253 +453,738 @@ module TetraNyteCore(	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
   input         io_debug	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:22:14
 );
 
-  wire [31:0]      io_memRdata_0 = io_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-  wire             io_instrWriteEnable_0 = io_instrWriteEnable;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-  wire [9:0]       io_instrWriteAddr_0 = io_instrWriteAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-  wire [31:0]      io_instrWriteData_0 = io_instrWriteData;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-  wire             io_debug_0 = io_debug;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-  wire             ifWire_valid = 1'h1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :91:24
-  wire [1:0]       _ifStage_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [1:0]       _ifStage_WIRE_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [1:0]       _ifStage_WIRE_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [1:0]       _ifStage_WIRE_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [1:0]       _ifStage_WIRE_4_0_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [1:0]       _ifStage_WIRE_4_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [1:0]       _ifStage_WIRE_4_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [1:0]       _ifStage_WIRE_4_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [1:0]       _decStage_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [1:0]       _decStage_WIRE_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [1:0]       _decStage_WIRE_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [1:0]       _decStage_WIRE_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [1:0]       _decStage_WIRE_4_0_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [1:0]       _decStage_WIRE_4_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [1:0]       _decStage_WIRE_4_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [1:0]       _decStage_WIRE_4_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [1:0]       _exStage_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [1:0]       _exStage_WIRE_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [1:0]       _exStage_WIRE_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [1:0]       _exStage_WIRE_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [1:0]       _exStage_WIRE_4_0_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [1:0]       _exStage_WIRE_4_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [1:0]       _exStage_WIRE_4_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [1:0]       _exStage_WIRE_4_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [1:0]       _memStage_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [1:0]       _memStage_WIRE_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [1:0]       _memStage_WIRE_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [1:0]       _memStage_WIRE_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [1:0]       _memStage_WIRE_4_0_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [1:0]       _memStage_WIRE_4_1_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [1:0]       _memStage_WIRE_4_2_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [1:0]       _memStage_WIRE_4_3_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [1:0]       _ifWire_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [1:0]       _decWire_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [1:0]       _exWire_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [1:0]       _memWire_WIRE_threadId = 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _ifStage_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire             _ifStage_WIRE_4_0_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_0_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _ifStage_WIRE_4_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire             _decStage_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire             _decStage_WIRE_4_0_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_0_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _decStage_WIRE_4_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire             _exStage_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire             _exStage_WIRE_4_0_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_0_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _exStage_WIRE_4_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire             _memStage_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire             _memStage_WIRE_4_0_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_0_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_1_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_2_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _memStage_WIRE_4_3_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire             _ifWire_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             _ifWire_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire             ifWire_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             ifWire_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire             _decWire_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _decWire_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire             _exWire_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _exWire_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire             _memWire_WIRE_valid = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isALU = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isLoad = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isStore = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isBranch = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isJAL = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isJALR = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isLUI = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isAUIPC = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isFence = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire             _memWire_WIRE_isSystem = 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [4:0]       _ifStage_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [4:0]       _ifStage_WIRE_4_0_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_0_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_0_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_0_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _ifStage_WIRE_4_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [4:0]       _decStage_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [4:0]       _decStage_WIRE_4_0_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_0_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_0_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_0_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _decStage_WIRE_4_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [4:0]       _exStage_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [4:0]       _exStage_WIRE_4_0_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_0_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_0_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_0_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _exStage_WIRE_4_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [4:0]       _memStage_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [4:0]       _memStage_WIRE_4_0_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_0_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_0_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_0_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_1_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_1_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_1_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_1_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_2_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_2_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_2_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_2_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_3_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_3_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_3_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _memStage_WIRE_4_3_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [4:0]       _ifWire_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [4:0]       _ifWire_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [4:0]       _ifWire_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [4:0]       _ifWire_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [4:0]       ifWire_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [4:0]       ifWire_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [4:0]       ifWire_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [4:0]       ifWire_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [4:0]       _decWire_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [4:0]       _decWire_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [4:0]       _decWire_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [4:0]       _decWire_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [4:0]       _exWire_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [4:0]       _exWire_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [4:0]       _exWire_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [4:0]       _exWire_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [4:0]       _memWire_WIRE_aluOp = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [4:0]       _memWire_WIRE_rs1 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [4:0]       _memWire_WIRE_rs2 = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [4:0]       _memWire_WIRE_rd = 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _pcRegs_WIRE_0 = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:31
-  wire [31:0]      _pcRegs_WIRE_1 = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:31
-  wire [31:0]      _pcRegs_WIRE_2 = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:31
-  wire [31:0]      _pcRegs_WIRE_3 = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:31
-  wire [31:0]      _ifStage_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
-  wire [31:0]      _ifStage_WIRE_4_0_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_0_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _ifStage_WIRE_4_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:33
-  wire [31:0]      _decStage_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
-  wire [31:0]      _decStage_WIRE_4_0_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_0_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _decStage_WIRE_4_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:33
-  wire [31:0]      _exStage_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
-  wire [31:0]      _exStage_WIRE_4_0_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_0_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _exStage_WIRE_4_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:33
-  wire [31:0]      _memStage_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
-  wire [31:0]      _memStage_WIRE_4_0_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_0_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_1_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_2_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _memStage_WIRE_4_3_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:33
-  wire [31:0]      _ifWire_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      _ifWire_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
-  wire [31:0]      ifWire_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      ifWire_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      ifWire_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      ifWire_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      ifWire_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      ifWire_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      ifWire_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      _decWire_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _decWire_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
-  wire [31:0]      _exWire_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _exWire_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
-  wire [31:0]      _memWire_WIRE_pc = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_instr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_imm = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_rs1Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_rs2Data = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_memAddr = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_memWdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_memRdata = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      _memWire_WIRE_aluResult = 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
-  wire [31:0]      memWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25
-  wire [31:0]      memWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25
-  wire [31:0]      memWire_memRdata = io_memRdata_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :172:25
-  wire             _io_memWe_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:178:34
+  wire [31:0]      _alu_io_out;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:19
+  wire [31:0]      _regFile_io_src1data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:56:23
+  wire [31:0]      _regFile_io_src2data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:56:23
+  wire [31:0]      _instrMem_ext_R0_data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:50:29
+  wire [3:0][31:0] _pcRegs_WIRE = '{32'h0, 32'h0, 32'h0, 32'h0};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:31
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _GEN =
+    '{threadId: 2'h0,
+      valid: 1'h0,
+      pc: 32'h0,
+      instr: 32'h0,
+      isALU: 1'h0,
+      isLoad: 1'h0,
+      isStore: 1'h0,
+      isBranch: 1'h0,
+      isJAL: 1'h0,
+      isJALR: 1'h0,
+      isLUI: 1'h0,
+      isAUIPC: 1'h0,
+      isFence: 1'h0,
+      isSystem: 1'h0,
+      aluOp: 5'h0,
+      imm: 32'h0,
+      rs1: 5'h0,
+      rs2: 5'h0,
+      rd: 5'h0,
+      rs1Data: 32'h0,
+      rs2Data: 32'h0,
+      memAddr: 32'h0,
+      memWdata: 32'h0,
+      memRdata: 32'h0,
+      aluResult: 32'h0};
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _ifStage_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  assign _ifStage_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _ifStage_WIRE_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  assign _ifStage_WIRE_1 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _ifStage_WIRE_2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  assign _ifStage_WIRE_2 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _ifStage_WIRE_3;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  assign _ifStage_WIRE_3 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _decStage_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  assign _decStage_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _decStage_WIRE_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  assign _decStage_WIRE_1 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _decStage_WIRE_2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  assign _decStage_WIRE_2 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _decStage_WIRE_3;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  assign _decStage_WIRE_3 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _exStage_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  assign _exStage_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _exStage_WIRE_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  assign _exStage_WIRE_1 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _exStage_WIRE_2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  assign _exStage_WIRE_2 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _exStage_WIRE_3;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  assign _exStage_WIRE_3 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _memStage_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  assign _memStage_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _memStage_WIRE_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  assign _memStage_WIRE_1 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _memStage_WIRE_2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  assign _memStage_WIRE_2 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _memStage_WIRE_3;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  assign _memStage_WIRE_3 = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:67
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _ifWire_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
+  assign _ifWire_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:37
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _decWire_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
+  assign _decWire_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:38
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _exWire_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
+  assign _exWire_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:37
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _memWire_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
+  assign _memWire_WIRE = _GEN;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:38
+  wire
+    struct packed {logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic memWe; logic instrWriteEnable; logic [9:0] instrWriteAddr; logic [31:0] instrWriteData; logic debug; }
+    io;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
   reg  [1:0]       currentThread;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30
-  wire [1:0]       ifWire_threadId = currentThread;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :91:24
-  wire [2:0]       _currentThread_T = {1'h0, currentThread} + 3'h1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :44:34
+  wire [2:0]       _currentThread_T = {1'h0, currentThread} + 3'h1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :44:34, :91:24, :102:26
   wire [1:0]       _currentThread_T_1 = _currentThread_T[1:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:44:34
-  reg  [31:0]      pcRegs_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-  reg  [31:0]      pcRegs_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-  reg  [31:0]      pcRegs_2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-  reg  [31:0]      pcRegs_3;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-  reg  [1:0]       ifStage_0_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg              ifStage_0_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_0_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_0_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [1:0]       ifStage_1_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg              ifStage_1_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_1_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_1_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [1:0]       ifStage_2_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg              ifStage_2_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_2_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_2_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [1:0]       ifStage_3_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg              ifStage_3_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_3_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [31:0]      ifStage_3_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-  reg  [1:0]       decStage_0_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_0_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_0_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_0_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_0_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_0_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_0_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [1:0]       decStage_1_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_1_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_1_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_1_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_1_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_1_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_1_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [1:0]       decStage_2_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_2_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_2_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_2_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_2_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_2_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_2_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [1:0]       decStage_3_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg              decStage_3_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_3_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_3_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_3_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [4:0]       decStage_3_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [31:0]      decStage_3_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  reg  [1:0]       exStage_0_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_0_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_0_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_0_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_0_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_0_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_0_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [1:0]       exStage_1_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_1_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_1_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_1_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_1_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_1_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_1_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [1:0]       exStage_2_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_2_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_2_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_2_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_2_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_2_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_2_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [1:0]       exStage_3_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg              exStage_3_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_3_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_3_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_3_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [4:0]       exStage_3_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [31:0]      exStage_3_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  reg  [1:0]       memStage_0_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_0_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_0_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_0_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_0_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_0_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_0_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [1:0]       memStage_1_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_1_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_1_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_1_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_1_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_1_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_1_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [1:0]       memStage_2_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_2_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_2_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_2_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_2_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_2_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_2_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [1:0]       memStage_3_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg              memStage_3_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_3_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_3_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_3_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [4:0]       memStage_3_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  reg  [31:0]      memStage_3_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [3:0][31:0] _GEN = {{pcRegs_3}, {pcRegs_2}, {pcRegs_1}, {pcRegs_0}};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :94:19
-  wire [31:0]      ifWire_pc = _GEN[currentThread];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :91:24, :94:19
-  wire [29:0]      _ifWire_instr_T = ifWire_pc[31:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24, :95:58
+  reg  [3:0][31:0] pcRegs;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
+  struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    ifStage;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
+  struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    decStage;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
+  struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    exStage;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
+  struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    memStage;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
+  wire [31:0]      _GEN_0 = pcRegs[currentThread];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :94:19
+  wire [29:0]      _ifWire_instr_T = _GEN_0[31:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:94:19, :95:58
   wire [29:0]      _ifWire_instr_WIRE = _ifWire_instr_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:95:{35,58}
   wire [9:0]       _ifWire_instr_T_1 = _ifWire_instr_WIRE[9:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:95:35
-  wire [32:0]      _pcRegs_T = {1'h0, ifWire_pc} + 33'h4;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24, :99:50
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    ifWire =
+    '{threadId: currentThread,
+      valid: (1'h1),
+      pc: _GEN_0,
+      instr: _instrMem_ext_R0_data,
+      isALU: (1'h0),
+      isLoad: (1'h0),
+      isStore: (1'h0),
+      isBranch: (1'h0),
+      isJAL: (1'h0),
+      isJALR: (1'h0),
+      isLUI: (1'h0),
+      isAUIPC: (1'h0),
+      isFence: (1'h0),
+      isSystem: (1'h0),
+      aluOp: (5'h0),
+      imm: (32'h0),
+      rs1: (5'h0),
+      rs2: (5'h0),
+      rd: (5'h0),
+      rs1Data: (32'h0),
+      rs2Data: (32'h0),
+      memAddr: (32'h0),
+      memWdata: (32'h0),
+      memRdata: (32'h0),
+      aluResult: (32'h0)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :43:30, :50:29, :91:24, :92:19, :93:19, :94:19, :95:19, :102:26
+  wire [32:0]      _pcRegs_T = {1'h0, _GEN_0} + 33'h4;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24, :94:19, :99:50, :102:26
   wire [31:0]      _pcRegs_T_1 = _pcRegs_T[31:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:50
-  wire [3:0][1:0]  _GEN_0 =
-    {{decStage_3_threadId},
-     {decStage_2_threadId},
-     {decStage_1_threadId},
-     {decStage_0_threadId}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [1:0]       decWire_threadId = _GEN_0[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_1 =
-    {{decStage_3_valid}, {decStage_2_valid}, {decStage_1_valid}, {decStage_0_valid}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_valid = _GEN_1[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][31:0] _GEN_2 =
-    {{decStage_3_pc}, {decStage_2_pc}, {decStage_1_pc}, {decStage_0_pc}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [31:0]      decWire_pc = _GEN_2[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][31:0] _GEN_3 =
-    {{decStage_3_instr}, {decStage_2_instr}, {decStage_1_instr}, {decStage_0_instr}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [31:0]      decWire_instr = _GEN_3[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_4 =
-    {{decStage_3_isALU}, {decStage_2_isALU}, {decStage_1_isALU}, {decStage_0_isALU}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [3:0]       _GEN_5 =
-    {{decStage_3_isLoad}, {decStage_2_isLoad}, {decStage_1_isLoad}, {decStage_0_isLoad}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [3:0]       _GEN_6 =
-    {{decStage_3_isStore},
-     {decStage_2_isStore},
-     {decStage_1_isStore},
-     {decStage_0_isStore}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [3:0]       _GEN_7 =
-    {{decStage_3_isBranch},
-     {decStage_2_isBranch},
-     {decStage_1_isBranch},
-     {decStage_0_isBranch}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_isBranch = _GEN_7[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_8 =
-    {{decStage_3_isJAL}, {decStage_2_isJAL}, {decStage_1_isJAL}, {decStage_0_isJAL}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_isJAL = _GEN_8[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_9 =
-    {{decStage_3_isJALR}, {decStage_2_isJALR}, {decStage_1_isJALR}, {decStage_0_isJALR}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_isJALR = _GEN_9[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_10 =
-    {{decStage_3_isLUI}, {decStage_2_isLUI}, {decStage_1_isLUI}, {decStage_0_isLUI}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_isLUI = _GEN_10[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_11 =
-    {{decStage_3_isAUIPC},
-     {decStage_2_isAUIPC},
-     {decStage_1_isAUIPC},
-     {decStage_0_isAUIPC}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_isAUIPC = _GEN_11[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_12 =
-    {{decStage_3_isFence},
-     {decStage_2_isFence},
-     {decStage_1_isFence},
-     {decStage_0_isFence}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_isFence = _GEN_12[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0]       _GEN_13 =
-    {{decStage_3_isSystem},
-     {decStage_2_isSystem},
-     {decStage_1_isSystem},
-     {decStage_0_isSystem}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire             decWire_isSystem = _GEN_13[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][4:0]  _GEN_14 =
-    {{decStage_3_aluOp}, {decStage_2_aluOp}, {decStage_1_aluOp}, {decStage_0_aluOp}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [4:0]       decWire_aluOp = _GEN_14[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][31:0] _GEN_15 =
-    {{decStage_3_imm}, {decStage_2_imm}, {decStage_1_imm}, {decStage_0_imm}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [31:0]      decWire_imm = _GEN_15[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][31:0] _GEN_16 =
-    {{decStage_3_memAddr},
-     {decStage_2_memAddr},
-     {decStage_1_memAddr},
-     {decStage_0_memAddr}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [31:0]      decWire_memAddr = _GEN_16[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][31:0] _GEN_17 =
-    {{decStage_3_memWdata},
-     {decStage_2_memWdata},
-     {decStage_1_memWdata},
-     {decStage_0_memWdata}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [31:0]      decWire_memWdata = _GEN_17[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][31:0] _GEN_18 =
-    {{decStage_3_memRdata},
-     {decStage_2_memRdata},
-     {decStage_1_memRdata},
-     {decStage_0_memRdata}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [31:0]      decWire_memRdata = _GEN_18[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [3:0][31:0] _GEN_19 =
-    {{decStage_3_aluResult},
-     {decStage_2_aluResult},
-     {decStage_1_aluResult},
-     {decStage_0_aluResult}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-  wire [31:0]      decWire_aluResult = _GEN_19[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25
-  wire [4:0]       _decWire_rs1_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:123:31
-  wire [4:0]       _decWire_rs2_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:124:31
-  wire [4:0]       _decWire_rd_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:125:31
-  wire [6:0]       opcode = decWire_instr[6:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :114:29
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _GEN_1 = decStage[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    decWire;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25
+  wire [6:0]       opcode = decWire.instr[6:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :114:29
   wire             _T = opcode == 7'h33;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:114:29, :115:15
-  wire             decWire_isALU = _T | _GEN_4[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25, :111:11, :115:{15,33}, :116:19
   wire             _T_1 = opcode == 7'h3;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:114:29, :117:22
-  wire             decWire_isLoad = ~_T & _T_1 | _GEN_5[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25, :111:11, :115:{15,33}, :117:{22,40}
-  wire             decWire_isStore =
-    ~(_T | _T_1) & opcode == 7'h23 | _GEN_6[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :110:25, :111:11, :114:29, :115:{15,33}, :117:{22,40}, :119:{22,40}
-  assign _decWire_rs1_T = decWire_instr[19:15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :123:31
-  wire [4:0]       decWire_rs1 = _decWire_rs1_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :123:31
-  assign _decWire_rs2_T = decWire_instr[24:20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :124:31
-  wire [4:0]       decWire_rs2 = _decWire_rs2_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :124:31
-  assign _decWire_rd_T = decWire_instr[11:7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :125:31
-  wire [4:0]       decWire_rd = _decWire_rd_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :125:31
-  wire [3:0][1:0]  _GEN_20 =
-    {{exStage_3_threadId},
-     {exStage_2_threadId},
-     {exStage_1_threadId},
-     {exStage_0_threadId}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [1:0]       exWire_threadId = _GEN_20[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_21 =
-    {{exStage_3_valid}, {exStage_2_valid}, {exStage_1_valid}, {exStage_0_valid}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_valid = _GEN_21[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][31:0] _GEN_22 =
-    {{exStage_3_pc}, {exStage_2_pc}, {exStage_1_pc}, {exStage_0_pc}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [31:0]      exWire_pc = _GEN_22[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][31:0] _GEN_23 =
-    {{exStage_3_instr}, {exStage_2_instr}, {exStage_1_instr}, {exStage_0_instr}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [31:0]      exWire_instr = _GEN_23[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_24 =
-    {{exStage_3_isALU}, {exStage_2_isALU}, {exStage_1_isALU}, {exStage_0_isALU}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isALU = _GEN_24[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_25 =
-    {{exStage_3_isLoad}, {exStage_2_isLoad}, {exStage_1_isLoad}, {exStage_0_isLoad}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isLoad = _GEN_25[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_26 =
-    {{exStage_3_isStore}, {exStage_2_isStore}, {exStage_1_isStore}, {exStage_0_isStore}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isStore = _GEN_26[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_27 =
-    {{exStage_3_isBranch},
-     {exStage_2_isBranch},
-     {exStage_1_isBranch},
-     {exStage_0_isBranch}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isBranch = _GEN_27[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_28 =
-    {{exStage_3_isJAL}, {exStage_2_isJAL}, {exStage_1_isJAL}, {exStage_0_isJAL}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isJAL = _GEN_28[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_29 =
-    {{exStage_3_isJALR}, {exStage_2_isJALR}, {exStage_1_isJALR}, {exStage_0_isJALR}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isJALR = _GEN_29[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_30 =
-    {{exStage_3_isLUI}, {exStage_2_isLUI}, {exStage_1_isLUI}, {exStage_0_isLUI}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isLUI = _GEN_30[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_31 =
-    {{exStage_3_isAUIPC}, {exStage_2_isAUIPC}, {exStage_1_isAUIPC}, {exStage_0_isAUIPC}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isAUIPC = _GEN_31[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_32 =
-    {{exStage_3_isFence}, {exStage_2_isFence}, {exStage_1_isFence}, {exStage_0_isFence}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isFence = _GEN_32[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0]       _GEN_33 =
-    {{exStage_3_isSystem},
-     {exStage_2_isSystem},
-     {exStage_1_isSystem},
-     {exStage_0_isSystem}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire             exWire_isSystem = _GEN_33[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][4:0]  _GEN_34 =
-    {{exStage_3_aluOp}, {exStage_2_aluOp}, {exStage_1_aluOp}, {exStage_0_aluOp}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [4:0]       exWire_aluOp = _GEN_34[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][31:0] _GEN_35 =
-    {{exStage_3_imm}, {exStage_2_imm}, {exStage_1_imm}, {exStage_0_imm}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [31:0]      exWire_imm = _GEN_35[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][4:0]  _GEN_36 =
-    {{exStage_3_rs1}, {exStage_2_rs1}, {exStage_1_rs1}, {exStage_0_rs1}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [4:0]       exWire_rs1 = _GEN_36[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][4:0]  _GEN_37 =
-    {{exStage_3_rs2}, {exStage_2_rs2}, {exStage_1_rs2}, {exStage_0_rs2}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [4:0]       exWire_rs2 = _GEN_37[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][4:0]  _GEN_38 =
-    {{exStage_3_rd}, {exStage_2_rd}, {exStage_1_rd}, {exStage_0_rd}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [4:0]       exWire_rd = _GEN_38[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][31:0] _GEN_39 =
-    {{exStage_3_rs1Data}, {exStage_2_rs1Data}, {exStage_1_rs1Data}, {exStage_0_rs1Data}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [31:0]      exWire_rs1Data = _GEN_39[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][31:0] _GEN_40 =
-    {{exStage_3_rs2Data}, {exStage_2_rs2Data}, {exStage_1_rs2Data}, {exStage_0_rs2Data}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [31:0]      exWire_rs2Data = _GEN_40[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire [3:0][31:0] _GEN_41 =
-    {{exStage_3_memAddr}, {exStage_2_memAddr}, {exStage_1_memAddr}, {exStage_0_memAddr}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [3:0][31:0] _GEN_42 =
-    {{exStage_3_memWdata},
-     {exStage_2_memWdata},
-     {exStage_1_memWdata},
-     {exStage_0_memWdata}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [3:0][31:0] _GEN_43 =
-    {{exStage_3_memRdata},
-     {exStage_2_memRdata},
-     {exStage_1_memRdata},
-     {exStage_0_memRdata}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-  wire [31:0]      exWire_memRdata = _GEN_43[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24
-  wire             _T_3 = exWire_isLoad | exWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24, :158:22
-  wire [32:0]      _exWire_memAddr_T = {1'h0, exWire_rs1Data} + {1'h0, exWire_imm};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24, :159:39
+  wire [4:0]       _decWire_rs1_T = decWire.instr[19:15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :114:29, :123:31
+  wire [4:0]       _decWire_rs2_T = decWire.instr[24:20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :114:29, :124:31
+  wire [4:0]       _decWire_rd_T = decWire.instr[11:7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :114:29, :125:31
+  assign decWire =
+    '{threadId: _GEN_1.threadId,
+      valid: _GEN_1.valid,
+      pc: _GEN_1.pc,
+      instr: _GEN_1.instr,
+      isALU: (_T | _GEN_1.isALU),
+      isLoad: (~_T & _T_1 | _GEN_1.isLoad),
+      isStore: (~(_T | _T_1) & opcode == 7'h23 | _GEN_1.isStore),
+      isBranch: _GEN_1.isBranch,
+      isJAL: _GEN_1.isJAL,
+      isJALR: _GEN_1.isJALR,
+      isLUI: _GEN_1.isLUI,
+      isAUIPC: _GEN_1.isAUIPC,
+      isFence: _GEN_1.isFence,
+      isSystem: _GEN_1.isSystem,
+      aluOp: _GEN_1.aluOp,
+      imm: _GEN_1.imm,
+      rs1: _decWire_rs1_T,
+      rs2: _decWire_rs2_T,
+      rd: _decWire_rd_T,
+      rs1Data: _regFile_io_src1data,
+      rs2Data: _regFile_io_src2data,
+      memAddr: _GEN_1.memAddr,
+      memWdata: _GEN_1.memWdata,
+      memRdata: _GEN_1.memRdata,
+      aluResult: _GEN_1.aluResult};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:56:23, :110:25, :111:11, :114:29, :115:{15,33}, :116:19, :117:{22,40}, :119:{22,40}, :123:{15,31}, :124:{15,31}, :125:{15,31}, :135:19, :136:19
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _GEN_2 = exStage[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :84:25
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    exWire;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24
+  wire             _T_3 = exWire.isLoad | exWire.isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24, :158:22
+  wire [32:0]      _exWire_memAddr_T = {1'h0, exWire.rs1Data} + {1'h0, exWire.imm};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24, :102:26, :147:24, :151:13, :159:39
   wire [31:0]      _exWire_memAddr_T_1 = _exWire_memAddr_T[31:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:159:39
-  wire [31:0]      exWire_memAddr = _T_3 ? _exWire_memAddr_T_1 : _GEN_41[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24, :148:10, :158:{22,41}, :159:{21,39}
-  wire [31:0]      exWire_memWdata = _T_3 ? exWire_rs2Data : _GEN_42[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :147:24, :148:10, :158:{22,41}, :160:21
-  wire [3:0][1:0]  _GEN_44 =
-    {{memStage_3_threadId},
-     {memStage_2_threadId},
-     {memStage_1_threadId},
-     {memStage_0_threadId}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [1:0]       memWire_threadId = _GEN_44[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_45 =
-    {{memStage_3_valid}, {memStage_2_valid}, {memStage_1_valid}, {memStage_0_valid}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_valid = _GEN_45[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_46 =
-    {{memStage_3_pc}, {memStage_2_pc}, {memStage_1_pc}, {memStage_0_pc}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [31:0]      memWire_pc = _GEN_46[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_47 =
-    {{memStage_3_instr}, {memStage_2_instr}, {memStage_1_instr}, {memStage_0_instr}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [31:0]      memWire_instr = _GEN_47[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_48 =
-    {{memStage_3_isALU}, {memStage_2_isALU}, {memStage_1_isALU}, {memStage_0_isALU}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isALU = _GEN_48[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_49 =
-    {{memStage_3_isLoad}, {memStage_2_isLoad}, {memStage_1_isLoad}, {memStage_0_isLoad}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isLoad = _GEN_49[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_50 =
-    {{memStage_3_isStore},
-     {memStage_2_isStore},
-     {memStage_1_isStore},
-     {memStage_0_isStore}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isStore = _GEN_50[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_51 =
-    {{memStage_3_isBranch},
-     {memStage_2_isBranch},
-     {memStage_1_isBranch},
-     {memStage_0_isBranch}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isBranch = _GEN_51[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_52 =
-    {{memStage_3_isJAL}, {memStage_2_isJAL}, {memStage_1_isJAL}, {memStage_0_isJAL}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isJAL = _GEN_52[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_53 =
-    {{memStage_3_isJALR}, {memStage_2_isJALR}, {memStage_1_isJALR}, {memStage_0_isJALR}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isJALR = _GEN_53[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_54 =
-    {{memStage_3_isLUI}, {memStage_2_isLUI}, {memStage_1_isLUI}, {memStage_0_isLUI}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isLUI = _GEN_54[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_55 =
-    {{memStage_3_isAUIPC},
-     {memStage_2_isAUIPC},
-     {memStage_1_isAUIPC},
-     {memStage_0_isAUIPC}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isAUIPC = _GEN_55[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_56 =
-    {{memStage_3_isFence},
-     {memStage_2_isFence},
-     {memStage_1_isFence},
-     {memStage_0_isFence}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isFence = _GEN_56[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0]       _GEN_57 =
-    {{memStage_3_isSystem},
-     {memStage_2_isSystem},
-     {memStage_1_isSystem},
-     {memStage_0_isSystem}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire             memWire_isSystem = _GEN_57[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][4:0]  _GEN_58 =
-    {{memStage_3_aluOp}, {memStage_2_aluOp}, {memStage_1_aluOp}, {memStage_0_aluOp}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [4:0]       memWire_aluOp = _GEN_58[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_59 =
-    {{memStage_3_imm}, {memStage_2_imm}, {memStage_1_imm}, {memStage_0_imm}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [31:0]      memWire_imm = _GEN_59[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][4:0]  _GEN_60 =
-    {{memStage_3_rs1}, {memStage_2_rs1}, {memStage_1_rs1}, {memStage_0_rs1}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [4:0]       memWire_rs1 = _GEN_60[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][4:0]  _GEN_61 =
-    {{memStage_3_rs2}, {memStage_2_rs2}, {memStage_1_rs2}, {memStage_0_rs2}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [4:0]       memWire_rs2 = _GEN_61[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][4:0]  _GEN_62 =
-    {{memStage_3_rd}, {memStage_2_rd}, {memStage_1_rd}, {memStage_0_rd}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [4:0]       memWire_rd = _GEN_62[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_63 =
-    {{memStage_3_rs1Data},
-     {memStage_2_rs1Data},
-     {memStage_1_rs1Data},
-     {memStage_0_rs1Data}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [31:0]      memWire_rs1Data = _GEN_63[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_64 =
-    {{memStage_3_rs2Data},
-     {memStage_2_rs2Data},
-     {memStage_1_rs2Data},
-     {memStage_0_rs2Data}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [31:0]      memWire_rs2Data = _GEN_64[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_65 =
-    {{memStage_3_memAddr},
-     {memStage_2_memAddr},
-     {memStage_1_memAddr},
-     {memStage_0_memAddr}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  assign memWire_memAddr = _GEN_65[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_66 =
-    {{memStage_3_memWdata},
-     {memStage_2_memWdata},
-     {memStage_1_memWdata},
-     {memStage_0_memWdata}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  assign memWire_memWdata = _GEN_66[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [3:0][31:0] _GEN_67 =
-    {{memStage_3_aluResult},
-     {memStage_2_aluResult},
-     {memStage_1_aluResult},
-     {memStage_0_aluResult}};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-  wire [31:0]      memWire_aluResult = _GEN_67[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :172:25
-  wire [31:0]      io_memAddr_0 = memWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :172:25
-  wire [31:0]      io_memWdata_0 = memWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :172:25
-  assign _io_memWe_T = memWire_isStore & memWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :178:34
-  wire             io_memWe_0 = _io_memWe_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :178:34
-  wire [31:0]      wbData = memWire_isLoad ? memWire_memRdata : memWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :184:19
-  wire             _regFile_io_wen_T = |memWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :187:55
-  wire             _regFile_io_wen_T_1 = memWire_valid & _regFile_io_wen_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :187:{40,55}
-  wire             _regFile_io_wen_T_2 = memWire_isLoad | memWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :188:42
+  assign exWire =
+    '{threadId: _GEN_2.threadId,
+      valid: _GEN_2.valid,
+      pc: _GEN_2.pc,
+      instr: _GEN_2.instr,
+      isALU: _GEN_2.isALU,
+      isLoad: _GEN_2.isLoad,
+      isStore: _GEN_2.isStore,
+      isBranch: _GEN_2.isBranch,
+      isJAL: _GEN_2.isJAL,
+      isJALR: _GEN_2.isJALR,
+      isLUI: _GEN_2.isLUI,
+      isAUIPC: _GEN_2.isAUIPC,
+      isFence: _GEN_2.isFence,
+      isSystem: _GEN_2.isSystem,
+      aluOp: _GEN_2.aluOp,
+      imm: _GEN_2.imm,
+      rs1: _GEN_2.rs1,
+      rs2: _GEN_2.rs2,
+      rd: _GEN_2.rd,
+      rs1Data: _GEN_2.rs1Data,
+      rs2Data: _GEN_2.rs2Data,
+      memAddr: (_T_3 ? _exWire_memAddr_T_1 : _GEN_2.memAddr),
+      memWdata: (_T_3 ? exWire.rs2Data : _GEN_2.memWdata),
+      memRdata: _GEN_2.memRdata,
+      aluResult: _alu_io_out};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:19, :147:24, :148:10, :152:13, :155:20, :158:{22,41}, :159:{21,39}, :160:21
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    _GEN_3 = memStage[currentThread];	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :85:25
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }
+    memWire;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25
+  wire             _io_memWe_T = memWire.isStore & memWire.valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :178:34
+  assign memWire =
+    '{threadId: _GEN_3.threadId,
+      valid: _GEN_3.valid,
+      pc: _GEN_3.pc,
+      instr: _GEN_3.instr,
+      isALU: _GEN_3.isALU,
+      isLoad: _GEN_3.isLoad,
+      isStore: _GEN_3.isStore,
+      isBranch: _GEN_3.isBranch,
+      isJAL: _GEN_3.isJAL,
+      isJALR: _GEN_3.isJALR,
+      isLUI: _GEN_3.isLUI,
+      isAUIPC: _GEN_3.isAUIPC,
+      isFence: _GEN_3.isFence,
+      isSystem: _GEN_3.isSystem,
+      aluOp: _GEN_3.aluOp,
+      imm: _GEN_3.imm,
+      rs1: _GEN_3.rs1,
+      rs2: _GEN_3.rs2,
+      rd: _GEN_3.rd,
+      rs1Data: _GEN_3.rs1Data,
+      rs2Data: _GEN_3.rs2Data,
+      memAddr: _GEN_3.memAddr,
+      memWdata: _GEN_3.memWdata,
+      memRdata: io.memRdata,
+      aluResult: _GEN_3.aluResult};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :172:25, :173:11, :181:20
+  wire [31:0]      wbData = memWire.isLoad ? memWire.memRdata : memWire.aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :181:20, :184:19
+  wire             _regFile_io_wen_T = |memWire.rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :185:23, :187:55
+  wire             _regFile_io_wen_T_1 = memWire.valid & _regFile_io_wen_T;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :178:34, :187:{40,55}
+  wire             _regFile_io_wen_T_2 = memWire.isLoad | memWire.isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :184:19, :188:42
   wire             _regFile_io_wen_T_3 = _regFile_io_wen_T_1 & _regFile_io_wen_T_2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:187:{40,64}, :188:42
-  wire [31:0]      ifWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:91:24
-  wire [31:0]      decWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25
-  wire [31:0]      decWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25
-  wire [31:0]      exWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    _ifStage_WIRE_4 =
+    {{_ifStage_WIRE_3}, {_ifStage_WIRE_2}, {_ifStage_WIRE_1}, {_ifStage_WIRE}};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:{33,67}
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    _decStage_WIRE_4 =
+    {{_decStage_WIRE_3}, {_decStage_WIRE_2}, {_decStage_WIRE_1}, {_decStage_WIRE}};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:{33,67}
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    _exStage_WIRE_4 =
+    {{_exStage_WIRE_3}, {_exStage_WIRE_2}, {_exStage_WIRE_1}, {_exStage_WIRE}};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:{33,67}
+  wire
+    struct packed {logic [1:0] threadId; logic valid; logic [31:0] pc; logic [31:0] instr; logic isALU; logic isLoad; logic isStore; logic isBranch; logic isJAL; logic isJALR; logic isLUI; logic isAUIPC; logic isFence; logic isSystem; logic [4:0] aluOp; logic [31:0] imm; logic [4:0] rs1; logic [4:0] rs2; logic [4:0] rd; logic [31:0] rs1Data; logic [31:0] rs2Data; logic [31:0] memAddr; logic [31:0] memWdata; logic [31:0] memRdata; logic [31:0] aluResult; }[3:0]
+    _memStage_WIRE_4 =
+    {{_memStage_WIRE_3}, {_memStage_WIRE_2}, {_memStage_WIRE_1}, {_memStage_WIRE}};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:{33,67}
+  assign io =
+    '{memAddr: memWire.memAddr,
+      memWdata: memWire.memWdata,
+      memRdata: io_memRdata,
+      memWe: _io_memWe_T,
+      instrWriteEnable: io_instrWriteEnable,
+      instrWriteAddr: io_instrWriteAddr,
+      instrWriteData: io_instrWriteData,
+      debug: io_debug};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :172:25, :176:15, :177:15, :178:34
   always @(posedge clock) begin	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
     if (reset) begin	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-      currentThread <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30
-      pcRegs_0 <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-      pcRegs_1 <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-      pcRegs_2 <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-      pcRegs_3 <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23
-      ifStage_0_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_0_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_0_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_0_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_1_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_1_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_1_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_1_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_2_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_2_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_2_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_2_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_3_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_3_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_3_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      ifStage_3_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25
-      decStage_0_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_0_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_1_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_2_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      decStage_3_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25
-      exStage_0_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_0_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_1_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_2_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      exStage_3_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25
-      memStage_0_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_0_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_1_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_2_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_threadId <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_valid <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_pc <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_instr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isALU <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isLoad <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isStore <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isBranch <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isJAL <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isJALR <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isLUI <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isAUIPC <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isFence <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_isSystem <= 1'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_aluOp <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_imm <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_rs1 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_rs2 <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_rd <= 5'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_rs1Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_rs2Data <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_memAddr <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_memWdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_memRdata <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
-      memStage_3_aluResult <= 32'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25
+      currentThread <= 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+      pcRegs <= _pcRegs_WIRE;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:{23,31}
+      ifStage <= _ifStage_WIRE_4;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:{25,33}
+      decStage <= _decStage_WIRE_4;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:{25,33}
+      exStage <= _exStage_WIRE_4;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:{25,33}
+      memStage <= _memStage_WIRE_4;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:{25,33}
     end
     else begin	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-      automatic logic _GEN_68;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
-      automatic logic _GEN_69;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
-      automatic logic _GEN_70;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
-      _GEN_68 = currentThread == 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :99:25
-      _GEN_69 = currentThread == 2'h1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :99:25
-      _GEN_70 = currentThread == 2'h2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :99:25
+      automatic logic _GEN_4;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
+      automatic logic _GEN_5;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
+      automatic logic _GEN_6;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
+      _GEN_4 = currentThread == 2'h0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :164:26, :191:27
+      _GEN_5 = currentThread == 2'h1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :164:26, :191:27
+      _GEN_6 = currentThread == 2'h2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :164:26, :191:27
       currentThread <= _currentThread_T_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :44:34
-      if (_GEN_68) begin	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
-        pcRegs_0 <= _pcRegs_T_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :99:50
-        ifStage_0_threadId <= ifWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_0_pc <= ifWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_0_instr <= ifWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        decStage_0_threadId <= decWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_valid <= decWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_pc <= decWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_instr <= decWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_aluOp <= decWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_imm <= decWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_rs1 <= decWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_rs2 <= decWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_rd <= decWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_rs1Data <= decWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_rs2Data <= decWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_memAddr <= decWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_memWdata <= decWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_memRdata <= decWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_0_aluResult <= decWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        exStage_0_threadId <= exWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_valid <= exWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_pc <= exWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_instr <= exWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isALU <= exWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isLoad <= exWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isStore <= exWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isBranch <= exWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isJAL <= exWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isJALR <= exWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isLUI <= exWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isAUIPC <= exWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isFence <= exWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_isSystem <= exWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_aluOp <= exWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_imm <= exWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_rs1 <= exWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_rs2 <= exWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_rd <= exWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_rs1Data <= exWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_rs2Data <= exWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_memAddr <= exWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_memWdata <= exWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_memRdata <= exWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_0_aluResult <= exWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        memStage_0_threadId <= memWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_valid <= memWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_pc <= memWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_instr <= memWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isALU <= memWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isLoad <= memWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isStore <= memWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isBranch <= memWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isJAL <= memWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isJALR <= memWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isLUI <= memWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isAUIPC <= memWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isFence <= memWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_isSystem <= memWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_aluOp <= memWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_imm <= memWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_rs1 <= memWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_rs2 <= memWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_rd <= memWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_rs1Data <= memWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_rs2Data <= memWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_memAddr <= memWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_memWdata <= memWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_memRdata <= memWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_0_aluResult <= memWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-      end
-      if (_GEN_69) begin	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
-        pcRegs_1 <= _pcRegs_T_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :99:50
-        ifStage_1_threadId <= ifWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_1_pc <= ifWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_1_instr <= ifWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        decStage_1_threadId <= decWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_valid <= decWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_pc <= decWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_instr <= decWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_aluOp <= decWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_imm <= decWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_rs1 <= decWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_rs2 <= decWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_rd <= decWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_rs1Data <= decWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_rs2Data <= decWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_memAddr <= decWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_memWdata <= decWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_memRdata <= decWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_1_aluResult <= decWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        exStage_1_threadId <= exWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_valid <= exWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_pc <= exWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_instr <= exWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isALU <= exWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isLoad <= exWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isStore <= exWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isBranch <= exWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isJAL <= exWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isJALR <= exWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isLUI <= exWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isAUIPC <= exWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isFence <= exWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_isSystem <= exWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_aluOp <= exWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_imm <= exWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_rs1 <= exWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_rs2 <= exWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_rd <= exWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_rs1Data <= exWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_rs2Data <= exWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_memAddr <= exWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_memWdata <= exWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_memRdata <= exWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_1_aluResult <= exWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        memStage_1_threadId <= memWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_valid <= memWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_pc <= memWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_instr <= memWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isALU <= memWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isLoad <= memWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isStore <= memWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isBranch <= memWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isJAL <= memWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isJALR <= memWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isLUI <= memWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isAUIPC <= memWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isFence <= memWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_isSystem <= memWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_aluOp <= memWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_imm <= memWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_rs1 <= memWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_rs2 <= memWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_rd <= memWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_rs1Data <= memWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_rs2Data <= memWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_memAddr <= memWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_memWdata <= memWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_memRdata <= memWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_1_aluResult <= memWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-      end
-      if (_GEN_70) begin	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:99:25
-        pcRegs_2 <= _pcRegs_T_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :99:50
-        ifStage_2_threadId <= ifWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_2_pc <= ifWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_2_instr <= ifWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        decStage_2_threadId <= decWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_valid <= decWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_pc <= decWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_instr <= decWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_aluOp <= decWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_imm <= decWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_rs1 <= decWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_rs2 <= decWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_rd <= decWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_rs1Data <= decWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_rs2Data <= decWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_memAddr <= decWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_memWdata <= decWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_memRdata <= decWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_2_aluResult <= decWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        exStage_2_threadId <= exWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_valid <= exWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_pc <= exWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_instr <= exWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isALU <= exWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isLoad <= exWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isStore <= exWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isBranch <= exWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isJAL <= exWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isJALR <= exWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isLUI <= exWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isAUIPC <= exWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isFence <= exWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_isSystem <= exWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_aluOp <= exWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_imm <= exWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_rs1 <= exWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_rs2 <= exWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_rd <= exWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_rs1Data <= exWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_rs2Data <= exWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_memAddr <= exWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_memWdata <= exWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_memRdata <= exWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_2_aluResult <= exWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        memStage_2_threadId <= memWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_valid <= memWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_pc <= memWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_instr <= memWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isALU <= memWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isLoad <= memWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isStore <= memWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isBranch <= memWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isJAL <= memWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isJALR <= memWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isLUI <= memWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isAUIPC <= memWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isFence <= memWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_isSystem <= memWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_aluOp <= memWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_imm <= memWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_rs1 <= memWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_rs2 <= memWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_rd <= memWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_rs1Data <= memWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_rs2Data <= memWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_memAddr <= memWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_memWdata <= memWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_memRdata <= memWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_2_aluResult <= memWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-      end
-      if (&currentThread) begin	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :99:25
-        pcRegs_3 <= _pcRegs_T_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :99:50
-        ifStage_3_threadId <= ifWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_3_pc <= ifWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        ifStage_3_instr <= ifWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :91:24
-        decStage_3_threadId <= decWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_valid <= decWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_pc <= decWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_instr <= decWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_aluOp <= decWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_imm <= decWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_rs1 <= decWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_rs2 <= decWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_rd <= decWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_rs1Data <= decWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_rs2Data <= decWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_memAddr <= decWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_memWdata <= decWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_memRdata <= decWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        decStage_3_aluResult <= decWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :110:25
-        exStage_3_threadId <= exWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_valid <= exWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_pc <= exWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_instr <= exWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isALU <= exWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isLoad <= exWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isStore <= exWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isBranch <= exWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isJAL <= exWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isJALR <= exWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isLUI <= exWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isAUIPC <= exWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isFence <= exWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_isSystem <= exWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_aluOp <= exWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_imm <= exWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_rs1 <= exWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_rs2 <= exWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_rd <= exWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_rs1Data <= exWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_rs2Data <= exWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_memAddr <= exWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_memWdata <= exWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_memRdata <= exWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        exStage_3_aluResult <= exWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:84:25, :147:24
-        memStage_3_threadId <= memWire_threadId;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_valid <= memWire_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_pc <= memWire_pc;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_instr <= memWire_instr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isALU <= memWire_isALU;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isLoad <= memWire_isLoad;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isStore <= memWire_isStore;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isBranch <= memWire_isBranch;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isJAL <= memWire_isJAL;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isJALR <= memWire_isJALR;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isLUI <= memWire_isLUI;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isAUIPC <= memWire_isAUIPC;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isFence <= memWire_isFence;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_isSystem <= memWire_isSystem;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_aluOp <= memWire_aluOp;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_imm <= memWire_imm;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_rs1 <= memWire_rs1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_rs2 <= memWire_rs2;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_rd <= memWire_rd;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_rs1Data <= memWire_rs1Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_rs2Data <= memWire_rs2Data;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_memAddr <= memWire_memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_memWdata <= memWire_memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_memRdata <= memWire_memRdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-        memStage_3_aluResult <= memWire_aluResult;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:85:25, :172:25
-      end
-      ifStage_0_valid <= _GEN_68 | ifStage_0_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :99:25, :102:26
-      ifStage_1_valid <= _GEN_69 | ifStage_1_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :99:25, :102:26
-      ifStage_2_valid <= _GEN_70 | ifStage_2_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:82:25, :99:25, :102:26
-      ifStage_3_valid <= (&currentThread) | ifStage_3_valid;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :82:25, :99:25, :102:26
-      decStage_0_isALU <= _GEN_68 ? decWire_isALU : ~_GEN_68 & decStage_0_isALU;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isLoad <= _GEN_68 ? decWire_isLoad : ~_GEN_68 & decStage_0_isLoad;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isStore <= _GEN_68 ? decWire_isStore : ~_GEN_68 & decStage_0_isStore;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isBranch <= _GEN_68 ? decWire_isBranch : ~_GEN_68 & decStage_0_isBranch;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isJAL <= _GEN_68 ? decWire_isJAL : ~_GEN_68 & decStage_0_isJAL;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isJALR <= _GEN_68 ? decWire_isJALR : ~_GEN_68 & decStage_0_isJALR;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isLUI <= _GEN_68 ? decWire_isLUI : ~_GEN_68 & decStage_0_isLUI;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isAUIPC <= _GEN_68 ? decWire_isAUIPC : ~_GEN_68 & decStage_0_isAUIPC;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isFence <= _GEN_68 ? decWire_isFence : ~_GEN_68 & decStage_0_isFence;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_0_isSystem <= _GEN_68 ? decWire_isSystem : ~_GEN_68 & decStage_0_isSystem;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isALU <= _GEN_69 ? decWire_isALU : ~_GEN_69 & decStage_1_isALU;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isLoad <= _GEN_69 ? decWire_isLoad : ~_GEN_69 & decStage_1_isLoad;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isStore <= _GEN_69 ? decWire_isStore : ~_GEN_69 & decStage_1_isStore;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isBranch <= _GEN_69 ? decWire_isBranch : ~_GEN_69 & decStage_1_isBranch;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isJAL <= _GEN_69 ? decWire_isJAL : ~_GEN_69 & decStage_1_isJAL;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isJALR <= _GEN_69 ? decWire_isJALR : ~_GEN_69 & decStage_1_isJALR;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isLUI <= _GEN_69 ? decWire_isLUI : ~_GEN_69 & decStage_1_isLUI;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isAUIPC <= _GEN_69 ? decWire_isAUIPC : ~_GEN_69 & decStage_1_isAUIPC;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isFence <= _GEN_69 ? decWire_isFence : ~_GEN_69 & decStage_1_isFence;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_1_isSystem <= _GEN_69 ? decWire_isSystem : ~_GEN_69 & decStage_1_isSystem;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isALU <= _GEN_70 ? decWire_isALU : ~_GEN_70 & decStage_2_isALU;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isLoad <= _GEN_70 ? decWire_isLoad : ~_GEN_70 & decStage_2_isLoad;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isStore <= _GEN_70 ? decWire_isStore : ~_GEN_70 & decStage_2_isStore;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isBranch <= _GEN_70 ? decWire_isBranch : ~_GEN_70 & decStage_2_isBranch;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isJAL <= _GEN_70 ? decWire_isJAL : ~_GEN_70 & decStage_2_isJAL;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isJALR <= _GEN_70 ? decWire_isJALR : ~_GEN_70 & decStage_2_isJALR;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isLUI <= _GEN_70 ? decWire_isLUI : ~_GEN_70 & decStage_2_isLUI;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isAUIPC <= _GEN_70 ? decWire_isAUIPC : ~_GEN_70 & decStage_2_isAUIPC;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isFence <= _GEN_70 ? decWire_isFence : ~_GEN_70 & decStage_2_isFence;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_2_isSystem <= _GEN_70 ? decWire_isSystem : ~_GEN_70 & decStage_2_isSystem;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isALU <=
-        (&currentThread) ? decWire_isALU : ~(&currentThread) & decStage_3_isALU;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isLoad <=
-        (&currentThread) ? decWire_isLoad : ~(&currentThread) & decStage_3_isLoad;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isStore <=
-        (&currentThread) ? decWire_isStore : ~(&currentThread) & decStage_3_isStore;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isBranch <=
-        (&currentThread) ? decWire_isBranch : ~(&currentThread) & decStage_3_isBranch;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isJAL <=
-        (&currentThread) ? decWire_isJAL : ~(&currentThread) & decStage_3_isJAL;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isJALR <=
-        (&currentThread) ? decWire_isJALR : ~(&currentThread) & decStage_3_isJALR;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isLUI <=
-        (&currentThread) ? decWire_isLUI : ~(&currentThread) & decStage_3_isLUI;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isAUIPC <=
-        (&currentThread) ? decWire_isAUIPC : ~(&currentThread) & decStage_3_isAUIPC;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isFence <=
-        (&currentThread) ? decWire_isFence : ~(&currentThread) & decStage_3_isFence;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
-      decStage_3_isSystem <=
-        (&currentThread) ? decWire_isSystem : ~(&currentThread) & decStage_3_isSystem;	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :83:25, :99:25, :110:25, :128:27, :139:27
+      pcRegs[currentThread] <= _pcRegs_T_1;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :99:50
+      ifStage[2'h0] <=
+        '{threadId: (_GEN_4 ? ifWire.threadId : ifStage[2'h0].threadId),
+          valid: (_GEN_4 | ifStage[2'h0].valid),
+          pc: (_GEN_4 ? ifWire.pc : ifStage[2'h0].pc),
+          instr: (_GEN_4 ? ifWire.instr : ifStage[2'h0].instr),
+          isALU: (~_GEN_4 & ifStage[2'h0].isALU),
+          isLoad: (~_GEN_4 & ifStage[2'h0].isLoad),
+          isStore: (~_GEN_4 & ifStage[2'h0].isStore),
+          isBranch: (~_GEN_4 & ifStage[2'h0].isBranch),
+          isJAL: (~_GEN_4 & ifStage[2'h0].isJAL),
+          isJALR: (~_GEN_4 & ifStage[2'h0].isJALR),
+          isLUI: (~_GEN_4 & ifStage[2'h0].isLUI),
+          isAUIPC: (~_GEN_4 & ifStage[2'h0].isAUIPC),
+          isFence: (~_GEN_4 & ifStage[2'h0].isFence),
+          isSystem: (~_GEN_4 & ifStage[2'h0].isSystem),
+          aluOp: (_GEN_4 ? 5'h0 : ifStage[2'h0].aluOp),
+          imm: (_GEN_4 ? 32'h0 : ifStage[2'h0].imm),
+          rs1: (_GEN_4 ? 5'h0 : ifStage[2'h0].rs1),
+          rs2: (_GEN_4 ? 5'h0 : ifStage[2'h0].rs2),
+          rd: (_GEN_4 ? 5'h0 : ifStage[2'h0].rd),
+          rs1Data: (_GEN_4 ? 32'h0 : ifStage[2'h0].rs1Data),
+          rs2Data: (_GEN_4 ? 32'h0 : ifStage[2'h0].rs2Data),
+          memAddr: (_GEN_4 ? 32'h0 : ifStage[2'h0].memAddr),
+          memWdata: (_GEN_4 ? 32'h0 : ifStage[2'h0].memWdata),
+          memRdata: (_GEN_4 ? 32'h0 : ifStage[2'h0].memRdata),
+          aluResult: (_GEN_4 ? 32'h0 : ifStage[2'h0].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :91:24, :99:25, :102:26, :139:27, :164:26, :191:27
+      ifStage[2'h1] <=
+        '{threadId: (_GEN_5 ? ifWire.threadId : ifStage[2'h1].threadId),
+          valid: (_GEN_5 | ifStage[2'h1].valid),
+          pc: (_GEN_5 ? ifWire.pc : ifStage[2'h1].pc),
+          instr: (_GEN_5 ? ifWire.instr : ifStage[2'h1].instr),
+          isALU: (~_GEN_5 & ifStage[2'h1].isALU),
+          isLoad: (~_GEN_5 & ifStage[2'h1].isLoad),
+          isStore: (~_GEN_5 & ifStage[2'h1].isStore),
+          isBranch: (~_GEN_5 & ifStage[2'h1].isBranch),
+          isJAL: (~_GEN_5 & ifStage[2'h1].isJAL),
+          isJALR: (~_GEN_5 & ifStage[2'h1].isJALR),
+          isLUI: (~_GEN_5 & ifStage[2'h1].isLUI),
+          isAUIPC: (~_GEN_5 & ifStage[2'h1].isAUIPC),
+          isFence: (~_GEN_5 & ifStage[2'h1].isFence),
+          isSystem: (~_GEN_5 & ifStage[2'h1].isSystem),
+          aluOp: (_GEN_5 ? 5'h0 : ifStage[2'h1].aluOp),
+          imm: (_GEN_5 ? 32'h0 : ifStage[2'h1].imm),
+          rs1: (_GEN_5 ? 5'h0 : ifStage[2'h1].rs1),
+          rs2: (_GEN_5 ? 5'h0 : ifStage[2'h1].rs2),
+          rd: (_GEN_5 ? 5'h0 : ifStage[2'h1].rd),
+          rs1Data: (_GEN_5 ? 32'h0 : ifStage[2'h1].rs1Data),
+          rs2Data: (_GEN_5 ? 32'h0 : ifStage[2'h1].rs2Data),
+          memAddr: (_GEN_5 ? 32'h0 : ifStage[2'h1].memAddr),
+          memWdata: (_GEN_5 ? 32'h0 : ifStage[2'h1].memWdata),
+          memRdata: (_GEN_5 ? 32'h0 : ifStage[2'h1].memRdata),
+          aluResult: (_GEN_5 ? 32'h0 : ifStage[2'h1].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :91:24, :99:25, :102:26, :139:27, :164:26, :191:27
+      ifStage[2'h2] <=
+        '{threadId: (_GEN_6 ? ifWire.threadId : ifStage[2'h2].threadId),
+          valid: (_GEN_6 | ifStage[2'h2].valid),
+          pc: (_GEN_6 ? ifWire.pc : ifStage[2'h2].pc),
+          instr: (_GEN_6 ? ifWire.instr : ifStage[2'h2].instr),
+          isALU: (~_GEN_6 & ifStage[2'h2].isALU),
+          isLoad: (~_GEN_6 & ifStage[2'h2].isLoad),
+          isStore: (~_GEN_6 & ifStage[2'h2].isStore),
+          isBranch: (~_GEN_6 & ifStage[2'h2].isBranch),
+          isJAL: (~_GEN_6 & ifStage[2'h2].isJAL),
+          isJALR: (~_GEN_6 & ifStage[2'h2].isJALR),
+          isLUI: (~_GEN_6 & ifStage[2'h2].isLUI),
+          isAUIPC: (~_GEN_6 & ifStage[2'h2].isAUIPC),
+          isFence: (~_GEN_6 & ifStage[2'h2].isFence),
+          isSystem: (~_GEN_6 & ifStage[2'h2].isSystem),
+          aluOp: (_GEN_6 ? 5'h0 : ifStage[2'h2].aluOp),
+          imm: (_GEN_6 ? 32'h0 : ifStage[2'h2].imm),
+          rs1: (_GEN_6 ? 5'h0 : ifStage[2'h2].rs1),
+          rs2: (_GEN_6 ? 5'h0 : ifStage[2'h2].rs2),
+          rd: (_GEN_6 ? 5'h0 : ifStage[2'h2].rd),
+          rs1Data: (_GEN_6 ? 32'h0 : ifStage[2'h2].rs1Data),
+          rs2Data: (_GEN_6 ? 32'h0 : ifStage[2'h2].rs2Data),
+          memAddr: (_GEN_6 ? 32'h0 : ifStage[2'h2].memAddr),
+          memWdata: (_GEN_6 ? 32'h0 : ifStage[2'h2].memWdata),
+          memRdata: (_GEN_6 ? 32'h0 : ifStage[2'h2].memRdata),
+          aluResult: (_GEN_6 ? 32'h0 : ifStage[2'h2].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :91:24, :99:25, :102:26, :139:27, :164:26, :191:27
+      ifStage[2'h3] <=
+        '{threadId: ((&currentThread) ? ifWire.threadId : ifStage[2'h3].threadId),
+          valid: ((&currentThread) | ifStage[2'h3].valid),
+          pc: ((&currentThread) ? ifWire.pc : ifStage[2'h3].pc),
+          instr: ((&currentThread) ? ifWire.instr : ifStage[2'h3].instr),
+          isALU: (~(&currentThread) & ifStage[2'h3].isALU),
+          isLoad: (~(&currentThread) & ifStage[2'h3].isLoad),
+          isStore: (~(&currentThread) & ifStage[2'h3].isStore),
+          isBranch: (~(&currentThread) & ifStage[2'h3].isBranch),
+          isJAL: (~(&currentThread) & ifStage[2'h3].isJAL),
+          isJALR: (~(&currentThread) & ifStage[2'h3].isJALR),
+          isLUI: (~(&currentThread) & ifStage[2'h3].isLUI),
+          isAUIPC: (~(&currentThread) & ifStage[2'h3].isAUIPC),
+          isFence: (~(&currentThread) & ifStage[2'h3].isFence),
+          isSystem: (~(&currentThread) & ifStage[2'h3].isSystem),
+          aluOp: ((&currentThread) ? 5'h0 : ifStage[2'h3].aluOp),
+          imm: ((&currentThread) ? 32'h0 : ifStage[2'h3].imm),
+          rs1: ((&currentThread) ? 5'h0 : ifStage[2'h3].rs1),
+          rs2: ((&currentThread) ? 5'h0 : ifStage[2'h3].rs2),
+          rd: ((&currentThread) ? 5'h0 : ifStage[2'h3].rd),
+          rs1Data: ((&currentThread) ? 32'h0 : ifStage[2'h3].rs1Data),
+          rs2Data: ((&currentThread) ? 32'h0 : ifStage[2'h3].rs2Data),
+          memAddr: ((&currentThread) ? 32'h0 : ifStage[2'h3].memAddr),
+          memWdata: ((&currentThread) ? 32'h0 : ifStage[2'h3].memWdata),
+          memRdata: ((&currentThread) ? 32'h0 : ifStage[2'h3].memRdata),
+          aluResult: ((&currentThread) ? 32'h0 : ifStage[2'h3].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :91:24, :99:25, :102:26, :139:27, :164:26, :191:27
+      decStage[2'h0] <=
+        '{threadId: (_GEN_4 ? decWire.threadId : decStage[2'h0].threadId),
+          valid: (_GEN_4 ? decWire.valid : decStage[2'h0].valid),
+          pc: (_GEN_4 ? decWire.pc : decStage[2'h0].pc),
+          instr: (_GEN_4 ? decWire.instr : decStage[2'h0].instr),
+          isALU: (_GEN_4 ? decWire.isALU : decStage[2'h0].isALU),
+          isLoad: (_GEN_4 ? decWire.isLoad : decStage[2'h0].isLoad),
+          isStore: (_GEN_4 ? decWire.isStore : decStage[2'h0].isStore),
+          isBranch: (_GEN_4 ? decWire.isBranch : decStage[2'h0].isBranch),
+          isJAL: (_GEN_4 ? decWire.isJAL : decStage[2'h0].isJAL),
+          isJALR: (_GEN_4 ? decWire.isJALR : decStage[2'h0].isJALR),
+          isLUI: (_GEN_4 ? decWire.isLUI : decStage[2'h0].isLUI),
+          isAUIPC: (_GEN_4 ? decWire.isAUIPC : decStage[2'h0].isAUIPC),
+          isFence: (_GEN_4 ? decWire.isFence : decStage[2'h0].isFence),
+          isSystem: (_GEN_4 ? decWire.isSystem : decStage[2'h0].isSystem),
+          aluOp: (_GEN_4 ? decWire.aluOp : decStage[2'h0].aluOp),
+          imm: (_GEN_4 ? decWire.imm : decStage[2'h0].imm),
+          rs1: (_GEN_4 ? decWire.rs1 : decStage[2'h0].rs1),
+          rs2: (_GEN_4 ? decWire.rs2 : decStage[2'h0].rs2),
+          rd: (_GEN_4 ? decWire.rd : decStage[2'h0].rd),
+          rs1Data: (_GEN_4 ? decWire.rs1Data : decStage[2'h0].rs1Data),
+          rs2Data: (_GEN_4 ? decWire.rs2Data : decStage[2'h0].rs2Data),
+          memAddr: (_GEN_4 ? decWire.memAddr : decStage[2'h0].memAddr),
+          memWdata: (_GEN_4 ? decWire.memWdata : decStage[2'h0].memWdata),
+          memRdata: (_GEN_4 ? decWire.memRdata : decStage[2'h0].memRdata),
+          aluResult: (_GEN_4 ? decWire.aluResult : decStage[2'h0].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :110:25, :114:29, :123:15, :124:15, :128:27, :139:27, :164:26, :191:27
+      decStage[2'h1] <=
+        '{threadId: (_GEN_5 ? decWire.threadId : decStage[2'h1].threadId),
+          valid: (_GEN_5 ? decWire.valid : decStage[2'h1].valid),
+          pc: (_GEN_5 ? decWire.pc : decStage[2'h1].pc),
+          instr: (_GEN_5 ? decWire.instr : decStage[2'h1].instr),
+          isALU: (_GEN_5 ? decWire.isALU : decStage[2'h1].isALU),
+          isLoad: (_GEN_5 ? decWire.isLoad : decStage[2'h1].isLoad),
+          isStore: (_GEN_5 ? decWire.isStore : decStage[2'h1].isStore),
+          isBranch: (_GEN_5 ? decWire.isBranch : decStage[2'h1].isBranch),
+          isJAL: (_GEN_5 ? decWire.isJAL : decStage[2'h1].isJAL),
+          isJALR: (_GEN_5 ? decWire.isJALR : decStage[2'h1].isJALR),
+          isLUI: (_GEN_5 ? decWire.isLUI : decStage[2'h1].isLUI),
+          isAUIPC: (_GEN_5 ? decWire.isAUIPC : decStage[2'h1].isAUIPC),
+          isFence: (_GEN_5 ? decWire.isFence : decStage[2'h1].isFence),
+          isSystem: (_GEN_5 ? decWire.isSystem : decStage[2'h1].isSystem),
+          aluOp: (_GEN_5 ? decWire.aluOp : decStage[2'h1].aluOp),
+          imm: (_GEN_5 ? decWire.imm : decStage[2'h1].imm),
+          rs1: (_GEN_5 ? decWire.rs1 : decStage[2'h1].rs1),
+          rs2: (_GEN_5 ? decWire.rs2 : decStage[2'h1].rs2),
+          rd: (_GEN_5 ? decWire.rd : decStage[2'h1].rd),
+          rs1Data: (_GEN_5 ? decWire.rs1Data : decStage[2'h1].rs1Data),
+          rs2Data: (_GEN_5 ? decWire.rs2Data : decStage[2'h1].rs2Data),
+          memAddr: (_GEN_5 ? decWire.memAddr : decStage[2'h1].memAddr),
+          memWdata: (_GEN_5 ? decWire.memWdata : decStage[2'h1].memWdata),
+          memRdata: (_GEN_5 ? decWire.memRdata : decStage[2'h1].memRdata),
+          aluResult: (_GEN_5 ? decWire.aluResult : decStage[2'h1].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :110:25, :114:29, :123:15, :124:15, :128:27, :139:27, :164:26, :191:27
+      decStage[2'h2] <=
+        '{threadId: (_GEN_6 ? decWire.threadId : decStage[2'h2].threadId),
+          valid: (_GEN_6 ? decWire.valid : decStage[2'h2].valid),
+          pc: (_GEN_6 ? decWire.pc : decStage[2'h2].pc),
+          instr: (_GEN_6 ? decWire.instr : decStage[2'h2].instr),
+          isALU: (_GEN_6 ? decWire.isALU : decStage[2'h2].isALU),
+          isLoad: (_GEN_6 ? decWire.isLoad : decStage[2'h2].isLoad),
+          isStore: (_GEN_6 ? decWire.isStore : decStage[2'h2].isStore),
+          isBranch: (_GEN_6 ? decWire.isBranch : decStage[2'h2].isBranch),
+          isJAL: (_GEN_6 ? decWire.isJAL : decStage[2'h2].isJAL),
+          isJALR: (_GEN_6 ? decWire.isJALR : decStage[2'h2].isJALR),
+          isLUI: (_GEN_6 ? decWire.isLUI : decStage[2'h2].isLUI),
+          isAUIPC: (_GEN_6 ? decWire.isAUIPC : decStage[2'h2].isAUIPC),
+          isFence: (_GEN_6 ? decWire.isFence : decStage[2'h2].isFence),
+          isSystem: (_GEN_6 ? decWire.isSystem : decStage[2'h2].isSystem),
+          aluOp: (_GEN_6 ? decWire.aluOp : decStage[2'h2].aluOp),
+          imm: (_GEN_6 ? decWire.imm : decStage[2'h2].imm),
+          rs1: (_GEN_6 ? decWire.rs1 : decStage[2'h2].rs1),
+          rs2: (_GEN_6 ? decWire.rs2 : decStage[2'h2].rs2),
+          rd: (_GEN_6 ? decWire.rd : decStage[2'h2].rd),
+          rs1Data: (_GEN_6 ? decWire.rs1Data : decStage[2'h2].rs1Data),
+          rs2Data: (_GEN_6 ? decWire.rs2Data : decStage[2'h2].rs2Data),
+          memAddr: (_GEN_6 ? decWire.memAddr : decStage[2'h2].memAddr),
+          memWdata: (_GEN_6 ? decWire.memWdata : decStage[2'h2].memWdata),
+          memRdata: (_GEN_6 ? decWire.memRdata : decStage[2'h2].memRdata),
+          aluResult: (_GEN_6 ? decWire.aluResult : decStage[2'h2].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :110:25, :114:29, :123:15, :124:15, :128:27, :139:27, :164:26, :191:27
+      decStage[2'h3] <=
+        '{threadId: ((&currentThread) ? decWire.threadId : decStage[2'h3].threadId),
+          valid: ((&currentThread) ? decWire.valid : decStage[2'h3].valid),
+          pc: ((&currentThread) ? decWire.pc : decStage[2'h3].pc),
+          instr: ((&currentThread) ? decWire.instr : decStage[2'h3].instr),
+          isALU: ((&currentThread) ? decWire.isALU : decStage[2'h3].isALU),
+          isLoad: ((&currentThread) ? decWire.isLoad : decStage[2'h3].isLoad),
+          isStore: ((&currentThread) ? decWire.isStore : decStage[2'h3].isStore),
+          isBranch: ((&currentThread) ? decWire.isBranch : decStage[2'h3].isBranch),
+          isJAL: ((&currentThread) ? decWire.isJAL : decStage[2'h3].isJAL),
+          isJALR: ((&currentThread) ? decWire.isJALR : decStage[2'h3].isJALR),
+          isLUI: ((&currentThread) ? decWire.isLUI : decStage[2'h3].isLUI),
+          isAUIPC: ((&currentThread) ? decWire.isAUIPC : decStage[2'h3].isAUIPC),
+          isFence: ((&currentThread) ? decWire.isFence : decStage[2'h3].isFence),
+          isSystem: ((&currentThread) ? decWire.isSystem : decStage[2'h3].isSystem),
+          aluOp: ((&currentThread) ? decWire.aluOp : decStage[2'h3].aluOp),
+          imm: ((&currentThread) ? decWire.imm : decStage[2'h3].imm),
+          rs1: ((&currentThread) ? decWire.rs1 : decStage[2'h3].rs1),
+          rs2: ((&currentThread) ? decWire.rs2 : decStage[2'h3].rs2),
+          rd: ((&currentThread) ? decWire.rd : decStage[2'h3].rd),
+          rs1Data: ((&currentThread) ? decWire.rs1Data : decStage[2'h3].rs1Data),
+          rs2Data: ((&currentThread) ? decWire.rs2Data : decStage[2'h3].rs2Data),
+          memAddr: ((&currentThread) ? decWire.memAddr : decStage[2'h3].memAddr),
+          memWdata: ((&currentThread) ? decWire.memWdata : decStage[2'h3].memWdata),
+          memRdata: ((&currentThread) ? decWire.memRdata : decStage[2'h3].memRdata),
+          aluResult: ((&currentThread) ? decWire.aluResult : decStage[2'h3].aluResult)};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :110:25, :114:29, :123:15, :124:15, :128:27, :139:27, :164:26, :191:27
+      exStage[2'h0] <=
+        '{threadId: (_GEN_4 ? exWire.threadId : exStage[2'h0].threadId),
+          valid: (_GEN_4 ? exWire.valid : exStage[2'h0].valid),
+          pc: (_GEN_4 ? exWire.pc : exStage[2'h0].pc),
+          instr: (_GEN_4 ? exWire.instr : exStage[2'h0].instr),
+          isALU: (_GEN_4 ? exWire.isALU : exStage[2'h0].isALU),
+          isLoad: (_GEN_4 ? exWire.isLoad : exStage[2'h0].isLoad),
+          isStore: (_GEN_4 ? exWire.isStore : exStage[2'h0].isStore),
+          isBranch: (_GEN_4 ? exWire.isBranch : exStage[2'h0].isBranch),
+          isJAL: (_GEN_4 ? exWire.isJAL : exStage[2'h0].isJAL),
+          isJALR: (_GEN_4 ? exWire.isJALR : exStage[2'h0].isJALR),
+          isLUI: (_GEN_4 ? exWire.isLUI : exStage[2'h0].isLUI),
+          isAUIPC: (_GEN_4 ? exWire.isAUIPC : exStage[2'h0].isAUIPC),
+          isFence: (_GEN_4 ? exWire.isFence : exStage[2'h0].isFence),
+          isSystem: (_GEN_4 ? exWire.isSystem : exStage[2'h0].isSystem),
+          aluOp: (_GEN_4 ? exWire.aluOp : exStage[2'h0].aluOp),
+          imm: (_GEN_4 ? exWire.imm : exStage[2'h0].imm),
+          rs1: (_GEN_4 ? exWire.rs1 : exStage[2'h0].rs1),
+          rs2: (_GEN_4 ? exWire.rs2 : exStage[2'h0].rs2),
+          rd: (_GEN_4 ? exWire.rd : exStage[2'h0].rd),
+          rs1Data: (_GEN_4 ? exWire.rs1Data : exStage[2'h0].rs1Data),
+          rs2Data: (_GEN_4 ? exWire.rs2Data : exStage[2'h0].rs2Data),
+          memAddr: (_GEN_4 ? exWire.memAddr : exStage[2'h0].memAddr),
+          memWdata: (_GEN_4 ? exWire.memWdata : exStage[2'h0].memWdata),
+          memRdata: (_GEN_4 ? exWire.memRdata : exStage[2'h0].memRdata),
+          aluResult: (_GEN_4 ? exWire.aluResult : exStage[2'h0].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :147:24, :151:13, :152:13, :153:13, :158:22, :159:39, :164:26, :191:27
+      exStage[2'h1] <=
+        '{threadId: (_GEN_5 ? exWire.threadId : exStage[2'h1].threadId),
+          valid: (_GEN_5 ? exWire.valid : exStage[2'h1].valid),
+          pc: (_GEN_5 ? exWire.pc : exStage[2'h1].pc),
+          instr: (_GEN_5 ? exWire.instr : exStage[2'h1].instr),
+          isALU: (_GEN_5 ? exWire.isALU : exStage[2'h1].isALU),
+          isLoad: (_GEN_5 ? exWire.isLoad : exStage[2'h1].isLoad),
+          isStore: (_GEN_5 ? exWire.isStore : exStage[2'h1].isStore),
+          isBranch: (_GEN_5 ? exWire.isBranch : exStage[2'h1].isBranch),
+          isJAL: (_GEN_5 ? exWire.isJAL : exStage[2'h1].isJAL),
+          isJALR: (_GEN_5 ? exWire.isJALR : exStage[2'h1].isJALR),
+          isLUI: (_GEN_5 ? exWire.isLUI : exStage[2'h1].isLUI),
+          isAUIPC: (_GEN_5 ? exWire.isAUIPC : exStage[2'h1].isAUIPC),
+          isFence: (_GEN_5 ? exWire.isFence : exStage[2'h1].isFence),
+          isSystem: (_GEN_5 ? exWire.isSystem : exStage[2'h1].isSystem),
+          aluOp: (_GEN_5 ? exWire.aluOp : exStage[2'h1].aluOp),
+          imm: (_GEN_5 ? exWire.imm : exStage[2'h1].imm),
+          rs1: (_GEN_5 ? exWire.rs1 : exStage[2'h1].rs1),
+          rs2: (_GEN_5 ? exWire.rs2 : exStage[2'h1].rs2),
+          rd: (_GEN_5 ? exWire.rd : exStage[2'h1].rd),
+          rs1Data: (_GEN_5 ? exWire.rs1Data : exStage[2'h1].rs1Data),
+          rs2Data: (_GEN_5 ? exWire.rs2Data : exStage[2'h1].rs2Data),
+          memAddr: (_GEN_5 ? exWire.memAddr : exStage[2'h1].memAddr),
+          memWdata: (_GEN_5 ? exWire.memWdata : exStage[2'h1].memWdata),
+          memRdata: (_GEN_5 ? exWire.memRdata : exStage[2'h1].memRdata),
+          aluResult: (_GEN_5 ? exWire.aluResult : exStage[2'h1].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :147:24, :151:13, :152:13, :153:13, :158:22, :159:39, :164:26, :191:27
+      exStage[2'h2] <=
+        '{threadId: (_GEN_6 ? exWire.threadId : exStage[2'h2].threadId),
+          valid: (_GEN_6 ? exWire.valid : exStage[2'h2].valid),
+          pc: (_GEN_6 ? exWire.pc : exStage[2'h2].pc),
+          instr: (_GEN_6 ? exWire.instr : exStage[2'h2].instr),
+          isALU: (_GEN_6 ? exWire.isALU : exStage[2'h2].isALU),
+          isLoad: (_GEN_6 ? exWire.isLoad : exStage[2'h2].isLoad),
+          isStore: (_GEN_6 ? exWire.isStore : exStage[2'h2].isStore),
+          isBranch: (_GEN_6 ? exWire.isBranch : exStage[2'h2].isBranch),
+          isJAL: (_GEN_6 ? exWire.isJAL : exStage[2'h2].isJAL),
+          isJALR: (_GEN_6 ? exWire.isJALR : exStage[2'h2].isJALR),
+          isLUI: (_GEN_6 ? exWire.isLUI : exStage[2'h2].isLUI),
+          isAUIPC: (_GEN_6 ? exWire.isAUIPC : exStage[2'h2].isAUIPC),
+          isFence: (_GEN_6 ? exWire.isFence : exStage[2'h2].isFence),
+          isSystem: (_GEN_6 ? exWire.isSystem : exStage[2'h2].isSystem),
+          aluOp: (_GEN_6 ? exWire.aluOp : exStage[2'h2].aluOp),
+          imm: (_GEN_6 ? exWire.imm : exStage[2'h2].imm),
+          rs1: (_GEN_6 ? exWire.rs1 : exStage[2'h2].rs1),
+          rs2: (_GEN_6 ? exWire.rs2 : exStage[2'h2].rs2),
+          rd: (_GEN_6 ? exWire.rd : exStage[2'h2].rd),
+          rs1Data: (_GEN_6 ? exWire.rs1Data : exStage[2'h2].rs1Data),
+          rs2Data: (_GEN_6 ? exWire.rs2Data : exStage[2'h2].rs2Data),
+          memAddr: (_GEN_6 ? exWire.memAddr : exStage[2'h2].memAddr),
+          memWdata: (_GEN_6 ? exWire.memWdata : exStage[2'h2].memWdata),
+          memRdata: (_GEN_6 ? exWire.memRdata : exStage[2'h2].memRdata),
+          aluResult: (_GEN_6 ? exWire.aluResult : exStage[2'h2].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :147:24, :151:13, :152:13, :153:13, :158:22, :159:39, :164:26, :191:27
+      exStage[2'h3] <=
+        '{threadId: ((&currentThread) ? exWire.threadId : exStage[2'h3].threadId),
+          valid: ((&currentThread) ? exWire.valid : exStage[2'h3].valid),
+          pc: ((&currentThread) ? exWire.pc : exStage[2'h3].pc),
+          instr: ((&currentThread) ? exWire.instr : exStage[2'h3].instr),
+          isALU: ((&currentThread) ? exWire.isALU : exStage[2'h3].isALU),
+          isLoad: ((&currentThread) ? exWire.isLoad : exStage[2'h3].isLoad),
+          isStore: ((&currentThread) ? exWire.isStore : exStage[2'h3].isStore),
+          isBranch: ((&currentThread) ? exWire.isBranch : exStage[2'h3].isBranch),
+          isJAL: ((&currentThread) ? exWire.isJAL : exStage[2'h3].isJAL),
+          isJALR: ((&currentThread) ? exWire.isJALR : exStage[2'h3].isJALR),
+          isLUI: ((&currentThread) ? exWire.isLUI : exStage[2'h3].isLUI),
+          isAUIPC: ((&currentThread) ? exWire.isAUIPC : exStage[2'h3].isAUIPC),
+          isFence: ((&currentThread) ? exWire.isFence : exStage[2'h3].isFence),
+          isSystem: ((&currentThread) ? exWire.isSystem : exStage[2'h3].isSystem),
+          aluOp: ((&currentThread) ? exWire.aluOp : exStage[2'h3].aluOp),
+          imm: ((&currentThread) ? exWire.imm : exStage[2'h3].imm),
+          rs1: ((&currentThread) ? exWire.rs1 : exStage[2'h3].rs1),
+          rs2: ((&currentThread) ? exWire.rs2 : exStage[2'h3].rs2),
+          rd: ((&currentThread) ? exWire.rd : exStage[2'h3].rd),
+          rs1Data: ((&currentThread) ? exWire.rs1Data : exStage[2'h3].rs1Data),
+          rs2Data: ((&currentThread) ? exWire.rs2Data : exStage[2'h3].rs2Data),
+          memAddr: ((&currentThread) ? exWire.memAddr : exStage[2'h3].memAddr),
+          memWdata: ((&currentThread) ? exWire.memWdata : exStage[2'h3].memWdata),
+          memRdata: ((&currentThread) ? exWire.memRdata : exStage[2'h3].memRdata),
+          aluResult: ((&currentThread) ? exWire.aluResult : exStage[2'h3].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :147:24, :151:13, :152:13, :153:13, :158:22, :159:39, :164:26, :191:27
+      memStage[2'h0] <=
+        '{threadId: (_GEN_4 ? memWire.threadId : memStage[2'h0].threadId),
+          valid: (_GEN_4 ? memWire.valid : memStage[2'h0].valid),
+          pc: (_GEN_4 ? memWire.pc : memStage[2'h0].pc),
+          instr: (_GEN_4 ? memWire.instr : memStage[2'h0].instr),
+          isALU: (_GEN_4 ? memWire.isALU : memStage[2'h0].isALU),
+          isLoad: (_GEN_4 ? memWire.isLoad : memStage[2'h0].isLoad),
+          isStore: (_GEN_4 ? memWire.isStore : memStage[2'h0].isStore),
+          isBranch: (_GEN_4 ? memWire.isBranch : memStage[2'h0].isBranch),
+          isJAL: (_GEN_4 ? memWire.isJAL : memStage[2'h0].isJAL),
+          isJALR: (_GEN_4 ? memWire.isJALR : memStage[2'h0].isJALR),
+          isLUI: (_GEN_4 ? memWire.isLUI : memStage[2'h0].isLUI),
+          isAUIPC: (_GEN_4 ? memWire.isAUIPC : memStage[2'h0].isAUIPC),
+          isFence: (_GEN_4 ? memWire.isFence : memStage[2'h0].isFence),
+          isSystem: (_GEN_4 ? memWire.isSystem : memStage[2'h0].isSystem),
+          aluOp: (_GEN_4 ? memWire.aluOp : memStage[2'h0].aluOp),
+          imm: (_GEN_4 ? memWire.imm : memStage[2'h0].imm),
+          rs1: (_GEN_4 ? memWire.rs1 : memStage[2'h0].rs1),
+          rs2: (_GEN_4 ? memWire.rs2 : memStage[2'h0].rs2),
+          rd: (_GEN_4 ? memWire.rd : memStage[2'h0].rd),
+          rs1Data: (_GEN_4 ? memWire.rs1Data : memStage[2'h0].rs1Data),
+          rs2Data: (_GEN_4 ? memWire.rs2Data : memStage[2'h0].rs2Data),
+          memAddr: (_GEN_4 ? memWire.memAddr : memStage[2'h0].memAddr),
+          memWdata: (_GEN_4 ? memWire.memWdata : memStage[2'h0].memWdata),
+          memRdata: (_GEN_4 ? memWire.memRdata : memStage[2'h0].memRdata),
+          aluResult: (_GEN_4 ? memWire.aluResult : memStage[2'h0].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :164:26, :172:25, :176:15, :177:15, :178:34, :181:20, :184:19, :185:23, :188:42, :191:27
+      memStage[2'h1] <=
+        '{threadId: (_GEN_5 ? memWire.threadId : memStage[2'h1].threadId),
+          valid: (_GEN_5 ? memWire.valid : memStage[2'h1].valid),
+          pc: (_GEN_5 ? memWire.pc : memStage[2'h1].pc),
+          instr: (_GEN_5 ? memWire.instr : memStage[2'h1].instr),
+          isALU: (_GEN_5 ? memWire.isALU : memStage[2'h1].isALU),
+          isLoad: (_GEN_5 ? memWire.isLoad : memStage[2'h1].isLoad),
+          isStore: (_GEN_5 ? memWire.isStore : memStage[2'h1].isStore),
+          isBranch: (_GEN_5 ? memWire.isBranch : memStage[2'h1].isBranch),
+          isJAL: (_GEN_5 ? memWire.isJAL : memStage[2'h1].isJAL),
+          isJALR: (_GEN_5 ? memWire.isJALR : memStage[2'h1].isJALR),
+          isLUI: (_GEN_5 ? memWire.isLUI : memStage[2'h1].isLUI),
+          isAUIPC: (_GEN_5 ? memWire.isAUIPC : memStage[2'h1].isAUIPC),
+          isFence: (_GEN_5 ? memWire.isFence : memStage[2'h1].isFence),
+          isSystem: (_GEN_5 ? memWire.isSystem : memStage[2'h1].isSystem),
+          aluOp: (_GEN_5 ? memWire.aluOp : memStage[2'h1].aluOp),
+          imm: (_GEN_5 ? memWire.imm : memStage[2'h1].imm),
+          rs1: (_GEN_5 ? memWire.rs1 : memStage[2'h1].rs1),
+          rs2: (_GEN_5 ? memWire.rs2 : memStage[2'h1].rs2),
+          rd: (_GEN_5 ? memWire.rd : memStage[2'h1].rd),
+          rs1Data: (_GEN_5 ? memWire.rs1Data : memStage[2'h1].rs1Data),
+          rs2Data: (_GEN_5 ? memWire.rs2Data : memStage[2'h1].rs2Data),
+          memAddr: (_GEN_5 ? memWire.memAddr : memStage[2'h1].memAddr),
+          memWdata: (_GEN_5 ? memWire.memWdata : memStage[2'h1].memWdata),
+          memRdata: (_GEN_5 ? memWire.memRdata : memStage[2'h1].memRdata),
+          aluResult: (_GEN_5 ? memWire.aluResult : memStage[2'h1].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :164:26, :172:25, :176:15, :177:15, :178:34, :181:20, :184:19, :185:23, :188:42, :191:27
+      memStage[2'h2] <=
+        '{threadId: (_GEN_6 ? memWire.threadId : memStage[2'h2].threadId),
+          valid: (_GEN_6 ? memWire.valid : memStage[2'h2].valid),
+          pc: (_GEN_6 ? memWire.pc : memStage[2'h2].pc),
+          instr: (_GEN_6 ? memWire.instr : memStage[2'h2].instr),
+          isALU: (_GEN_6 ? memWire.isALU : memStage[2'h2].isALU),
+          isLoad: (_GEN_6 ? memWire.isLoad : memStage[2'h2].isLoad),
+          isStore: (_GEN_6 ? memWire.isStore : memStage[2'h2].isStore),
+          isBranch: (_GEN_6 ? memWire.isBranch : memStage[2'h2].isBranch),
+          isJAL: (_GEN_6 ? memWire.isJAL : memStage[2'h2].isJAL),
+          isJALR: (_GEN_6 ? memWire.isJALR : memStage[2'h2].isJALR),
+          isLUI: (_GEN_6 ? memWire.isLUI : memStage[2'h2].isLUI),
+          isAUIPC: (_GEN_6 ? memWire.isAUIPC : memStage[2'h2].isAUIPC),
+          isFence: (_GEN_6 ? memWire.isFence : memStage[2'h2].isFence),
+          isSystem: (_GEN_6 ? memWire.isSystem : memStage[2'h2].isSystem),
+          aluOp: (_GEN_6 ? memWire.aluOp : memStage[2'h2].aluOp),
+          imm: (_GEN_6 ? memWire.imm : memStage[2'h2].imm),
+          rs1: (_GEN_6 ? memWire.rs1 : memStage[2'h2].rs1),
+          rs2: (_GEN_6 ? memWire.rs2 : memStage[2'h2].rs2),
+          rd: (_GEN_6 ? memWire.rd : memStage[2'h2].rd),
+          rs1Data: (_GEN_6 ? memWire.rs1Data : memStage[2'h2].rs1Data),
+          rs2Data: (_GEN_6 ? memWire.rs2Data : memStage[2'h2].rs2Data),
+          memAddr: (_GEN_6 ? memWire.memAddr : memStage[2'h2].memAddr),
+          memWdata: (_GEN_6 ? memWire.memWdata : memStage[2'h2].memWdata),
+          memRdata: (_GEN_6 ? memWire.memRdata : memStage[2'h2].memRdata),
+          aluResult: (_GEN_6 ? memWire.aluResult : memStage[2'h2].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :164:26, :172:25, :176:15, :177:15, :178:34, :181:20, :184:19, :185:23, :188:42, :191:27
+      memStage[2'h3] <=
+        '{threadId: ((&currentThread) ? memWire.threadId : memStage[2'h3].threadId),
+          valid: ((&currentThread) ? memWire.valid : memStage[2'h3].valid),
+          pc: ((&currentThread) ? memWire.pc : memStage[2'h3].pc),
+          instr: ((&currentThread) ? memWire.instr : memStage[2'h3].instr),
+          isALU: ((&currentThread) ? memWire.isALU : memStage[2'h3].isALU),
+          isLoad: ((&currentThread) ? memWire.isLoad : memStage[2'h3].isLoad),
+          isStore: ((&currentThread) ? memWire.isStore : memStage[2'h3].isStore),
+          isBranch: ((&currentThread) ? memWire.isBranch : memStage[2'h3].isBranch),
+          isJAL: ((&currentThread) ? memWire.isJAL : memStage[2'h3].isJAL),
+          isJALR: ((&currentThread) ? memWire.isJALR : memStage[2'h3].isJALR),
+          isLUI: ((&currentThread) ? memWire.isLUI : memStage[2'h3].isLUI),
+          isAUIPC: ((&currentThread) ? memWire.isAUIPC : memStage[2'h3].isAUIPC),
+          isFence: ((&currentThread) ? memWire.isFence : memStage[2'h3].isFence),
+          isSystem: ((&currentThread) ? memWire.isSystem : memStage[2'h3].isSystem),
+          aluOp: ((&currentThread) ? memWire.aluOp : memStage[2'h3].aluOp),
+          imm: ((&currentThread) ? memWire.imm : memStage[2'h3].imm),
+          rs1: ((&currentThread) ? memWire.rs1 : memStage[2'h3].rs1),
+          rs2: ((&currentThread) ? memWire.rs2 : memStage[2'h3].rs2),
+          rd: ((&currentThread) ? memWire.rd : memStage[2'h3].rd),
+          rs1Data: ((&currentThread) ? memWire.rs1Data : memStage[2'h3].rs1Data),
+          rs2Data: ((&currentThread) ? memWire.rs2Data : memStage[2'h3].rs2Data),
+          memAddr: ((&currentThread) ? memWire.memAddr : memStage[2'h3].memAddr),
+          memWdata: ((&currentThread) ? memWire.memWdata : memStage[2'h3].memWdata),
+          memRdata: ((&currentThread) ? memWire.memRdata : memStage[2'h3].memRdata),
+          aluResult: ((&currentThread) ? memWire.aluResult : memStage[2'h3].aluResult)};	// src/main/scala/TetraNyteCore/PipelineRegs.scala:56:26, src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :99:25, :102:26, :139:27, :164:26, :172:25, :176:15, :177:15, :178:34, :181:20, :184:19, :185:23, :188:42, :191:27
     end
   end // always @(posedge)
   `ifdef ENABLE_INITIAL_REG_	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
@@ -3349,326 +1201,410 @@ module TetraNyteCore(	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
           _RANDOM[i] = `RANDOM;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
         end	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
         currentThread = _RANDOM[8'h0][1:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :43:30
-        pcRegs_0 = {_RANDOM[8'h0][31:2], _RANDOM[8'h1][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :43:30, :47:23
-        pcRegs_1 = {_RANDOM[8'h1][31:2], _RANDOM[8'h2][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23
-        pcRegs_2 = {_RANDOM[8'h2][31:2], _RANDOM[8'h3][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23
-        pcRegs_3 = {_RANDOM[8'h3][31:2], _RANDOM[8'h4][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23
-        ifStage_0_threadId = _RANDOM[8'h4][3:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25
-        ifStage_0_valid = _RANDOM[8'h4][4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25
-        ifStage_0_pc = {_RANDOM[8'h4][31:5], _RANDOM[8'h5][4:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25
-        ifStage_0_instr = {_RANDOM[8'h5][31:5], _RANDOM[8'h6][4:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_1_threadId = _RANDOM[8'hE][4:3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_1_valid = _RANDOM[8'hE][5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_1_pc = {_RANDOM[8'hE][31:6], _RANDOM[8'hF][5:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_1_instr = {_RANDOM[8'hF][31:6], _RANDOM[8'h10][5:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_2_threadId = _RANDOM[8'h18][5:4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_2_valid = _RANDOM[8'h18][6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_2_pc = {_RANDOM[8'h18][31:7], _RANDOM[8'h19][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_2_instr = {_RANDOM[8'h19][31:7], _RANDOM[8'h1A][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_3_threadId = _RANDOM[8'h22][6:5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_3_valid = _RANDOM[8'h22][7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_3_pc = {_RANDOM[8'h22][31:8], _RANDOM[8'h23][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        ifStage_3_instr = {_RANDOM[8'h23][31:8], _RANDOM[8'h24][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :82:25
-        decStage_0_threadId = _RANDOM[8'h2C][7:6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_valid = _RANDOM[8'h2C][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_pc = {_RANDOM[8'h2C][31:9], _RANDOM[8'h2D][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_instr = {_RANDOM[8'h2D][31:9], _RANDOM[8'h2E][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isALU = _RANDOM[8'h2E][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isLoad = _RANDOM[8'h2E][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isStore = _RANDOM[8'h2E][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isBranch = _RANDOM[8'h2E][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isJAL = _RANDOM[8'h2E][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isJALR = _RANDOM[8'h2E][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isLUI = _RANDOM[8'h2E][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isAUIPC = _RANDOM[8'h2E][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isFence = _RANDOM[8'h2E][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_isSystem = _RANDOM[8'h2E][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_aluOp = _RANDOM[8'h2E][23:19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_imm = {_RANDOM[8'h2E][31:24], _RANDOM[8'h2F][23:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_rs1 = _RANDOM[8'h2F][28:24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_rs2 = {_RANDOM[8'h2F][31:29], _RANDOM[8'h30][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_rd = _RANDOM[8'h30][6:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_rs1Data = {_RANDOM[8'h30][31:7], _RANDOM[8'h31][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_rs2Data = {_RANDOM[8'h31][31:7], _RANDOM[8'h32][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_memAddr = {_RANDOM[8'h32][31:7], _RANDOM[8'h33][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_memWdata = {_RANDOM[8'h33][31:7], _RANDOM[8'h34][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_memRdata = {_RANDOM[8'h34][31:7], _RANDOM[8'h35][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_0_aluResult = {_RANDOM[8'h35][31:7], _RANDOM[8'h36][6:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_threadId = _RANDOM[8'h36][8:7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_valid = _RANDOM[8'h36][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_pc = {_RANDOM[8'h36][31:10], _RANDOM[8'h37][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_instr = {_RANDOM[8'h37][31:10], _RANDOM[8'h38][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isALU = _RANDOM[8'h38][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isLoad = _RANDOM[8'h38][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isStore = _RANDOM[8'h38][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isBranch = _RANDOM[8'h38][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isJAL = _RANDOM[8'h38][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isJALR = _RANDOM[8'h38][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isLUI = _RANDOM[8'h38][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isAUIPC = _RANDOM[8'h38][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isFence = _RANDOM[8'h38][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_isSystem = _RANDOM[8'h38][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_aluOp = _RANDOM[8'h38][24:20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_imm = {_RANDOM[8'h38][31:25], _RANDOM[8'h39][24:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_rs1 = _RANDOM[8'h39][29:25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_rs2 = {_RANDOM[8'h39][31:30], _RANDOM[8'h3A][2:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_rd = _RANDOM[8'h3A][7:3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_rs1Data = {_RANDOM[8'h3A][31:8], _RANDOM[8'h3B][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_rs2Data = {_RANDOM[8'h3B][31:8], _RANDOM[8'h3C][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_memAddr = {_RANDOM[8'h3C][31:8], _RANDOM[8'h3D][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_memWdata = {_RANDOM[8'h3D][31:8], _RANDOM[8'h3E][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_memRdata = {_RANDOM[8'h3E][31:8], _RANDOM[8'h3F][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_1_aluResult = {_RANDOM[8'h3F][31:8], _RANDOM[8'h40][7:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_threadId = _RANDOM[8'h40][9:8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_valid = _RANDOM[8'h40][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_pc = {_RANDOM[8'h40][31:11], _RANDOM[8'h41][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_instr = {_RANDOM[8'h41][31:11], _RANDOM[8'h42][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isALU = _RANDOM[8'h42][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isLoad = _RANDOM[8'h42][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isStore = _RANDOM[8'h42][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isBranch = _RANDOM[8'h42][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isJAL = _RANDOM[8'h42][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isJALR = _RANDOM[8'h42][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isLUI = _RANDOM[8'h42][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isAUIPC = _RANDOM[8'h42][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isFence = _RANDOM[8'h42][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_isSystem = _RANDOM[8'h42][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_aluOp = _RANDOM[8'h42][25:21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_imm = {_RANDOM[8'h42][31:26], _RANDOM[8'h43][25:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_rs1 = _RANDOM[8'h43][30:26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_rs2 = {_RANDOM[8'h43][31], _RANDOM[8'h44][3:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_rd = _RANDOM[8'h44][8:4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_rs1Data = {_RANDOM[8'h44][31:9], _RANDOM[8'h45][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_rs2Data = {_RANDOM[8'h45][31:9], _RANDOM[8'h46][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_memAddr = {_RANDOM[8'h46][31:9], _RANDOM[8'h47][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_memWdata = {_RANDOM[8'h47][31:9], _RANDOM[8'h48][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_memRdata = {_RANDOM[8'h48][31:9], _RANDOM[8'h49][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_2_aluResult = {_RANDOM[8'h49][31:9], _RANDOM[8'h4A][8:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_threadId = _RANDOM[8'h4A][10:9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_valid = _RANDOM[8'h4A][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_pc = {_RANDOM[8'h4A][31:12], _RANDOM[8'h4B][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_instr = {_RANDOM[8'h4B][31:12], _RANDOM[8'h4C][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isALU = _RANDOM[8'h4C][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isLoad = _RANDOM[8'h4C][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isStore = _RANDOM[8'h4C][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isBranch = _RANDOM[8'h4C][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isJAL = _RANDOM[8'h4C][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isJALR = _RANDOM[8'h4C][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isLUI = _RANDOM[8'h4C][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isAUIPC = _RANDOM[8'h4C][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isFence = _RANDOM[8'h4C][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_isSystem = _RANDOM[8'h4C][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_aluOp = _RANDOM[8'h4C][26:22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_imm = {_RANDOM[8'h4C][31:27], _RANDOM[8'h4D][26:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_rs1 = _RANDOM[8'h4D][31:27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_rs2 = _RANDOM[8'h4E][4:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_rd = _RANDOM[8'h4E][9:5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_rs1Data = {_RANDOM[8'h4E][31:10], _RANDOM[8'h4F][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_rs2Data = {_RANDOM[8'h4F][31:10], _RANDOM[8'h50][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_memAddr = {_RANDOM[8'h50][31:10], _RANDOM[8'h51][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_memWdata = {_RANDOM[8'h51][31:10], _RANDOM[8'h52][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_memRdata = {_RANDOM[8'h52][31:10], _RANDOM[8'h53][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        decStage_3_aluResult = {_RANDOM[8'h53][31:10], _RANDOM[8'h54][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25
-        exStage_0_threadId = _RANDOM[8'h54][11:10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25, :84:25
-        exStage_0_valid = _RANDOM[8'h54][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25, :84:25
-        exStage_0_pc = {_RANDOM[8'h54][31:13], _RANDOM[8'h55][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :83:25, :84:25
-        exStage_0_instr = {_RANDOM[8'h55][31:13], _RANDOM[8'h56][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isALU = _RANDOM[8'h56][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isLoad = _RANDOM[8'h56][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isStore = _RANDOM[8'h56][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isBranch = _RANDOM[8'h56][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isJAL = _RANDOM[8'h56][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isJALR = _RANDOM[8'h56][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isLUI = _RANDOM[8'h56][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isAUIPC = _RANDOM[8'h56][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isFence = _RANDOM[8'h56][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_isSystem = _RANDOM[8'h56][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_aluOp = _RANDOM[8'h56][27:23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_imm = {_RANDOM[8'h56][31:28], _RANDOM[8'h57][27:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_rs1 = {_RANDOM[8'h57][31:28], _RANDOM[8'h58][0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_rs2 = _RANDOM[8'h58][5:1];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_rd = _RANDOM[8'h58][10:6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_rs1Data = {_RANDOM[8'h58][31:11], _RANDOM[8'h59][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_rs2Data = {_RANDOM[8'h59][31:11], _RANDOM[8'h5A][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_memAddr = {_RANDOM[8'h5A][31:11], _RANDOM[8'h5B][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_memWdata = {_RANDOM[8'h5B][31:11], _RANDOM[8'h5C][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_memRdata = {_RANDOM[8'h5C][31:11], _RANDOM[8'h5D][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_0_aluResult = {_RANDOM[8'h5D][31:11], _RANDOM[8'h5E][10:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_threadId = _RANDOM[8'h5E][12:11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_valid = _RANDOM[8'h5E][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_pc = {_RANDOM[8'h5E][31:14], _RANDOM[8'h5F][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_instr = {_RANDOM[8'h5F][31:14], _RANDOM[8'h60][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isALU = _RANDOM[8'h60][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isLoad = _RANDOM[8'h60][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isStore = _RANDOM[8'h60][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isBranch = _RANDOM[8'h60][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isJAL = _RANDOM[8'h60][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isJALR = _RANDOM[8'h60][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isLUI = _RANDOM[8'h60][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isAUIPC = _RANDOM[8'h60][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isFence = _RANDOM[8'h60][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_isSystem = _RANDOM[8'h60][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_aluOp = _RANDOM[8'h60][28:24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_imm = {_RANDOM[8'h60][31:29], _RANDOM[8'h61][28:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_rs1 = {_RANDOM[8'h61][31:29], _RANDOM[8'h62][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_rs2 = _RANDOM[8'h62][6:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_rd = _RANDOM[8'h62][11:7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_rs1Data = {_RANDOM[8'h62][31:12], _RANDOM[8'h63][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_rs2Data = {_RANDOM[8'h63][31:12], _RANDOM[8'h64][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_memAddr = {_RANDOM[8'h64][31:12], _RANDOM[8'h65][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_memWdata = {_RANDOM[8'h65][31:12], _RANDOM[8'h66][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_memRdata = {_RANDOM[8'h66][31:12], _RANDOM[8'h67][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_1_aluResult = {_RANDOM[8'h67][31:12], _RANDOM[8'h68][11:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_threadId = _RANDOM[8'h68][13:12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_valid = _RANDOM[8'h68][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_pc = {_RANDOM[8'h68][31:15], _RANDOM[8'h69][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_instr = {_RANDOM[8'h69][31:15], _RANDOM[8'h6A][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isALU = _RANDOM[8'h6A][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isLoad = _RANDOM[8'h6A][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isStore = _RANDOM[8'h6A][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isBranch = _RANDOM[8'h6A][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isJAL = _RANDOM[8'h6A][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isJALR = _RANDOM[8'h6A][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isLUI = _RANDOM[8'h6A][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isAUIPC = _RANDOM[8'h6A][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isFence = _RANDOM[8'h6A][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_isSystem = _RANDOM[8'h6A][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_aluOp = _RANDOM[8'h6A][29:25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_imm = {_RANDOM[8'h6A][31:30], _RANDOM[8'h6B][29:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_rs1 = {_RANDOM[8'h6B][31:30], _RANDOM[8'h6C][2:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_rs2 = _RANDOM[8'h6C][7:3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_rd = _RANDOM[8'h6C][12:8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_rs1Data = {_RANDOM[8'h6C][31:13], _RANDOM[8'h6D][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_rs2Data = {_RANDOM[8'h6D][31:13], _RANDOM[8'h6E][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_memAddr = {_RANDOM[8'h6E][31:13], _RANDOM[8'h6F][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_memWdata = {_RANDOM[8'h6F][31:13], _RANDOM[8'h70][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_memRdata = {_RANDOM[8'h70][31:13], _RANDOM[8'h71][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_2_aluResult = {_RANDOM[8'h71][31:13], _RANDOM[8'h72][12:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_threadId = _RANDOM[8'h72][14:13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_valid = _RANDOM[8'h72][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_pc = {_RANDOM[8'h72][31:16], _RANDOM[8'h73][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_instr = {_RANDOM[8'h73][31:16], _RANDOM[8'h74][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isALU = _RANDOM[8'h74][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isLoad = _RANDOM[8'h74][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isStore = _RANDOM[8'h74][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isBranch = _RANDOM[8'h74][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isJAL = _RANDOM[8'h74][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isJALR = _RANDOM[8'h74][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isLUI = _RANDOM[8'h74][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isAUIPC = _RANDOM[8'h74][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isFence = _RANDOM[8'h74][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_isSystem = _RANDOM[8'h74][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_aluOp = _RANDOM[8'h74][30:26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_imm = {_RANDOM[8'h74][31], _RANDOM[8'h75][30:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_rs1 = {_RANDOM[8'h75][31], _RANDOM[8'h76][3:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_rs2 = _RANDOM[8'h76][8:4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_rd = _RANDOM[8'h76][13:9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_rs1Data = {_RANDOM[8'h76][31:14], _RANDOM[8'h77][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_rs2Data = {_RANDOM[8'h77][31:14], _RANDOM[8'h78][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_memAddr = {_RANDOM[8'h78][31:14], _RANDOM[8'h79][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_memWdata = {_RANDOM[8'h79][31:14], _RANDOM[8'h7A][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_memRdata = {_RANDOM[8'h7A][31:14], _RANDOM[8'h7B][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        exStage_3_aluResult = {_RANDOM[8'h7B][31:14], _RANDOM[8'h7C][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25
-        memStage_0_threadId = _RANDOM[8'h7C][15:14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25, :85:25
-        memStage_0_valid = _RANDOM[8'h7C][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25, :85:25
-        memStage_0_pc = {_RANDOM[8'h7C][31:17], _RANDOM[8'h7D][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :84:25, :85:25
-        memStage_0_instr = {_RANDOM[8'h7D][31:17], _RANDOM[8'h7E][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isALU = _RANDOM[8'h7E][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isLoad = _RANDOM[8'h7E][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isStore = _RANDOM[8'h7E][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isBranch = _RANDOM[8'h7E][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isJAL = _RANDOM[8'h7E][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isJALR = _RANDOM[8'h7E][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isLUI = _RANDOM[8'h7E][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isAUIPC = _RANDOM[8'h7E][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isFence = _RANDOM[8'h7E][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_isSystem = _RANDOM[8'h7E][26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_aluOp = _RANDOM[8'h7E][31:27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_imm = _RANDOM[8'h7F];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_rs1 = _RANDOM[8'h80][4:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_rs2 = _RANDOM[8'h80][9:5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_rd = _RANDOM[8'h80][14:10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_rs1Data = {_RANDOM[8'h80][31:15], _RANDOM[8'h81][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_rs2Data = {_RANDOM[8'h81][31:15], _RANDOM[8'h82][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_memAddr = {_RANDOM[8'h82][31:15], _RANDOM[8'h83][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_memWdata = {_RANDOM[8'h83][31:15], _RANDOM[8'h84][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_memRdata = {_RANDOM[8'h84][31:15], _RANDOM[8'h85][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_0_aluResult = {_RANDOM[8'h85][31:15], _RANDOM[8'h86][14:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_threadId = _RANDOM[8'h86][16:15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_valid = _RANDOM[8'h86][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_pc = {_RANDOM[8'h86][31:18], _RANDOM[8'h87][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_instr = {_RANDOM[8'h87][31:18], _RANDOM[8'h88][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isALU = _RANDOM[8'h88][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isLoad = _RANDOM[8'h88][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isStore = _RANDOM[8'h88][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isBranch = _RANDOM[8'h88][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isJAL = _RANDOM[8'h88][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isJALR = _RANDOM[8'h88][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isLUI = _RANDOM[8'h88][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isAUIPC = _RANDOM[8'h88][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isFence = _RANDOM[8'h88][26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_isSystem = _RANDOM[8'h88][27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_aluOp = {_RANDOM[8'h88][31:28], _RANDOM[8'h89][0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_imm = {_RANDOM[8'h89][31:1], _RANDOM[8'h8A][0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_rs1 = _RANDOM[8'h8A][5:1];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_rs2 = _RANDOM[8'h8A][10:6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_rd = _RANDOM[8'h8A][15:11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_rs1Data = {_RANDOM[8'h8A][31:16], _RANDOM[8'h8B][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_rs2Data = {_RANDOM[8'h8B][31:16], _RANDOM[8'h8C][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_memAddr = {_RANDOM[8'h8C][31:16], _RANDOM[8'h8D][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_memWdata = {_RANDOM[8'h8D][31:16], _RANDOM[8'h8E][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_memRdata = {_RANDOM[8'h8E][31:16], _RANDOM[8'h8F][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_1_aluResult = {_RANDOM[8'h8F][31:16], _RANDOM[8'h90][15:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_threadId = _RANDOM[8'h90][17:16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_valid = _RANDOM[8'h90][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_pc = {_RANDOM[8'h90][31:19], _RANDOM[8'h91][18:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_instr = {_RANDOM[8'h91][31:19], _RANDOM[8'h92][18:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isALU = _RANDOM[8'h92][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isLoad = _RANDOM[8'h92][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isStore = _RANDOM[8'h92][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isBranch = _RANDOM[8'h92][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isJAL = _RANDOM[8'h92][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isJALR = _RANDOM[8'h92][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isLUI = _RANDOM[8'h92][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isAUIPC = _RANDOM[8'h92][26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isFence = _RANDOM[8'h92][27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_isSystem = _RANDOM[8'h92][28];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_aluOp = {_RANDOM[8'h92][31:29], _RANDOM[8'h93][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_imm = {_RANDOM[8'h93][31:2], _RANDOM[8'h94][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_rs1 = _RANDOM[8'h94][6:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_rs2 = _RANDOM[8'h94][11:7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_rd = _RANDOM[8'h94][16:12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_rs1Data = {_RANDOM[8'h94][31:17], _RANDOM[8'h95][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_rs2Data = {_RANDOM[8'h95][31:17], _RANDOM[8'h96][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_memAddr = {_RANDOM[8'h96][31:17], _RANDOM[8'h97][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_memWdata = {_RANDOM[8'h97][31:17], _RANDOM[8'h98][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_memRdata = {_RANDOM[8'h98][31:17], _RANDOM[8'h99][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_2_aluResult = {_RANDOM[8'h99][31:17], _RANDOM[8'h9A][16:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_threadId = _RANDOM[8'h9A][18:17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_valid = _RANDOM[8'h9A][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_pc = {_RANDOM[8'h9A][31:20], _RANDOM[8'h9B][19:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_instr = {_RANDOM[8'h9B][31:20], _RANDOM[8'h9C][19:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isALU = _RANDOM[8'h9C][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isLoad = _RANDOM[8'h9C][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isStore = _RANDOM[8'h9C][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isBranch = _RANDOM[8'h9C][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isJAL = _RANDOM[8'h9C][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isJALR = _RANDOM[8'h9C][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isLUI = _RANDOM[8'h9C][26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isAUIPC = _RANDOM[8'h9C][27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isFence = _RANDOM[8'h9C][28];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_isSystem = _RANDOM[8'h9C][29];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_aluOp = {_RANDOM[8'h9C][31:30], _RANDOM[8'h9D][2:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_imm = {_RANDOM[8'h9D][31:3], _RANDOM[8'h9E][2:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_rs1 = _RANDOM[8'h9E][7:3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_rs2 = _RANDOM[8'h9E][12:8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_rd = _RANDOM[8'h9E][17:13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_rs1Data = {_RANDOM[8'h9E][31:18], _RANDOM[8'h9F][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_rs2Data = {_RANDOM[8'h9F][31:18], _RANDOM[8'hA0][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_memAddr = {_RANDOM[8'hA0][31:18], _RANDOM[8'hA1][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_memWdata = {_RANDOM[8'hA1][31:18], _RANDOM[8'hA2][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_memRdata = {_RANDOM[8'hA2][31:18], _RANDOM[8'hA3][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
-        memStage_3_aluResult = {_RANDOM[8'hA3][31:18], _RANDOM[8'hA4][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :85:25
+        pcRegs[2'h0] = {_RANDOM[8'h0][31:2], _RANDOM[8'h1][31:30]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :43:30, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        pcRegs[2'h1] = {_RANDOM[8'h1][29:0], _RANDOM[8'h2][31:30]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        pcRegs[2'h2] = {_RANDOM[8'h2][29:0], _RANDOM[8'h3][31:30]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        pcRegs[2'h3] = {_RANDOM[8'h3][29:0], _RANDOM[8'h4][1:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].threadId = _RANDOM[8'h4][31:30];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].valid = _RANDOM[8'h4][29];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].pc = {_RANDOM[8'h4][28:2], _RANDOM[8'h5][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].instr = {_RANDOM[8'h5][26:0], _RANDOM[8'h6][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isALU = _RANDOM[8'h6][26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isLoad = _RANDOM[8'h6][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isStore = _RANDOM[8'h6][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isBranch = _RANDOM[8'h6][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isJAL = _RANDOM[8'h6][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isJALR = _RANDOM[8'h6][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isLUI = _RANDOM[8'h6][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isAUIPC = _RANDOM[8'h6][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isFence = _RANDOM[8'h6][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].isSystem = _RANDOM[8'h6][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].aluOp = _RANDOM[8'h6][16:12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].imm = {_RANDOM[8'h6][11:0], _RANDOM[8'h7][31:12]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].rs1 = _RANDOM[8'h7][11:7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].rs2 = _RANDOM[8'h7][6:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].rd = {_RANDOM[8'h7][1:0], _RANDOM[8'h8][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].rs1Data = {_RANDOM[8'h8][28:0], _RANDOM[8'h9][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].rs2Data = {_RANDOM[8'h9][28:0], _RANDOM[8'hA][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].memAddr = {_RANDOM[8'hA][28:0], _RANDOM[8'hB][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].memWdata = {_RANDOM[8'hB][28:0], _RANDOM[8'hC][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].memRdata = {_RANDOM[8'hC][28:0], _RANDOM[8'hD][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h0].aluResult = {_RANDOM[8'hD][28:0], _RANDOM[8'hE][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].threadId = _RANDOM[8'hE][28:27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].valid = _RANDOM[8'hE][26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].pc = {_RANDOM[8'hE][25:0], _RANDOM[8'hF][31:26]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].instr = {_RANDOM[8'hF][25:0], _RANDOM[8'h10][31:26]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isALU = _RANDOM[8'h10][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isLoad = _RANDOM[8'h10][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isStore = _RANDOM[8'h10][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isBranch = _RANDOM[8'h10][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isJAL = _RANDOM[8'h10][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isJALR = _RANDOM[8'h10][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isLUI = _RANDOM[8'h10][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isAUIPC = _RANDOM[8'h10][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isFence = _RANDOM[8'h10][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].isSystem = _RANDOM[8'h10][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].aluOp = _RANDOM[8'h10][15:11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].imm = {_RANDOM[8'h10][10:0], _RANDOM[8'h11][31:11]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].rs1 = _RANDOM[8'h11][10:6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].rs2 = _RANDOM[8'h11][5:1];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].rd = {_RANDOM[8'h11][0], _RANDOM[8'h12][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].rs1Data = {_RANDOM[8'h12][27:0], _RANDOM[8'h13][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].rs2Data = {_RANDOM[8'h13][27:0], _RANDOM[8'h14][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].memAddr = {_RANDOM[8'h14][27:0], _RANDOM[8'h15][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].memWdata = {_RANDOM[8'h15][27:0], _RANDOM[8'h16][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].memRdata = {_RANDOM[8'h16][27:0], _RANDOM[8'h17][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h1].aluResult = {_RANDOM[8'h17][27:0], _RANDOM[8'h18][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].threadId = _RANDOM[8'h18][27:26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].valid = _RANDOM[8'h18][25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].pc = {_RANDOM[8'h18][24:0], _RANDOM[8'h19][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].instr = {_RANDOM[8'h19][24:0], _RANDOM[8'h1A][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isALU = _RANDOM[8'h1A][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isLoad = _RANDOM[8'h1A][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isStore = _RANDOM[8'h1A][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isBranch = _RANDOM[8'h1A][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isJAL = _RANDOM[8'h1A][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isJALR = _RANDOM[8'h1A][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isLUI = _RANDOM[8'h1A][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isAUIPC = _RANDOM[8'h1A][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isFence = _RANDOM[8'h1A][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].isSystem = _RANDOM[8'h1A][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].aluOp = _RANDOM[8'h1A][14:10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].imm = {_RANDOM[8'h1A][9:0], _RANDOM[8'h1B][31:10]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].rs1 = _RANDOM[8'h1B][9:5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].rs2 = _RANDOM[8'h1B][4:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].rd = _RANDOM[8'h1C][31:27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].rs1Data = {_RANDOM[8'h1C][26:0], _RANDOM[8'h1D][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].rs2Data = {_RANDOM[8'h1D][26:0], _RANDOM[8'h1E][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].memAddr = {_RANDOM[8'h1E][26:0], _RANDOM[8'h1F][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].memWdata = {_RANDOM[8'h1F][26:0], _RANDOM[8'h20][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].memRdata = {_RANDOM[8'h20][26:0], _RANDOM[8'h21][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h2].aluResult = {_RANDOM[8'h21][26:0], _RANDOM[8'h22][31:27]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].threadId = _RANDOM[8'h22][26:25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].valid = _RANDOM[8'h22][24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].pc = {_RANDOM[8'h22][23:0], _RANDOM[8'h23][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].instr = {_RANDOM[8'h23][23:0], _RANDOM[8'h24][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isALU = _RANDOM[8'h24][23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isLoad = _RANDOM[8'h24][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isStore = _RANDOM[8'h24][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isBranch = _RANDOM[8'h24][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isJAL = _RANDOM[8'h24][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isJALR = _RANDOM[8'h24][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isLUI = _RANDOM[8'h24][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isAUIPC = _RANDOM[8'h24][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isFence = _RANDOM[8'h24][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].isSystem = _RANDOM[8'h24][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].aluOp = _RANDOM[8'h24][13:9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].imm = {_RANDOM[8'h24][8:0], _RANDOM[8'h25][31:9]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].rs1 = _RANDOM[8'h25][8:4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].rs2 = {_RANDOM[8'h25][3:0], _RANDOM[8'h26][31]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].rd = _RANDOM[8'h26][30:26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].rs1Data = {_RANDOM[8'h26][25:0], _RANDOM[8'h27][31:26]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].rs2Data = {_RANDOM[8'h27][25:0], _RANDOM[8'h28][31:26]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].memAddr = {_RANDOM[8'h28][25:0], _RANDOM[8'h29][31:26]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].memWdata = {_RANDOM[8'h29][25:0], _RANDOM[8'h2A][31:26]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].memRdata = {_RANDOM[8'h2A][25:0], _RANDOM[8'h2B][31:26]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        ifStage[2'h3].aluResult = {_RANDOM[8'h2B][25:0], _RANDOM[8'h2C][5:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].threadId = _RANDOM[8'h2C][31:30];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].valid = _RANDOM[8'h2C][29];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].pc = {_RANDOM[8'h2C][28:6], _RANDOM[8'h2D][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].instr = {_RANDOM[8'h2D][22:0], _RANDOM[8'h2E][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isALU = _RANDOM[8'h2E][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isLoad = _RANDOM[8'h2E][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isStore = _RANDOM[8'h2E][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isBranch = _RANDOM[8'h2E][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isJAL = _RANDOM[8'h2E][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isJALR = _RANDOM[8'h2E][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isLUI = _RANDOM[8'h2E][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isAUIPC = _RANDOM[8'h2E][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isFence = _RANDOM[8'h2E][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].isSystem = _RANDOM[8'h2E][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].aluOp = _RANDOM[8'h2E][12:8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].imm = {_RANDOM[8'h2E][7:0], _RANDOM[8'h2F][31:8]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].rs1 = _RANDOM[8'h2F][7:3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].rs2 = {_RANDOM[8'h2F][2:0], _RANDOM[8'h30][31:30]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].rd = _RANDOM[8'h30][29:25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].rs1Data = {_RANDOM[8'h30][24:0], _RANDOM[8'h31][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].rs2Data = {_RANDOM[8'h31][24:0], _RANDOM[8'h32][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].memAddr = {_RANDOM[8'h32][24:0], _RANDOM[8'h33][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].memWdata = {_RANDOM[8'h33][24:0], _RANDOM[8'h34][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].memRdata = {_RANDOM[8'h34][24:0], _RANDOM[8'h35][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h0].aluResult = {_RANDOM[8'h35][24:0], _RANDOM[8'h36][31:25]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].threadId = _RANDOM[8'h36][24:23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].valid = _RANDOM[8'h36][22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].pc = {_RANDOM[8'h36][21:0], _RANDOM[8'h37][31:22]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].instr = {_RANDOM[8'h37][21:0], _RANDOM[8'h38][31:22]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isALU = _RANDOM[8'h38][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isLoad = _RANDOM[8'h38][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isStore = _RANDOM[8'h38][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isBranch = _RANDOM[8'h38][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isJAL = _RANDOM[8'h38][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isJALR = _RANDOM[8'h38][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isLUI = _RANDOM[8'h38][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isAUIPC = _RANDOM[8'h38][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isFence = _RANDOM[8'h38][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].isSystem = _RANDOM[8'h38][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].aluOp = _RANDOM[8'h38][11:7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].imm = {_RANDOM[8'h38][6:0], _RANDOM[8'h39][31:7]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].rs1 = _RANDOM[8'h39][6:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].rs2 = {_RANDOM[8'h39][1:0], _RANDOM[8'h3A][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].rd = _RANDOM[8'h3A][28:24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].rs1Data = {_RANDOM[8'h3A][23:0], _RANDOM[8'h3B][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].rs2Data = {_RANDOM[8'h3B][23:0], _RANDOM[8'h3C][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].memAddr = {_RANDOM[8'h3C][23:0], _RANDOM[8'h3D][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].memWdata = {_RANDOM[8'h3D][23:0], _RANDOM[8'h3E][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].memRdata = {_RANDOM[8'h3E][23:0], _RANDOM[8'h3F][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h1].aluResult = {_RANDOM[8'h3F][23:0], _RANDOM[8'h40][31:24]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].threadId = _RANDOM[8'h40][23:22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].valid = _RANDOM[8'h40][21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].pc = {_RANDOM[8'h40][20:0], _RANDOM[8'h41][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].instr = {_RANDOM[8'h41][20:0], _RANDOM[8'h42][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isALU = _RANDOM[8'h42][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isLoad = _RANDOM[8'h42][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isStore = _RANDOM[8'h42][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isBranch = _RANDOM[8'h42][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isJAL = _RANDOM[8'h42][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isJALR = _RANDOM[8'h42][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isLUI = _RANDOM[8'h42][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isAUIPC = _RANDOM[8'h42][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isFence = _RANDOM[8'h42][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].isSystem = _RANDOM[8'h42][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].aluOp = _RANDOM[8'h42][10:6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].imm = {_RANDOM[8'h42][5:0], _RANDOM[8'h43][31:6]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].rs1 = _RANDOM[8'h43][5:1];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].rs2 = {_RANDOM[8'h43][0], _RANDOM[8'h44][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].rd = _RANDOM[8'h44][27:23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].rs1Data = {_RANDOM[8'h44][22:0], _RANDOM[8'h45][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].rs2Data = {_RANDOM[8'h45][22:0], _RANDOM[8'h46][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].memAddr = {_RANDOM[8'h46][22:0], _RANDOM[8'h47][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].memWdata = {_RANDOM[8'h47][22:0], _RANDOM[8'h48][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].memRdata = {_RANDOM[8'h48][22:0], _RANDOM[8'h49][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h2].aluResult = {_RANDOM[8'h49][22:0], _RANDOM[8'h4A][31:23]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].threadId = _RANDOM[8'h4A][22:21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].valid = _RANDOM[8'h4A][20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].pc = {_RANDOM[8'h4A][19:0], _RANDOM[8'h4B][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].instr = {_RANDOM[8'h4B][19:0], _RANDOM[8'h4C][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isALU = _RANDOM[8'h4C][19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isLoad = _RANDOM[8'h4C][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isStore = _RANDOM[8'h4C][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isBranch = _RANDOM[8'h4C][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isJAL = _RANDOM[8'h4C][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isJALR = _RANDOM[8'h4C][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isLUI = _RANDOM[8'h4C][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isAUIPC = _RANDOM[8'h4C][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isFence = _RANDOM[8'h4C][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].isSystem = _RANDOM[8'h4C][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].aluOp = _RANDOM[8'h4C][9:5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].imm = {_RANDOM[8'h4C][4:0], _RANDOM[8'h4D][31:5]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].rs1 = _RANDOM[8'h4D][4:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].rs2 = _RANDOM[8'h4E][31:27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].rd = _RANDOM[8'h4E][26:22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].rs1Data = {_RANDOM[8'h4E][21:0], _RANDOM[8'h4F][31:22]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].rs2Data = {_RANDOM[8'h4F][21:0], _RANDOM[8'h50][31:22]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].memAddr = {_RANDOM[8'h50][21:0], _RANDOM[8'h51][31:22]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].memWdata = {_RANDOM[8'h51][21:0], _RANDOM[8'h52][31:22]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].memRdata = {_RANDOM[8'h52][21:0], _RANDOM[8'h53][31:22]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        decStage[2'h3].aluResult = {_RANDOM[8'h53][21:0], _RANDOM[8'h54][9:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].threadId = _RANDOM[8'h54][31:30];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].valid = _RANDOM[8'h54][29];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].pc = {_RANDOM[8'h54][28:10], _RANDOM[8'h55][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].instr = {_RANDOM[8'h55][18:0], _RANDOM[8'h56][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isALU = _RANDOM[8'h56][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isLoad = _RANDOM[8'h56][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isStore = _RANDOM[8'h56][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isBranch = _RANDOM[8'h56][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isJAL = _RANDOM[8'h56][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isJALR = _RANDOM[8'h56][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isLUI = _RANDOM[8'h56][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isAUIPC = _RANDOM[8'h56][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isFence = _RANDOM[8'h56][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].isSystem = _RANDOM[8'h56][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].aluOp = _RANDOM[8'h56][8:4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].imm = {_RANDOM[8'h56][3:0], _RANDOM[8'h57][31:4]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].rs1 = {_RANDOM[8'h57][3:0], _RANDOM[8'h58][31]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].rs2 = _RANDOM[8'h58][30:26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].rd = _RANDOM[8'h58][25:21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].rs1Data = {_RANDOM[8'h58][20:0], _RANDOM[8'h59][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].rs2Data = {_RANDOM[8'h59][20:0], _RANDOM[8'h5A][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].memAddr = {_RANDOM[8'h5A][20:0], _RANDOM[8'h5B][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].memWdata = {_RANDOM[8'h5B][20:0], _RANDOM[8'h5C][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].memRdata = {_RANDOM[8'h5C][20:0], _RANDOM[8'h5D][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h0].aluResult = {_RANDOM[8'h5D][20:0], _RANDOM[8'h5E][31:21]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].threadId = _RANDOM[8'h5E][20:19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].valid = _RANDOM[8'h5E][18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].pc = {_RANDOM[8'h5E][17:0], _RANDOM[8'h5F][31:18]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].instr = {_RANDOM[8'h5F][17:0], _RANDOM[8'h60][31:18]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isALU = _RANDOM[8'h60][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isLoad = _RANDOM[8'h60][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isStore = _RANDOM[8'h60][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isBranch = _RANDOM[8'h60][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isJAL = _RANDOM[8'h60][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isJALR = _RANDOM[8'h60][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isLUI = _RANDOM[8'h60][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isAUIPC = _RANDOM[8'h60][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isFence = _RANDOM[8'h60][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].isSystem = _RANDOM[8'h60][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].aluOp = _RANDOM[8'h60][7:3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].imm = {_RANDOM[8'h60][2:0], _RANDOM[8'h61][31:3]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].rs1 = {_RANDOM[8'h61][2:0], _RANDOM[8'h62][31:30]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].rs2 = _RANDOM[8'h62][29:25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].rd = _RANDOM[8'h62][24:20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].rs1Data = {_RANDOM[8'h62][19:0], _RANDOM[8'h63][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].rs2Data = {_RANDOM[8'h63][19:0], _RANDOM[8'h64][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].memAddr = {_RANDOM[8'h64][19:0], _RANDOM[8'h65][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].memWdata = {_RANDOM[8'h65][19:0], _RANDOM[8'h66][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].memRdata = {_RANDOM[8'h66][19:0], _RANDOM[8'h67][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h1].aluResult = {_RANDOM[8'h67][19:0], _RANDOM[8'h68][31:20]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].threadId = _RANDOM[8'h68][19:18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].valid = _RANDOM[8'h68][17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].pc = {_RANDOM[8'h68][16:0], _RANDOM[8'h69][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].instr = {_RANDOM[8'h69][16:0], _RANDOM[8'h6A][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isALU = _RANDOM[8'h6A][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isLoad = _RANDOM[8'h6A][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isStore = _RANDOM[8'h6A][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isBranch = _RANDOM[8'h6A][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isJAL = _RANDOM[8'h6A][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isJALR = _RANDOM[8'h6A][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isLUI = _RANDOM[8'h6A][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isAUIPC = _RANDOM[8'h6A][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isFence = _RANDOM[8'h6A][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].isSystem = _RANDOM[8'h6A][7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].aluOp = _RANDOM[8'h6A][6:2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].imm = {_RANDOM[8'h6A][1:0], _RANDOM[8'h6B][31:2]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].rs1 = {_RANDOM[8'h6B][1:0], _RANDOM[8'h6C][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].rs2 = _RANDOM[8'h6C][28:24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].rd = _RANDOM[8'h6C][23:19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].rs1Data = {_RANDOM[8'h6C][18:0], _RANDOM[8'h6D][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].rs2Data = {_RANDOM[8'h6D][18:0], _RANDOM[8'h6E][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].memAddr = {_RANDOM[8'h6E][18:0], _RANDOM[8'h6F][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].memWdata = {_RANDOM[8'h6F][18:0], _RANDOM[8'h70][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].memRdata = {_RANDOM[8'h70][18:0], _RANDOM[8'h71][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h2].aluResult = {_RANDOM[8'h71][18:0], _RANDOM[8'h72][31:19]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].threadId = _RANDOM[8'h72][18:17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].valid = _RANDOM[8'h72][16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].pc = {_RANDOM[8'h72][15:0], _RANDOM[8'h73][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].instr = {_RANDOM[8'h73][15:0], _RANDOM[8'h74][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isALU = _RANDOM[8'h74][15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isLoad = _RANDOM[8'h74][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isStore = _RANDOM[8'h74][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isBranch = _RANDOM[8'h74][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isJAL = _RANDOM[8'h74][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isJALR = _RANDOM[8'h74][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isLUI = _RANDOM[8'h74][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isAUIPC = _RANDOM[8'h74][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isFence = _RANDOM[8'h74][7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].isSystem = _RANDOM[8'h74][6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].aluOp = _RANDOM[8'h74][5:1];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].imm = {_RANDOM[8'h74][0], _RANDOM[8'h75][31:1]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].rs1 = {_RANDOM[8'h75][0], _RANDOM[8'h76][31:28]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].rs2 = _RANDOM[8'h76][27:23];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].rd = _RANDOM[8'h76][22:18];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].rs1Data = {_RANDOM[8'h76][17:0], _RANDOM[8'h77][31:18]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].rs2Data = {_RANDOM[8'h77][17:0], _RANDOM[8'h78][31:18]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].memAddr = {_RANDOM[8'h78][17:0], _RANDOM[8'h79][31:18]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].memWdata = {_RANDOM[8'h79][17:0], _RANDOM[8'h7A][31:18]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].memRdata = {_RANDOM[8'h7A][17:0], _RANDOM[8'h7B][31:18]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        exStage[2'h3].aluResult = {_RANDOM[8'h7B][17:0], _RANDOM[8'h7C][13:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].threadId = _RANDOM[8'h7C][31:30];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].valid = _RANDOM[8'h7C][29];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].pc = {_RANDOM[8'h7C][28:14], _RANDOM[8'h7D][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].instr = {_RANDOM[8'h7D][14:0], _RANDOM[8'h7E][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isALU = _RANDOM[8'h7E][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isLoad = _RANDOM[8'h7E][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isStore = _RANDOM[8'h7E][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isBranch = _RANDOM[8'h7E][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isJAL = _RANDOM[8'h7E][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isJALR = _RANDOM[8'h7E][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isLUI = _RANDOM[8'h7E][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isAUIPC = _RANDOM[8'h7E][7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isFence = _RANDOM[8'h7E][6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].isSystem = _RANDOM[8'h7E][5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].aluOp = _RANDOM[8'h7E][4:0];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].imm = _RANDOM[8'h7F];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].rs1 = _RANDOM[8'h80][31:27];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].rs2 = _RANDOM[8'h80][26:22];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].rd = _RANDOM[8'h80][21:17];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].rs1Data = {_RANDOM[8'h80][16:0], _RANDOM[8'h81][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].rs2Data = {_RANDOM[8'h81][16:0], _RANDOM[8'h82][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].memAddr = {_RANDOM[8'h82][16:0], _RANDOM[8'h83][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].memWdata = {_RANDOM[8'h83][16:0], _RANDOM[8'h84][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].memRdata = {_RANDOM[8'h84][16:0], _RANDOM[8'h85][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h0].aluResult = {_RANDOM[8'h85][16:0], _RANDOM[8'h86][31:17]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].threadId = _RANDOM[8'h86][16:15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].valid = _RANDOM[8'h86][14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].pc = {_RANDOM[8'h86][13:0], _RANDOM[8'h87][31:14]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].instr = {_RANDOM[8'h87][13:0], _RANDOM[8'h88][31:14]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isALU = _RANDOM[8'h88][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isLoad = _RANDOM[8'h88][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isStore = _RANDOM[8'h88][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isBranch = _RANDOM[8'h88][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isJAL = _RANDOM[8'h88][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isJALR = _RANDOM[8'h88][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isLUI = _RANDOM[8'h88][7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isAUIPC = _RANDOM[8'h88][6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isFence = _RANDOM[8'h88][5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].isSystem = _RANDOM[8'h88][4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].aluOp = {_RANDOM[8'h88][3:0], _RANDOM[8'h89][31]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].imm = {_RANDOM[8'h89][30:0], _RANDOM[8'h8A][31]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].rs1 = _RANDOM[8'h8A][30:26];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].rs2 = _RANDOM[8'h8A][25:21];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].rd = _RANDOM[8'h8A][20:16];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].rs1Data = {_RANDOM[8'h8A][15:0], _RANDOM[8'h8B][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].rs2Data = {_RANDOM[8'h8B][15:0], _RANDOM[8'h8C][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].memAddr = {_RANDOM[8'h8C][15:0], _RANDOM[8'h8D][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].memWdata = {_RANDOM[8'h8D][15:0], _RANDOM[8'h8E][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].memRdata = {_RANDOM[8'h8E][15:0], _RANDOM[8'h8F][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h1].aluResult = {_RANDOM[8'h8F][15:0], _RANDOM[8'h90][31:16]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].threadId = _RANDOM[8'h90][15:14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].valid = _RANDOM[8'h90][13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].pc = {_RANDOM[8'h90][12:0], _RANDOM[8'h91][31:13]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].instr = {_RANDOM[8'h91][12:0], _RANDOM[8'h92][31:13]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isALU = _RANDOM[8'h92][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isLoad = _RANDOM[8'h92][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isStore = _RANDOM[8'h92][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isBranch = _RANDOM[8'h92][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isJAL = _RANDOM[8'h92][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isJALR = _RANDOM[8'h92][7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isLUI = _RANDOM[8'h92][6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isAUIPC = _RANDOM[8'h92][5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isFence = _RANDOM[8'h92][4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].isSystem = _RANDOM[8'h92][3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].aluOp = {_RANDOM[8'h92][2:0], _RANDOM[8'h93][31:30]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].imm = {_RANDOM[8'h93][29:0], _RANDOM[8'h94][31:30]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].rs1 = _RANDOM[8'h94][29:25];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].rs2 = _RANDOM[8'h94][24:20];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].rd = _RANDOM[8'h94][19:15];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].rs1Data = {_RANDOM[8'h94][14:0], _RANDOM[8'h95][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].rs2Data = {_RANDOM[8'h95][14:0], _RANDOM[8'h96][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].memAddr = {_RANDOM[8'h96][14:0], _RANDOM[8'h97][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].memWdata = {_RANDOM[8'h97][14:0], _RANDOM[8'h98][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].memRdata = {_RANDOM[8'h98][14:0], _RANDOM[8'h99][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h2].aluResult = {_RANDOM[8'h99][14:0], _RANDOM[8'h9A][31:15]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].threadId = _RANDOM[8'h9A][14:13];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].valid = _RANDOM[8'h9A][12];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].pc = {_RANDOM[8'h9A][11:0], _RANDOM[8'h9B][31:12]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].instr = {_RANDOM[8'h9B][11:0], _RANDOM[8'h9C][31:12]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isALU = _RANDOM[8'h9C][11];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isLoad = _RANDOM[8'h9C][10];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isStore = _RANDOM[8'h9C][9];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isBranch = _RANDOM[8'h9C][8];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isJAL = _RANDOM[8'h9C][7];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isJALR = _RANDOM[8'h9C][6];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isLUI = _RANDOM[8'h9C][5];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isAUIPC = _RANDOM[8'h9C][4];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isFence = _RANDOM[8'h9C][3];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].isSystem = _RANDOM[8'h9C][2];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].aluOp = {_RANDOM[8'h9C][1:0], _RANDOM[8'h9D][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].imm = {_RANDOM[8'h9D][28:0], _RANDOM[8'h9E][31:29]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].rs1 = _RANDOM[8'h9E][28:24];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].rs2 = _RANDOM[8'h9E][23:19];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].rd = _RANDOM[8'h9E][18:14];	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].rs1Data = {_RANDOM[8'h9E][13:0], _RANDOM[8'h9F][31:14]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].rs2Data = {_RANDOM[8'h9F][13:0], _RANDOM[8'hA0][31:14]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].memAddr = {_RANDOM[8'hA0][13:0], _RANDOM[8'hA1][31:14]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].memWdata = {_RANDOM[8'hA1][13:0], _RANDOM[8'hA2][31:14]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].memRdata = {_RANDOM[8'hA2][13:0], _RANDOM[8'hA3][31:14]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
+        memStage[2'h3].aluResult = {_RANDOM[8'hA3][13:0], _RANDOM[8'hA4][17:0]};	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7, :47:23, :82:25, :83:25, :84:25, :85:25, :102:26, :139:27, :164:26, :191:27
       `endif // RANDOMIZE_REG_INIT
     end // initial
     `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
@@ -3679,32 +1615,32 @@ module TetraNyteCore(	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
     .R0_addr (_ifWire_instr_T_1),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:95:35
     .R0_en   (1'h1),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
     .R0_clk  (clock),
-    .R0_data (ifWire_instr),
-    .W0_addr (io_instrWriteAddr_0),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-    .W0_en   (io_instrWriteEnable_0),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
+    .R0_data (_instrMem_ext_R0_data),
+    .W0_addr (io.instrWriteAddr),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
+    .W0_en   (io.instrWriteEnable),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
     .W0_clk  (clock),
-    .W0_data (io_instrWriteData_0)	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
+    .W0_data (io.instrWriteData)	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
   );	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:50:29
   RegFileMT2R1WVec regFile (	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:56:23
     .clock       (clock),
     .reset       (reset),
     .io_threadID (currentThread),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:43:30
-    .io_src1     (decWire_rs1),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25
-    .io_src2     (decWire_rs2),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25
-    .io_dst1     (memWire_rd),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25
+    .io_src1     (decWire.rs1),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :123:15
+    .io_src2     (decWire.rs2),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:110:25, :124:15
+    .io_dst1     (memWire.rd),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:172:25, :185:23
     .io_wen      (_regFile_io_wen_T_3),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:187:64
     .io_dst1data (wbData),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:184:19
-    .io_src1data (decWire_rs1Data),
-    .io_src2data (decWire_rs2Data)
+    .io_src1data (_regFile_io_src1data),
+    .io_src2data (_regFile_io_src2data)
   );	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:56:23
   TetraNyteCore_Anon alu (	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:19
-    .io_a   (exWire_rs1Data),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24
-    .io_b   (exWire_rs2Data),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24
-    .io_fn  (exWire_aluOp),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24
-    .io_out (exWire_aluResult)
+    .io_a   (exWire.rs1Data),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24, :151:13
+    .io_b   (exWire.rs2Data),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24, :152:13
+    .io_fn  (exWire.aluOp),	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:147:24, :153:13
+    .io_out (_alu_io_out)
   );	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:65:19
-  assign io_memAddr = io_memAddr_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-  assign io_memWdata = io_memWdata_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
-  assign io_memWe = io_memWe_0;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
+  assign io_memAddr = io.memAddr;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
+  assign io_memWdata = io.memWdata;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
+  assign io_memWe = io.memWe;	// src/main/scala/TetraNyteCore/TetraNyteCore.scala:21:7
 endmodule
 
