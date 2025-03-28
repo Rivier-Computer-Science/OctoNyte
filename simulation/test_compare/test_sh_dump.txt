@@ -1,0 +1,8 @@
+Dump 1:
+ra = 0x10632, sp = 0x3fffff9390, gp = 0x8c098, tp = 0x91760
+t0 = 0xffffffffffffa000, t1 = 0x3ffffffbf4, t2 = 0x0
+---------------------------
+Dump 2:
+ra = 0x106ce, sp = 0x3fffff9390, gp = 0x8c098, tp = 0x91760
+t0 = 0xffffffffffffa000, t1 = 0x58828, t2 = 0x0
+---------------------------

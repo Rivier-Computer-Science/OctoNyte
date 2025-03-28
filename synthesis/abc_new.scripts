@@ -1,0 +1,24 @@
+strash;         # Structural hashing
+ifraig;         # Fraiging (redundancy removal)
+scorr;          # Sequential correlation
+dc2;            # Combinational delay optimization
+dretime;        # Retiming
+strash;         # Structural hashing
+&get;           # Get current network
+&put;           # Put current network
+&dc2;           # Combinational delay optimization
+&nf;            # Node factoring
+&put;           # Put current network
+dch -f;         # Delay-constrained heuristic mapping
+&get;           # Get current network
+&nf;            # Node factoring
+&put;           # Put current network
+map -B 0.9;     # Technology mapping with area/delay tradeoff
+topo;           # Topological sorting
+stime -p;       # Print timing statistics
+buffer;         # Buffer insertion
+upsize;         # Gate sizing (upsizing)
+dnsize;         # Gate sizing (downsizing)
+stime -p;       # Print timing statistics
+print_stats;    # Print design statistics
+write_verilog output.v; # Write output Verilog

@@ -40,3 +40,7 @@ settings.json
 
 output/.~lock.rtl_timed_results.xlsx#
 
+# build folders
+simulation/asm/bin
+simulation/test_compare
+uppiretla-OCTONYTE

@@ -1,0 +1,23 @@
+strash;
+ifraig;
+scorr;
+dc2;
+dretime;
+strash;
+&get;
+&dc2;
+&nf;
+&put;
+dch -f;
+&get;
+&nf;
+&put;
+map -B 0.9;  # Area/delay tradeoff (prioritize area)
+topo;
+stime -p;
+buffer;
+upsize;
+dnsize;
+stime -p;
+print_stats;
+write_verilog output.v;

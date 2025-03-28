@@ -1,0 +1,3 @@
+Register state:
+  t0 = 0x3, t1 = 0x5
+  label_flag = 2
