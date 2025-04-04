@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++14 \
-					-I/opt/homebrew/Cellar/verilator/5.032/share/verilator/include \
-					-I/opt/homebrew/Cellar/verilator/5.032/share/verilator/include/vltstd \
-					-Iobj_dir
+
+CXXFLAGS += -I/usr/share/verilator/include \
+            -I/usr/share/verilator/include/vltstd \
+            -Iobj_dir
 
 LDFLAGS = -lverilated -pthread
 

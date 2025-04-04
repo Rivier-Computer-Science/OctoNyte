@@ -1,4 +1,4 @@
-// Run from RTL/Chisel sbt 'runMain generators.GenerateHardware'
+// Run from RTL/Chisel sbt 'runMain generators.GenerateHierarchicalRTL'
 
 // Licensed under the BSD 3-Clause License. 
 // See https://opensource.org/licenses/BSD-3-Clause for details.
@@ -261,7 +261,7 @@ object GenerateHierarchicalRTL extends App {
             prep -top $moduleName;                         
             techmap;
             dfflibmap -liberty $skywaterPdkLib; 
-            abc -liberty $skywaterPdkLib;   
+            abc -liberty $skywaterPdkLib-script +abc_map_new_area.script;  
             opt_clean;
             stat;
             write_verilog -noattr $verilogOutFile

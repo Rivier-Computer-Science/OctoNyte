@@ -4,6 +4,8 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <csignal>   // ✅ Fix: Include signal()
+#include <cstring>   // ✅ Fix: Include strerror()
 
 #define PIPE_NAME "../pipe/spike_rtl_pipe"
 #define PIPE_NAME_OUT "../pipe/rtl_spike_pipe"
@@ -43,7 +45,7 @@ void signal_handler(int signum){
 }
 
 int main() {
-    signal(SIGINT, signal_handler);
+    signal(SIGINT, signal_handler); // ✅ Fix: SIGINT is now recognized
 
     // Ensure the pipe exists or create it
     if (mkfifo(PIPE_NAME, 0666) == -1 && errno != EEXIST) {

@@ -44,3 +44,6 @@ output/.~lock.rtl_timed_results.xlsx#
 simulation/asm/bin
 simulation/test_compare
 uppiretla-OCTONYTE
+
+# remove obj__dir folder
+*/obj_dir
