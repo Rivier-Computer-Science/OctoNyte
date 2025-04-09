@@ -47,3 +47,4 @@ uppiretla-OCTONYTE
 
 # remove obj__dir folder
 */obj_dir
+obj_dir/
