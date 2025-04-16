@@ -63,7 +63,7 @@ object GenerateHierarchicalRTL extends App {
   val generatedNetlistPath = "generators/generated/netlist"
   val generatedDiagramsPath = "generators/generated/diagrams"
 
-  val skywaterPdkLib = "../../synthesis/pdk/sky130_fd_sc_hd/timing/sky130_fd_sc_hd__ss_n40C_1v44.lib"
+  val skywaterPdkLib = "../../synthesis/pdk/sky130_fd_sc_hd/timing/sky130_fd_sc_hd__tt_025C_1v80.lib"
   val optimizeForASIC = true
 
  
@@ -261,7 +261,7 @@ object GenerateHierarchicalRTL extends App {
             prep -top $moduleName;                         
             techmap;
             dfflibmap -liberty $skywaterPdkLib; 
-            abc-liberty $skywaterPdkLib;  
+            abc_new_map_area-liberty $skywaterPdkLib;  
             opt_clean;
             stat;
             write_verilog -noattr $verilogOutFile
