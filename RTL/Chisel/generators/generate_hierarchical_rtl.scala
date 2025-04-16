@@ -63,7 +63,7 @@ object GenerateHierarchicalRTL extends App {
   val generatedNetlistPath = "generators/generated/netlist"
   val generatedDiagramsPath = "generators/generated/diagrams"
 
-  val skywaterPdkLib = "../../synthesis/pdk/sky130_fd_sc_hd/timing/sky130_fd_sc_hd__ss_100C_1v40.lib"
+  val skywaterPdkLib = "../../synthesis/pdk/sky130_fd_sc_hd/timing/sky130_fd_sc_hd__ss_n40C_1v28.lib"
   val optimizeForASIC = true
 
  
