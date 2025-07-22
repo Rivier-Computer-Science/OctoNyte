@@ -146,22 +146,35 @@ int main() {
 
     // Perform XNOR operation using xor and not
     __asm__ volatile (
-        "xor t1, t1, t1\n"    // XOR operation: t1 = t0 ^ t2
+        "xor t0, t0, t0"    
     );
     
     get_registers(&regs.states[regs.count]);
     regs.count++;
 
-    // Perform XNOR operation using xor and not
     __asm__ volatile (
-        "xor t1, t0, t2\n"    // XOR operation: t1 = t0 ^ t2
-        "not t1, t1\n"         // NOT operation: t1 = ~t1 (XNOR)
+        "xor t1, t1, t1"    
     );
+    
+    get_registers(&regs.states[regs.count]);
+    regs.count++;
+
+    __asm__ volatile (
+        "xor t2, t2, t2"    
+    );
+    
+    get_registers(&regs.states[regs.count]);
+    regs.count++;
+
+    __asm__ volatile (
+        "xor t3, t3, t3\n"  
+    );
+    
+    get_registers(&regs.states[regs.count]);
+    regs.count++;
 
     // Get and print the state of the registers
     get_registers(&regs.states[regs.count]);
-
-    // Increment the dump count
     regs.count++;
 
     return 0;
