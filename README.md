@@ -7,12 +7,21 @@ From cloned github repository
 
 sh ./.devcontainer/install.sh
 
-This is also known to work in WSL Windows running Ubuntu 24.04
+## Ubuntu 24.04 using Windows WSL
+
+sh ./.devcontainer/install.sh
+
+sudo apt install wslu
+
+echo 'export BROWSER=wsluview' >> ~/.bashrc`
 
 ## Github Codespace
 
 It should build automatically
 
-## Mac / Windows
+## Mac / Native Windows
 
 You're on your own. Good luck!
+
+# Test Framework
+
