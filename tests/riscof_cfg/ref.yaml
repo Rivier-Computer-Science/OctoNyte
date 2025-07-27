@@ -1,0 +1,4 @@
+name: "Spike"
+work_dir: "./build/spike"
+isa: "RV32I"
+plugin: "riscof_spike"         # installed by pip

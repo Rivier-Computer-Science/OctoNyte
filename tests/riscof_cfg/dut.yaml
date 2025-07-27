@@ -1,0 +1,6 @@
+name: "TertaNyte‑Verilator"
+work_dir:   "./build/verilator"
+isa:        "RV32I"
+compile_cmd: ""               # handled in plugin
+sim_cmd:     ""               # handled in plugin
+plugin:      "../riscof_plugins/dut_single_thread_verilator.py"
