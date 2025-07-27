@@ -84,3 +84,41 @@ spike pk hello
 
 
 
+### Python
+
+### Install uv and venv
+
+https://docs.astral.sh/uv/#installation
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+```bash
+uv venv --python 3.12
+```
+
+Activate the environment
+
+```bash
+source .venv/bin/activate
+```
+
+### Install Python requirements.txt
+
+```bash
+uv pip install -r requirements.txt
+```
+
+
+
+### Check out the RV32I tests
+
+From top-level OctoNyte
+
+```bash
+git submodule add \
+  https://github.com/riscv-non-isa/riscv-arch-test.git \
+  external/riscv-arch-test
+git -C external/riscv-arch-test checkout
+```

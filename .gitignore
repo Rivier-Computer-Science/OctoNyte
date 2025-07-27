@@ -47,3 +47,6 @@ uppiretla-OCTONYTE
 
 # remove obj__dir folder
 */obj_dir
+
+# python 
+.venv
