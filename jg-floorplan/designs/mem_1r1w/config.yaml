@@ -1,0 +1,53 @@
+#openlane mem_1r1w/config.yaml --design-dir mem_1r1w
+
+DESIGN_NAME: "mem_1r1w"
+
+# Source files
+VERILOG_FILES:
+  - "src/mem_1r1w.v"
+
+CLOCK_PORT: "clk"
+CLOCK_PERIOD: 10.0
+
+# Floorplan settings
+FP_SIZING: "absolute"
+DIE_AREA: [0, 0, 260, 280]
+FP_PPL_MODE: "matching"  
+
+# Power & Ground
+VDD_NETS: ["vccd1"]
+GND_NETS: ["vssd1"]
+# IR drop
+# VSRC_LOC_FILES:
+#   vccd1: "scripts/pdn_vsrc.loc"
+#   vssd1: "scripts/pdn_vsrc.loc"
+
+# PDN Settings
+FP_PDN_CORE_RING: false
+FP_PDN_MULTILAYER: true
+FP_PDN_VOFFSET: 5
+FP_PDN_HOFFSET: 5
+FP_PDN_VWIDTH: 2
+FP_PDN_HWIDTH: 2
+FP_PDN_VPITCH: 30
+FP_PDN_HPITCH: 30
+FP_PDN_SKIPTRIM: true
+
+#pins
+FP_PIN_ORDER_CFG: "scripts/pin_order.cfg"
+
+# Routing
+RT_MAX_LAYER: "met4"
+
+# Constraints
+PNR_SDC_FILE: "src/mem_1r1w.sdc"
+SIGNOFF_SDC_FILE: "src/mem_1r1w.sdc"
+
+# Tech
+PDK: "sky130A"
+STD_CELL_LIBRARY: "sky130_fd_sc_hd"
+
+# Wirelength check
+WIRE_LENGTH_THRESHOLD: 300
+ERROR_ON_LONG_WIRE: false
+

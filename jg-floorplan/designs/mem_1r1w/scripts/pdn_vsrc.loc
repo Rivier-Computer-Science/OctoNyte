@@ -1,0 +1,7 @@
+# Filename: pdn_vsrc.loc
+# Each line typically indicates: net_name  x_min   y_min   x_max   y_max   voltage
+# The net name must match your actual power/ground nets (e.g., vccd1, vssd1).
+# Voltage is optional for ground nets, but you can include it for clarity.
+
+vccd1  0 0  260 280  1.8
+vssd1  0 0  260 280  0.0
