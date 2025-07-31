@@ -1,32 +1,25 @@
-# config.tcl - OpenLane design configuration for TetraNyteCore_synth
-
-# Set the design name and top module
+# Modern OpenLane2 configuration
 set ::env(DESIGN_NAME) "TetraNyteCore"
-set ::env(DESIGN_TOP) "TetraNyteCore"  ;# Change this to match your top module name
 
-# List of Verilog source files (use full paths if needed)
-set ::env(VERILOG_FILES) {
-    "designs/TetraNyteCore_timed_rtl/src/TetraNyteCore.v"
-    "designs/ALU32/src/ALU32.v"
-    "designs/LoadUnit/src/LoadUnit.v"
-}
+# Use absolute paths with DESIGN_DIR
+set ::env(VERILOG_FILES) [list \
+    "$::env(DESIGN_DIR)/TetraNyteCore.v" \
+    "$::env(DESIGN_DIR)/../ALU32/ALU32.v" \
+    "$::env(DESIGN_DIR)/../LoadUnit/LoadUnit.v" \
+]
 
-# (Optional) Clock and timing information if your design requires it
+# Clock configuration
 set ::env(CLOCK_PORT) "clock"
 set ::env(CLOCK_PERIOD) 5
 
-# Override PDN pitch to avoid a too-small grid (minimum required is 6.6)
-set ::env(PDN_PITCH) 7.0
-
-# Adjust floorplan parameters to force a larger core area
+# Floorplan and PDN
 set ::env(FP_CORE_UTIL) 0.3
+set ::env(FP_PDN_VPITCH) 7.0
+set ::env(FP_PDN_HPITCH) 7.0
 
-# (Optional) Constraint files if you have them, to avoid warnings.
-set constraint_dir "common_constraints"
-set sdc_file [file join $constraint_dir "design.sdc"]
+# Constraints
+set ::env(PNR_SDC_FILE) "$::env(DESIGN_DIR)/common_constraints/design.sdc"
+set ::env(SIGNOFF_SDC_FILE) "$::env(DESIGN_DIR)/common_constraints/design.sdc"
 
-set ::env(PNR_SDC_FILE) $sdc_file
-set ::env(SIGNOFF_SDC_FILE) $sdc_file
-
-# If you have any special flags for Verilator (e.g., to enable SystemVerilog)
-set ::env(VERILATOR_FLAGS) "-sv"
+# Synthesis
+set ::env(SYNTH_READ_BLACKBOX_LIB) 1

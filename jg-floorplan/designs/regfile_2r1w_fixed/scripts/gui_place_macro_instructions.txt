@@ -1,0 +1,32 @@
+# Inside the container
+
+openroad -gui
+
+# On the TCL command prompt
+# Load LEF (always necessary before DEF)
+read_lef /openlane/designs/regfile_2r1w/runs/output/tmp/merged.nom.lef
+
+# Load DEF explicitly after LEF
+read_def /openlane/designs/regfile_2r1w/runs/output/tmp/floorplan/3-initial_fp.def
+
+# Set Placements - Orient first and then move location
+
+# lane0 placement
+set inst0 [[ord::get_db_block] findInst lane0]
+$inst0 setOrient R90
+$inst0 setLocation 10 10
+$inst0 setPlacementStatus FIXED
+
+# lane1 placement
+set inst1 [[ord::get_db_block] findInst lane1]
+$inst1 setOrient R90
+$inst1 setLocation 400 10
+$inst1 setPlacementStatus FIXED
+
+# Verify placement (optional but recommended)
+puts "lane0 placed at [$inst0 getLocation] with orientation [$inst0 getOrient]"
+puts "lane1 placed at [$inst1 getLocation] with orientation [$inst1 getOrient]"
+
+# explicitly save your modified DEF
+write_def /openlane/designs/regfile_2r1w/src/pre_placed.def
+

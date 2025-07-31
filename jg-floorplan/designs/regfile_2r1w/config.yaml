@@ -1,0 +1,69 @@
+# openlane config.yaml --run-tag output --overwrite
+
+DESIGN_NAME: "regfile_2r1w"
+
+# Source Files
+VERILOG_FILES:
+  - "src/regfile_2r1w.v"
+  - "../mem_1r1w/src/mem_1r1w.v"
+
+CLOCK_PORT: "clk"
+CLOCK_PERIOD: 10.0
+
+# Floorplan
+FP_SIZING: "absolute"
+
+# Where pins are placed
+# Matching: Boundary closest to driving logic
+# sides, manual, random, fixed, distributed
+#
+FP_PIN_ORDER_CFG: "scripts/pin_order.cfg"
+
+FP_PPL_MODE: "matching"  
+DIE_AREA: [0, 0, 690, 230]
+
+
+
+
+# Use an existing DEF template for placement
+#FP_DEF_TEMPLATE: "src/manual_placement.def"
+
+
+# Power & Ground
+VDD_NETS: ["vccd1"]
+GND_NETS: ["vssd1"]
+# IR drop
+# VSRC_LOC_FILES:
+#   vccd1: "scripts/pdn_vsrc.loc"
+#   vssd1: "scripts/pdn_vsrc.loc"
+
+# PDN Settings
+FP_PDN_CORE_RING: false
+FP_PDN_MULTILAYER: true
+FP_PDN_VOFFSET: 5
+FP_PDN_HOFFSET: 5
+FP_PDN_VWIDTH: 2
+FP_PDN_HWIDTH: 2
+FP_PDN_VPITCH: 30
+FP_PDN_HPITCH: 30
+FP_PDN_SKIPTRIM: true
+# PDN_BEFORE_SCRIPTS:
+#   - "scripts/global_connect.tcl"
+
+# Routing
+RT_MAX_LAYER: "met4"
+
+# SDC Constraints
+PNR_SDC_FILE: "src/regfile_2r1w.sdc"
+SIGNOFF_SDC_FILE: "src/regfile_2r1w.sdc"
+
+# Tech
+PDK: "sky130A"
+STD_CELL_LIBRARY: "sky130_fd_sc_hd"
+
+# Wirelength check
+WIRE_LENGTH_THRESHOLD: 300
+ERROR_ON_LONG_WIRE: false
+
+
+

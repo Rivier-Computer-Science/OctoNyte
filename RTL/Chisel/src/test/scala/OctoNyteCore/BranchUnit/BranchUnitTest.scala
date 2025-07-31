@@ -34,7 +34,7 @@ class BranchUnitTest extends AnyFlatSpec {
       def testBranches(): Unit = {
         testBranch(10, 10, 100, 4, 0.U, true, true)  // BEQ: Branch if Equal: Taken
         testBranch(10, 5, 200, 8, 1.U, true, true)   // BNE: Branch if Not Equal: Taken
-        testBranch(-5, 3, 300, 12, 4.U, true, true)  // BLT: Taken
+        testBranch(-5, 3, 300, 12, 4.U, true, true)  // BLT: Branch if Less than: Taken
         testBranch(10, 10, 400, 16, 5.U, true, true) // BGE: Taken
         testBranch(5, 10, 500, 20, 6.U, true, true)  // BLTU: Taken
         testBranch(10, 5, 600, 24, 7.U, true, true)  // BGEU: Taken
