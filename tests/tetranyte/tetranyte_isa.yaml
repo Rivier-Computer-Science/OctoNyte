@@ -1,0 +1,25 @@
+hart_ids: [0]
+hart0:
+  ISA: RV32I
+  physical_addr_sz: 32
+  User_Spec_Version: '2.3'
+  supported_xlen: [32]
+  misa:
+    reset-val: 0x40000100
+    rv32:
+      accessible: true
+      fields:
+        - field_name: I
+          description: RV32I/64I/128I base ISA
+          shadow: none
+          msb: 8
+          lsb: 8
+          implemented: true
+        - field_name: MXL
+          description: Machine XLEN
+          shadow: none
+          msb: 31
+          lsb: 30
+          implemented: true
+          type:
+            ro_constant: 1

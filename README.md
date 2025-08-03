@@ -3,7 +3,7 @@ A RISC-V Multithreaded Core Targeting the Skywater 0.13um ASIC library
 
 ## Native Ubuntu 24.04 Installation (or Virtualbox)
 
-From cloned github repository
+From cloned github repository INTO YOUR HOME DIRECTORY
 
 ```bash
 sh ./.devcontainer/install.sh
@@ -95,7 +95,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ```bash
-uv venv --python 3.12
+uv venv --python 3.10 
 ```
 
 Activate the environment
@@ -112,6 +112,45 @@ uv pip install -r requirements.txt
 
 
 
+### Install the entire RISC-V Toolchain Prebuilt from Collab
+
+```bash
+cd /tmp 
+
+wget https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2025.07.16/riscv32-elf-ubuntu-24.04-gcc-nightly-2025.07.16-nightly.tar.xz 
+
+sudo mkdir -p /opt/riscv/collab
+
+sudo tar -xvf riscv32-elf-ubuntu-24.04-gcc-nightly-2025.07.16-nightly.tar.xz -C /opt/riscv/collab --strip-components=1
+
+echo 'export PATH=/opt/riscv/collab/bin:$PATH' >> ~/.bashrc 
+
+source ~/.bashrc
+```
+
+### Install RISCOF framework (if requirements.txt doesn't work)
+
+```bash
+# Python 3.10 is known to work. 3.8 and 3.12 do not work as of August 2025
+
+# A newer known compatible version
+uv pip install riscv-isac==0.18.0
+uv pip install riscv-config==3.20.0
+uv pip install riscof==1.25.3
+
+# An older Known compatible version
+uv pip install riscv-isac==0.17.0
+uv pip install riscv-config==3.12.0  
+uv pip install riscof==1.24.0
+
+# There are a lot of known compatibility issues. You can also try the latest dev branch
+uv pip install git+https://github.com/riscv/riscv-config.git # 3.20.0
+uv pip install git+https://github.com/riscv/riscv-isac.git # 0.18.0
+uv pip install git+https://github.com/riscv/riscof.git   # 1.25.3
+```
+
+
+
 ### Check out the RV32I tests
 
 From top-level OctoNyte
@@ -122,3 +161,63 @@ git submodule add \
   external/riscv-arch-test
 git -C external/riscv-arch-test checkout
 ```
+
+
+
+### Make Sure Tests are Up-to-date
+
+```bash
+git submodule update --init --recursive tests/external/riscv-arch-test
+```
+
+### Run RISC-V Signatures
+
+```bash
+cd tests
+export CC=riscv64-linux-gnu-gcc
+riscof validateyaml --config=riscof_cfg/ref.yaml
+riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/ --env=external/riscv-arch-test/riscv-test-suite/env
+```
+
+
+
+### Run the Verilog RTL tests on a Subset
+
+#### Generate the list of tests to be run:
+
+```bash
+riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/ --env=external/riscv-arch-test/riscv-test-suite/env
+```
+
+#### Run a small subset
+
+```bash
+riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser
+```
+
+#### Check the Result
+
+```bash
+cat riscof_work/report.html
+```
+
+#### Run the entire suite
+
+```bash
+asdf
+```
+
+### Flow:
+
+1. **Top Level Test Bench**: /home/octonyte/OctoNyte/RTL/Chisel/generators/generated/verilog_hierarchical_timed_rtl/Top.v
+   - This needs to be generated from Chisel code. I've put a simple one there for now.
+2. **Your testbench** (`tb_compliance.cpp`) needs to:
+   - Load the hex file into memory
+   - Run the simulation
+   - Write the signature to `rtl.sig` file
+3. **Expected workflow**:
+   - RISCOF compiles each test to ELF
+   - Your plugin converts ELF to hex
+   - Verilator simulates your RTL with the hex file
+   - Your testbench writes the signature
+   - RISCOF compares signatures between your RTL and Spike

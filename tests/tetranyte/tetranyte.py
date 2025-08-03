@@ -10,7 +10,7 @@ class Plugin:
         self.prefix = comp_opts.get('prefix', 'riscv64-linux-gnu-')
         self.top = comp_opts.get('top', 'Top')
         # Use absolute path for Verilog file
-        self.ver = Path(comp_opts.get('verilog', '../RTL/generated/Top.v')).resolve()
+        self.ver = Path(comp_opts.get('verilog', '../RTL/Chisel/generators/generated/verilog_hierarchical_timed_rtl/Top.v')).resolve()
         
         # Ensure workdir exists
         self.workdir.mkdir(parents=True, exist_ok=True)
