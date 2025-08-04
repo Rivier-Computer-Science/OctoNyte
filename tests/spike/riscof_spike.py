@@ -103,9 +103,8 @@ class spike(pluginTemplate):
             execute += self.objdump_cmd.format(elf, self.xlen, 'ref.disass')
             sig_file = os.path.join(test_dir, self.name[:-1] + ".signature")
 
-            #TODO: You will need to add any other arguments to your DUT
-            #      executable if any in the quotes below
-            execute += self.ref_exe + ''
+            execute += self.ref_exe + ' --isa=' + testentry['isa'].lower() + ' ' + elf + ' > ' + sig_file + ';'
+
 
             #TODO: The following is useful only if your reference model can
             #      support coverage extraction from riscv-isac. Else leave it
