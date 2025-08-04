@@ -46,8 +46,8 @@ class spike(pluginTemplate):
 
         #TODO: The following assumes you are using the riscv-gcc toolchain. If
         #      not please change appropriately
-        self.objdump_cmd = 'riscv32-unknown-elf-objdump -D {0} > {2};'
-        self.compile_cmd = 'riscv32-unknown-elf-gcc -march={0} \
+        self.objdump_cmd = 'riscv{1}-unknown-elf-objdump -D {0} > {2};'
+        self.compile_cmd = 'riscv{1}-unknown-elf-gcc -march={0} \
          -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles\
          -T '+self.pluginpath+'/env/link.ld\
          -I '+self.pluginpath+'/env/\

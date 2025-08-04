@@ -18,7 +18,11 @@ RTL/Chisel/.bsp/sbt.json
 
 # ignore all openlane runs directories
 **/runs/
-**/riscof_work
+**/riscof_work/
+**/obj_dir/
+**/obj__dir/
+**/__pycache__/
+**/external/
 
 # verilator output
 simulation/runs/
