@@ -65,7 +65,7 @@ int main(int argc, char **argv) {{
     std::ifstream memf(argv[1]);
     uint32_t data, addr = 0;
     while (memf >> std::hex >> data) {{
-        tb->memory[addr++] = data;
+        tb->rootp->Top__DOT__memory[addr++] = data;
     }}
     for (int i = 0; i < 1000000; i++) {{
         tb->clock = 0; tb->eval();
