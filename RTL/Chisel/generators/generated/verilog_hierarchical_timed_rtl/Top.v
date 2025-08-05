@@ -3,7 +3,9 @@
 // verilator lint_off WIDTHEXPAND
 // verilator lint_off CASEINCOMPLETE
 
-module Top(
+module Top #(
+    parameter MEMORY_SIZE = 65536  // Default 256KB (64K words), configurable
+)(
     input wire clock,
     input wire reset,
     output reg trap
@@ -13,8 +15,8 @@ module Top(
 reg [31:0] pc;
 reg [31:0] registers [0:31];
 
-// 64KiB data memory, exposed to the Verilator harness:
-reg [31:0] memory [0:16383];
+// Parameterized data memory, exposed to the Verilator harness:
+reg [31:0] memory [0:MEMORY_SIZE-1];
 
 // Instruction word and next-PC logic
 reg [31:0] instruction;
@@ -48,10 +50,18 @@ integer i;
 // Add string variable for memory file
 reg [8*256:1] memfile;
 
+// Calculate memory address bounds based on parameter
+wire [31:0] memory_base = 32'h8000_0000;
+wire [31:0] memory_top = memory_base + (MEMORY_SIZE << 2); // MEMORY_SIZE * 4 bytes
+
 // Reset/initialization
 initial begin
-    pc = 32'h8000_0000;
+    pc = memory_base;
     trap = 1'b0;
+    
+    // Display memory configuration
+    $display("Memory configuration: %0d words (%0d KB) from 0x%08x to 0x%08x", 
+             MEMORY_SIZE, (MEMORY_SIZE * 4) / 1024, memory_base, memory_top - 1);
     
     // Check for memory file parameter
     if ($test$plusargs("MEMFILE")) begin
@@ -60,19 +70,23 @@ initial begin
         $display("Loaded memory from file: %s", memfile);
     end else begin
         // Initialize memory to zero if no file provided
-        for (i = 0; i < 16384; i = i + 1) memory[i] = 32'h0;
+        for (i = 0; i < MEMORY_SIZE; i = i + 1) memory[i] = 32'h0;
     end
     
     // Initialize registers
     for (i = 0; i < 32; i = i + 1) registers[i] = 32'h0;
 end
 
-// FETCH stage
+// FETCH stage with bounds checking
 always @(*) begin
-    if (pc >= 32'h8000_0000 && pc < 32'h8001_0000)
-        instruction = memory[(pc - 32'h8000_0000) >> 2];
-    else
-        instruction = 32'h00000013; // NOP
+    if (pc >= memory_base && pc < memory_top) begin
+        instruction = memory[(pc - memory_base) >> 2];
+    end else begin
+        instruction = 32'h00000013; // NOP for out-of-bounds access
+        if (pc != memory_base) // Don't warn on initial PC
+            $display("Warning: PC 0x%08x is outside memory bounds [0x%08x, 0x%08x)", 
+                     pc, memory_base, memory_top - 1);
+    end
 end
 
 // READ register file
@@ -146,13 +160,15 @@ always @(*) begin
             reg_write = (rd != 0);
         end
         
-        7'b0000011: begin // Load
+        7'b0000011: begin // Load with bounds checking
             reg_write = (rd != 0);
             mem_read = 1;
-            if (mem_addr >= 32'h8000_0000 && mem_addr < 32'h8001_0000)
-                write_data = memory[(mem_addr - 32'h8000_0000)>>2];
-            else
+            if (mem_addr >= memory_base && mem_addr < memory_top) begin
+                write_data = memory[(mem_addr - memory_base) >> 2];
+            end else begin
                 write_data = 0;
+                $display("Warning: Load from address 0x%08x is outside memory bounds", mem_addr);
+            end
         end
         
         7'b0100011: mem_write = 1; // Store
@@ -186,7 +202,7 @@ end
 // SEQUENTIAL - PC update, writes, EBREAK-trap
 always @(posedge clock) begin
     if (reset) begin
-        pc <= 32'h8000_0000;
+        pc <= memory_base;
         trap <= 1'b0;
         for (i = 0; i < 32; i = i + 1) registers[i] <= 32'h0;
     end else begin
@@ -196,9 +212,14 @@ always @(posedge clock) begin
         if (reg_write && rd != 0)
             registers[rd] <= write_data;
         
-        // Memory write
-        if (mem_write && mem_addr >= 32'h8000_0000 && mem_addr < 32'h8001_0000)
-            memory[(mem_addr - 32'h8000_0000)>>2] <= mem_wdata;
+        // Memory write with bounds checking
+        if (mem_write) begin
+            if (mem_addr >= memory_base && mem_addr < memory_top) begin
+                memory[(mem_addr - memory_base) >> 2] <= mem_wdata;
+            end else begin
+                $display("Warning: Store to address 0x%08x is outside memory bounds", mem_addr);
+            end
+        end
         
         // EBREAK detection
         if (instruction == 32'h00100073)

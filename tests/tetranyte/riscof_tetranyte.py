@@ -174,11 +174,12 @@ int main(int argc, char **argv) {{
             mem = os.path.splitext(elf)[0] + ".mem"
             print(f"[tetranyte] expected .mem = {mem}")
 
-            # objcopy -> .mem
+            # objcopy -> .mem with relative addressing
             objcopy = self.prefix + "objcopy"
             try:
+                # Use objcopy to create hex file with relative addressing
                 cp = subprocess.run(
-                    [objcopy, "-O", "verilog", elf, mem],
+                    [objcopy, "-O", "verilog", "--change-addresses", "-0x80000000", elf, mem],
                     check=False,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
@@ -187,7 +188,35 @@ int main(int argc, char **argv) {{
                 )
                 print(f"[tetranyte] objcopy stdout:\\n{cp.stdout}")
                 print(f"[tetranyte] objcopy stderr:\\n{cp.stderr}")
+                
+                if cp.returncode != 0:
+                    print(f"[tetranyte] objcopy failed with return code {cp.returncode}")
+                    # Fallback: try without change-addresses
+                    print("[tetranyte] Trying fallback objcopy without address change...")
+                    cp = subprocess.run(
+                        [objcopy, "-O", "verilog", elf, mem],
+                        check=False,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
+                        env=self.env,
+                        text=True
+                    )
+                    print(f"[tetranyte] fallback objcopy stdout:\\n{cp.stdout}")
+                    print(f"[tetranyte] fallback objcopy stderr:\\n{cp.stderr}")
+                
                 cp.check_returncode()
+                
+                # Check if the file was created and show first few lines
+                if os.path.exists(mem):
+                    print(f"[tetranyte] Memory file created successfully")
+                    with open(mem, 'r') as f:
+                        first_lines = [f.readline().strip() for _ in range(3)]
+                    print(f"[tetranyte] First 3 lines of {mem}:")
+                    for i, line in enumerate(first_lines):
+                        print(f"[tetranyte]   {i+1}: {line}")
+                else:
+                    print(f"[tetranyte] ERROR: Memory file {mem} was not created!")
+                    
             except Exception as e:
                 print(f"[tetranyte] FAILED to objcopy: {e}")
                 traceback.print_exc()
