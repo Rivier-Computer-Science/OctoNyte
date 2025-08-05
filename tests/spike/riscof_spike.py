@@ -43,7 +43,7 @@ class spike(pluginTemplate):
             logger.error('Please install Executable for DUTNAME to proceed further')
             raise SystemExit(1)
         self.work_dir = work_dir
-
+        self.archtest_env = archtest_env
         #TODO: The following assumes you are using the riscv-gcc toolchain. If
         #      not please change appropriately
         self.objdump_cmd = 'riscv{1}-unknown-elf-objdump -D {0} > {2};'
@@ -51,8 +51,7 @@ class spike(pluginTemplate):
          -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles\
          -T '+self.pluginpath+'/env/link.ld\
          -I '+self.pluginpath+'/env/\
-         -I ' + archtest_env
-
+         -I '+self.archtest_env+' '
         # set all the necessary variables like compile command, elf2hex
         # commands, objdump cmds. etc whichever you feel necessary and required
         # for your plugin.
@@ -98,13 +97,19 @@ class spike(pluginTemplate):
             #TODO: we are using -D to enable compile time macros. If your
             #      toolchain is not riscv-gcc you may want to change the below code
             compile_cmd = cmd + ' -D' + " -D".join(testentry['macros'])
+            print(f"[spike] Compile command: {compile_cmd}")
             execute+=compile_cmd+";"
 
-            execute += self.objdump_cmd.format(elf, self.xlen, 'ref.disass')
+            objdump_cmd = self.objdump_cmd.format(elf, self.xlen, 'ref.disass')
+            print(f"[spike] Objdump command: {objdump_cmd}")
+            execute += objdump_cmd
             sig_file = os.path.join(test_dir, self.name[:-1] + ".signature")
 
-            execute += self.ref_exe + ' --isa=' + testentry['isa'].lower() + ' ' + elf + ' > ' + sig_file + ';'
-
+            #TODO: You will need to add any other arguments to your DUT
+            #      executable if any in the quotes below
+            spike_cmd = self.ref_exe + ' --isa=' + testentry['isa'].lower() + ' --instructions=10000 ' + elf + ' > ' + sig_file + ';'
+            print(f"[spike] Spike command: {spike_cmd}")
+            execute += spike_cmd
 
             #TODO: The following is useful only if your reference model can
             #      support coverage extraction from riscv-isac. Else leave it
@@ -123,6 +128,6 @@ class spike(pluginTemplate):
             #else:
             #    coverage_cmd = ''
             #execute+=coverage_cmd
-
+            print(f"[spike] Full execute command: {execute}")
             make.add_target(execute)
         make.execute_all(self.work_dir)

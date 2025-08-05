@@ -170,26 +170,35 @@ git -C external/riscv-arch-test checkout
 git submodule update --init --recursive tests/external/riscv-arch-test
 ```
 
-### Run RISC-V Signatures
+### Initialize RISC-V Single ADD Test and Check Config Files
 
 ```bash
 cd tests
-export CC=riscv64-linux-gnu-gcc
+riscof setup --dutname=tetranyte --refname=spike 
 riscof validateyaml --config=riscof_cfg/ref.yaml
-riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/ --env=external/riscv-arch-test/riscv-test-suite/env
+echo "addi-01" > single_tests.txt
+riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env
+cd riscof_work
+# Edit testfile.yaml and leave a single add testcase
 ```
 
+#### Run the ADD test
 
+```bash
+riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser
+```
+
+#### 
 
 ### Run the Verilog RTL tests on a Subset
 
-#### Generate the list of tests to be run:
+#### Generate the full list of RV32I tests to be run:
 
 ```bash
-riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/ --env=external/riscv-arch-test/riscv-test-suite/env
+riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env
 ```
 
-#### Run a small subset
+#### Run the RV32I full test suite
 
 ```bash
 riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser
