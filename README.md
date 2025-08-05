@@ -176,32 +176,44 @@ git submodule update --init --recursive tests/external/riscv-arch-test
 cd tests
 riscof setup --dutname=tetranyte --refname=spike 
 riscof validateyaml --config=riscof_cfg/ref.yaml
-echo "addi-01" > single_tests.txt
+
 riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env
-cd riscof_work
-# Edit testfile.yaml and leave a single add testcase
+cp riscof_work/test_list.yaml .
+# Edit test_list.yaml and leave a single add testcase
 ```
 
-#### Run the ADD test
+#### Run the ADD test only in spike
+
+Note: this assumes riscof testlist has been run
 
 ```bash
-riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser
+riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser --testfile ./test_list.yaml --no-dut-run
+```
+
+#### Run ADD test on Verilog Top.v
+
+note: this assume --no-dut-run completed and you have spike signature files
+
+```bash
+riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser --testfile ./test_list.yaml --no-ref-run
 ```
 
 #### 
 
-### Run the Verilog RTL tests on a Subset
+### Run Full Verification
 
 #### Generate the full list of RV32I tests to be run:
 
 ```bash
+rm -rf riscof_work/
+
 riscof testlist --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env
 ```
 
 #### Run the RV32I full test suite
 
 ```bash
-riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser
+riscof run --config=config.ini --suite=external/riscv-arch-test/riscv-test-suite/rv32i_m/I/ --env=external/riscv-arch-test/riscv-test-suite/env --no-browser testfile ./riscof_work/test_list.yaml
 ```
 
 #### Check the Result

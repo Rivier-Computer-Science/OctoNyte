@@ -174,12 +174,13 @@ int main(int argc, char **argv) {{
             mem = os.path.splitext(elf)[0] + ".mem"
             print(f"[tetranyte] expected .mem = {mem}")
 
-            # objcopy -> .mem with relative addressing
+            # objcopy -> .mem with relative addressing (pure hex format)
             objcopy = self.prefix + "objcopy"
             try:
-                # Use objcopy to create hex file with relative addressing
+                # First create binary file with relative addressing
+                bin_file = os.path.splitext(elf)[0] + ".bin"
                 cp = subprocess.run(
-                    [objcopy, "-O", "verilog", "--change-addresses", "-0x80000000", elf, mem],
+                    [objcopy, "-O", "binary", "--change-addresses", "-0x80000000", elf, bin_file],
                     check=False,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
@@ -189,12 +190,34 @@ int main(int argc, char **argv) {{
                 print(f"[tetranyte] objcopy stdout:\\n{cp.stdout}")
                 print(f"[tetranyte] objcopy stderr:\\n{cp.stderr}")
                 
-                if cp.returncode != 0:
+                if cp.returncode == 0 and os.path.exists(bin_file):
+                    # Convert binary to pure hex format (no address directives)
+                    with open(bin_file, 'rb') as f:
+                        binary_data = f.read()
+                    
+                    with open(mem, 'w') as f:
+                        # Write hex data in 32-bit words (little endian)
+                        for i in range(0, len(binary_data), 4):
+                            if i + 4 <= len(binary_data):
+                                # Read 4 bytes and convert to 32-bit hex (little endian)
+                                word = binary_data[i:i+4]
+                                if len(word) == 4:
+                                    hex_word = f"{word[3]:02x}{word[2]:02x}{word[1]:02x}{word[0]:02x}"
+                                    f.write(hex_word + '\n')
+                            else:
+                                # Handle partial word at end
+                                word = binary_data[i:] + b'\x00' * (4 - (len(binary_data) - i))
+                                hex_word = f"{word[3]:02x}{word[2]:02x}{word[1]:02x}{word[0]:02x}"
+                                f.write(hex_word + '\n')
+                    
+                    print("[tetranyte] Memory file created successfully (pure hex format)")
+                    os.remove(bin_file)  # Clean up binary file
+                else:
                     print(f"[tetranyte] objcopy failed with return code {cp.returncode}")
                     # Fallback: try without change-addresses
                     print("[tetranyte] Trying fallback objcopy without address change...")
                     cp = subprocess.run(
-                        [objcopy, "-O", "verilog", elf, mem],
+                        [objcopy, "-O", "binary", elf, bin_file],
                         check=False,
                         stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE,
