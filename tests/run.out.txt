@@ -1,0 +1,2405 @@
+[32m    INFO[0m | [32m****** RISCOF: RISC-V Architectural Test Framework 1.25.3 *******[0m
+[32m    INFO[0m | [32musing riscv_isac version : 0.18.0[0m
+[32m    INFO[0m | [32musing riscv_config version : 3.20.0[0m
+[32m    INFO[0m | [32mReading configuration from: /home/octonyte/OctoNyte/tests/config.ini[0m
+[32m    INFO[0m | [32mPreparing Models[0m
+[32m    INFO[0m | [32mRunning Build for DUT[0m
+make: Entering directory '/home/octonyte/OctoNyte/tests/riscof_work/obj_dir/obj_dir'
+g++  -I.  -MMD -I/opt/oss-cad-suite/share/verilator/include -I/opt/oss-cad-suite/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o main.o /home/octonyte/OctoNyte/tests/riscof_work/obj_dir/main.cpp
+g++    main.o verilated.o verilated_dpi.o verilated_threads.o VTop__ALL.a    -pthread -lpthread -latomic   -o VTop
+make: Leaving directory '/home/octonyte/OctoNyte/tests/riscof_work/obj_dir/obj_dir'
+- V e r i l a t i o n   R e p o r t: Verilator 5.033 devel rev v5.032-74-gfbe8439eb
+- Verilator: Built from 0.000 MB sources in 0 modules, into 0.000 MB in 0 C++ files needing 0.000 MB
+- Verilator: Walltime 1.110 s (elab=0.000, cvt=0.000, bld=1.109); cpu 0.001 s on 1 threads; alloced 0.668 MB
+[32m    INFO[0m | [32mRunning Tests on DUT.[0m
+[tetranyte] initialise called
+  suite    = /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I
+  work_dir = /home/octonyte/OctoNyte/tests/riscof_work
+  env      = /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/env
+  isa_spec = tetranyte/tetranyte_isa.yaml
+  pspec    = tetranyte/tetranyte_platform.yaml
+[tetranyte] build:
+  isa_spec      = /home/octonyte/OctoNyte/tests/riscof_work/tetranyte_isa_checked.yaml
+  platform_spec = /home/octonyte/OctoNyte/tests/riscof_work/tetranyte_platform_checked.yaml
+  verilog file  = ../../../RTL/Chisel/generators/generated/verilog_hierarchical_timed_rtl/Top.v
+  top module    = Top
+[tetranyte] running: verilator --cc ../../../RTL/Chisel/generators/generated/verilog_hierarchical_timed_rtl/Top.v --public-flat-rw --exe --build /home/octonyte/OctoNyte/tests/riscof_work/obj_dir/main.cpp in /home/octonyte/OctoNyte/tests/riscof_work/obj_dir
+[tetranyte] simulator binary at /home/octonyte/OctoNyte/tests/riscof_work/obj_dir/obj_dir/VTop
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/add-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/add-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/add-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/add-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/add-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                               /home/octonyte/OctoNyte/tests/riscof_work/src/add-01.S/ref/ref.mem
+Warning: Store to address 0xfffff58a is outside memory bounds
+Warning: Store to address 0xfffff58e is outside memory bounds
+Warning: Store to address 0xfffff592 is outside memory bounds
+Warning: Store to address 0xfffff596 is outside memory bounds
+Warning: Store to address 0xfffff59a is outside memory bounds
+Warning: Store to address 0xfffff59e is outside memory bounds
+Warning: Store to address 0xfffff5a2 is outside memory bounds
+Warning: Store to address 0xfffff5a6 is outside memory bounds
+Warning: Store to address 0xfffff5aa is outside memory bounds
+Warning: Store to address 0xfffff5ae is outside memory bounds
+Warning: Store to address 0xfffff5b2 is outside memory bounds
+Warning: Store to address 0xfffff5b6 is outside memory bounds
+Warning: Store to address 0xfffff5ba is outside memory bounds
+Warning: Store to address 0xfffff5be is outside memory bounds
+Warning: Store to address 0xfffff5c2 is outside memory bounds
+Warning: Store to address 0xfffff5c6 is outside memory bounds
+Warning: Store to address 0xfffffc8b is outside memory bounds
+Warning: Store to address 0xfffffc8f is outside memory bounds
+Warning: Store to address 0xfffffc93 is outside memory bounds
+Warning: Store to address 0xfffffc97 is outside memory bounds
+Warning: Store to address 0xfffffc9b is outside memory bounds
+Warning: Store to address 0xfffffc9f is outside memory bounds
+Warning: Store to address 0xfffffca3 is outside memory bounds
+Warning: Store to address 0xfffffca7 is outside memory bounds
+Warning: Store to address 0xfffffcab is outside memory bounds
+Warning: Store to address 0xfffffcaf is outside memory bounds
+Warning: Store to address 0xfffffcb3 is outside memory bounds
+Warning: Store to address 0xfffffcb7 is outside memory bounds
+Warning: Store to address 0xfffffcbb is outside memory bounds
+Warning: Store to address 0xfffffcbf is outside memory bounds
+Warning: Store to address 0xfffffcc3 is outside memory bounds
+Warning: Store to address 0xfffffcc7 is outside memory bounds
+Warning: Store to address 0xfffffccb is outside memory bounds
+Warning: Store to address 0xfffffccf is outside memory bounds
+Warning: Store to address 0xfffffcd3 is outside memory bounds
+Warning: Store to address 0xfffffcd7 is outside memory bounds
+Warning: Store to address 0xfffffcdb is outside memory bounds
+Warning: Store to address 0xfffffcdf is outside memory bounds
+Warning: Store to address 0xfffffce3 is outside memory bounds
+Warning: Store to address 0xfffffce7 is outside memory bounds
+Warning: Store to address 0xfffffceb is outside memory bounds
+Warning: Store to address 0xfffffcef is outside memory bounds
+Warning: Store to address 0xfffffcf3 is outside memory bounds
+Warning: Store to address 0xfffffcf7 is outside memory bounds
+Warning: Store to address 0xfffffcfb is outside memory bounds
+Warning: Store to address 0xfffffcff is outside memory bounds
+Warning: Store to address 0xfffffd03 is outside memory bounds
+Warning: Store to address 0xfffffd07 is outside memory bounds
+Warning: Store to address 0xfffffd0b is outside memory bounds
+Warning: Store to address 0xfffffd0f is outside memory bounds
+Warning: Store to address 0xfffffd13 is outside memory bounds
+Warning: Store to address 0xfffffd17 is outside memory bounds
+Warning: Store to address 0xfffffd1b is outside memory bounds
+Warning: Store to address 0xfffffd1f is outside memory bounds
+Warning: Store to address 0xfffffd23 is outside memory bounds
+Warning: Store to address 0xfffffd27 is outside memory bounds
+Warning: Store to address 0xfffffd2b is outside memory bounds
+Warning: Store to address 0xfffffd2f is outside memory bounds
+Warning: Store to address 0xfffffd33 is outside memory bounds
+Warning: Store to address 0xfffffd37 is outside memory bounds
+Warning: Store to address 0xfffffd3b is outside memory bounds
+Warning: Store to address 0xfffffd3f is outside memory bounds
+Warning: Store to address 0xfffffd43 is outside memory bounds
+Warning: Store to address 0xfffffd47 is outside memory bounds
+Warning: Store to address 0xfffffd4b is outside memory bounds
+Warning: Store to address 0xfffffd4f is outside memory bounds
+Warning: Store to address 0xfffffd53 is outside memory bounds
+Warning: Store to address 0xfffffd57 is outside memory bounds
+Warning: Store to address 0xfffffd5b is outside memory bounds
+Warning: Store to address 0xfffffd5f is outside memory bounds
+Warning: Store to address 0xfffffd63 is outside memory bounds
+Warning: Store to address 0xfffffd67 is outside memory bounds
+Warning: Store to address 0xfffffd6b is outside memory bounds
+Warning: Store to address 0xfffffd6f is outside memory bounds
+Warning: Store to address 0xfffffd73 is outside memory bounds
+Warning: Store to address 0xfffffd77 is outside memory bounds
+Warning: Store to address 0xfffffd7b is outside memory bounds
+Warning: Store to address 0xfffffd7f is outside memory bounds
+Warning: Store to address 0xfffffd83 is outside memory bounds
+Warning: Store to address 0xfffffd87 is outside memory bounds
+Warning: Store to address 0xfffffd8b is outside memory bounds
+Warning: Store to address 0xfffffd8f is outside memory bounds
+Warning: Store to address 0xfffffd93 is outside memory bounds
+Warning: Store to address 0xfffffd97 is outside memory bounds
+Warning: Store to address 0xfffffd9b is outside memory bounds
+Warning: Store to address 0xfffffd9f is outside memory bounds
+Warning: Store to address 0xfffffda3 is outside memory bounds
+Warning: Store to address 0xfffffda7 is outside memory bounds
+Warning: Store to address 0xfffffdab is outside memory bounds
+Warning: Store to address 0xfffffdaf is outside memory bounds
+Warning: Store to address 0xfffffdb3 is outside memory bounds
+Warning: Store to address 0xfffffdb7 is outside memory bounds
+Warning: Store to address 0xfffffdbb is outside memory bounds
+Warning: Store to address 0xfffffdbf is outside memory bounds
+Warning: Store to address 0xfffffdc3 is outside memory bounds
+Warning: Store to address 0xfffffdc7 is outside memory bounds
+Warning: Store to address 0xfffffdcb is outside memory bounds
+Warning: Store to address 0xfffffdcf is outside memory bounds
+Warning: Store to address 0xfffffdd3 is outside memory bounds
+Warning: Store to address 0xfffffdd7 is outside memory bounds
+Warning: Store to address 0xfffffddb is outside memory bounds
+Warning: Store to address 0xfffffddf is outside memory bounds
+Warning: Store to address 0xfffffde3 is outside memory bounds
+Warning: Store to address 0xfffffde7 is outside memory bounds
+Warning: Store to address 0xfffffdeb is outside memory bounds
+Warning: Store to address 0xfffffdef is outside memory bounds
+Warning: Store to address 0xfffffdf3 is outside memory bounds
+Warning: Store to address 0xfffffdf7 is outside memory bounds
+Warning: Store to address 0xfffffdfb is outside memory bounds
+Warning: Store to address 0xfffffdff is outside memory bounds
+Warning: Store to address 0xfffffe03 is outside memory bounds
+Warning: Store to address 0xfffffe07 is outside memory bounds
+Warning: Store to address 0xfffffe0b is outside memory bounds
+Warning: Store to address 0xfffffe0f is outside memory bounds
+Warning: Store to address 0xfffffe13 is outside memory bounds
+Warning: Store to address 0xfffffe17 is outside memory bounds
+Warning: Store to address 0xfffffe1b is outside memory bounds
+Warning: Store to address 0xfffffe1f is outside memory bounds
+Warning: Store to address 0xfffffe23 is outside memory bounds
+Warning: Store to address 0xfffffe27 is outside memory bounds
+Warning: Store to address 0xfffffe2b is outside memory bounds
+Warning: Store to address 0xfffffe2f is outside memory bounds
+Warning: Store to address 0xfffffe33 is outside memory bounds
+Warning: Store to address 0xfffffe37 is outside memory bounds
+Warning: Store to address 0xfffffe3b is outside memory bounds
+Warning: Store to address 0xfffffe3f is outside memory bounds
+Warning: Store to address 0xfffffe43 is outside memory bounds
+Warning: Store to address 0xfffffe47 is outside memory bounds
+Warning: Store to address 0xfffffe4b is outside memory bounds
+Warning: Store to address 0xfffffe4f is outside memory bounds
+Warning: Store to address 0xfffffe53 is outside memory bounds
+Warning: Store to address 0xfffffe57 is outside memory bounds
+Warning: Store to address 0xfffffe5b is outside memory bounds
+Warning: Store to address 0xfffffe5f is outside memory bounds
+Warning: Store to address 0xfffffe63 is outside memory bounds
+Warning: Store to address 0xfffffe67 is outside memory bounds
+Warning: Store to address 0xfffffe6b is outside memory bounds
+Warning: Store to address 0xfffffe6f is outside memory bounds
+Warning: Store to address 0xfffffe73 is outside memory bounds
+Warning: Store to address 0xfffffe77 is outside memory bounds
+Warning: Store to address 0xfffffe7b is outside memory bounds
+Warning: Store to address 0xfffffe7f is outside memory bounds
+Warning: Store to address 0xfffffe83 is outside memory bounds
+Warning: Store to address 0xfffffe87 is outside memory bounds
+Warning: Store to address 0xfffffe8b is outside memory bounds
+Warning: Store to address 0xfffffe8f is outside memory bounds
+Warning: Store to address 0xfffffe93 is outside memory bounds
+Warning: Store to address 0xfffffe97 is outside memory bounds
+Warning: Store to address 0xfffffe9b is outside memory bounds
+Warning: Store to address 0xfffffe9f is outside memory bounds
+Warning: Store to address 0xfffffea3 is outside memory bounds
+Warning: Store to address 0xfffffea7 is outside memory bounds
+Warning: Store to address 0xfffffeab is outside memory bounds
+Warning: Store to address 0xfffffeaf is outside memory bounds
+Warning: Store to address 0xfffffeb3 is outside memory bounds
+Warning: Store to address 0xfffffeb7 is outside memory bounds
+Warning: Store to address 0xfffffebb is outside memory bounds
+Warning: Store to address 0xfffffebf is outside memory bounds
+Warning: Store to address 0xfffffec3 is outside memory bounds
+Warning: Store to address 0xfffffec7 is outside memory bounds
+Warning: Store to address 0xfffffecb is outside memory bounds
+Warning: Store to address 0xfffffecf is outside memory bounds
+Warning: Store to address 0xfffffed3 is outside memory bounds
+Warning: Store to address 0xfffffed7 is outside memory bounds
+Warning: Store to address 0xfffffedb is outside memory bounds
+Warning: Store to address 0xfffffedf is outside memory bounds
+Warning: Store to address 0xfffffee3 is outside memory bounds
+Warning: Store to address 0xfffffee7 is outside memory bounds
+Warning: Store to address 0xfffffeeb is outside memory bounds
+Warning: Store to address 0xfffffeef is outside memory bounds
+Warning: Store to address 0xfffffef3 is outside memory bounds
+Warning: Store to address 0xfffffef7 is outside memory bounds
+Warning: Store to address 0xfffffefb is outside memory bounds
+Warning: Store to address 0xfffffeff is outside memory bounds
+Warning: Store to address 0xffffff03 is outside memory bounds
+Warning: Store to address 0xffffff07 is outside memory bounds
+Warning: Store to address 0xffffff0b is outside memory bounds
+Warning: Store to address 0xffffff0f is outside memory bounds
+Warning: Store to address 0xffffff13 is outside memory bounds
+Warning: Store to address 0xffffff17 is outside memory bounds
+Warning: Store to address 0xffffff1b is outside memory bounds
+Warning: Store to address 0xffffff1f is outside memory bounds
+Warning: Store to address 0xffffff23 is outside memory bounds
+Warning: Store to address 0xffffff27 is outside memory bounds
+Warning: Store to address 0xffffff2b is outside memory bounds
+Warning: Store to address 0xffffff2f is outside memory bounds
+Warning: Store to address 0xffffff33 is outside memory bounds
+Warning: Store to address 0xffffff37 is outside memory bounds
+Warning: Store to address 0xffffff3b is outside memory bounds
+Warning: Store to address 0xffffff3f is outside memory bounds
+Warning: Store to address 0xffffff43 is outside memory bounds
+Warning: Store to address 0xffffff47 is outside memory bounds
+Warning: Store to address 0xffffff4b is outside memory bounds
+Warning: Store to address 0xffffff4f is outside memory bounds
+Warning: Store to address 0xffffff53 is outside memory bounds
+Warning: Store to address 0xffffff57 is outside memory bounds
+Warning: Store to address 0xffffff5b is outside memory bounds
+Warning: Store to address 0xffffff5f is outside memory bounds
+Warning: Store to address 0xffffff63 is outside memory bounds
+Warning: Store to address 0xffffff67 is outside memory bounds
+Warning: Store to address 0xffffff6b is outside memory bounds
+Warning: Store to address 0xffffff6f is outside memory bounds
+Warning: Store to address 0xffffff73 is outside memory bounds
+Warning: Store to address 0xffffff77 is outside memory bounds
+Warning: Store to address 0xffffff7b is outside memory bounds
+Warning: Store to address 0xffffff7f is outside memory bounds
+Warning: Store to address 0xffffff83 is outside memory bounds
+Warning: Store to address 0xffffff87 is outside memory bounds
+Warning: Store to address 0xffffff8b is outside memory bounds
+Warning: Store to address 0xffffff8f is outside memory bounds
+Warning: Store to address 0xffffff93 is outside memory bounds
+Warning: Store to address 0xffffff97 is outside memory bounds
+Warning: Store to address 0xffffff9b is outside memory bounds
+Warning: Store to address 0xffffff9f is outside memory bounds
+Warning: Store to address 0xffffffa3 is outside memory bounds
+Warning: Store to address 0xffffffa7 is outside memory bounds
+Warning: Store to address 0xffffffab is outside memory bounds
+Warning: Store to address 0xffffffaf is outside memory bounds
+Warning: Store to address 0xffffffb3 is outside memory bounds
+Warning: Store to address 0xffffffb7 is outside memory bounds
+Warning: Store to address 0xffffffbb is outside memory bounds
+Warning: Store to address 0xffffffbf is outside memory bounds
+Warning: Store to address 0xffffffc3 is outside memory bounds
+Warning: Store to address 0xffffffc7 is outside memory bounds
+Warning: Store to address 0xffffffcb is outside memory bounds
+Warning: Store to address 0xffffffcf is outside memory bounds
+Warning: Store to address 0xffffffd3 is outside memory bounds
+Warning: Store to address 0xffffffd7 is outside memory bounds
+Warning: Store to address 0xffffffdb is outside memory bounds
+Warning: Store to address 0xffffffdf is outside memory bounds
+Warning: Store to address 0xffffffe3 is outside memory bounds
+Warning: Store to address 0xffffffe7 is outside memory bounds
+Warning: Store to address 0xffffffeb is outside memory bounds
+Warning: Store to address 0xffffffef is outside memory bounds
+Warning: Store to address 0xfffffff3 is outside memory bounds
+Warning: Store to address 0xfffffff7 is outside memory bounds
+Warning: Store to address 0xfffffffb is outside memory bounds
+Warning: Store to address 0xffffffff is outside memory bounds
+Warning: Store to address 0xfffff5f3 is outside memory bounds
+Warning: Store to address 0xfffff5f7 is outside memory bounds
+Warning: Store to address 0xfffff5fb is outside memory bounds
+Warning: Store to address 0xfffff5ff is outside memory bounds
+Warning: Store to address 0xfffff603 is outside memory bounds
+Warning: Store to address 0xfffff607 is outside memory bounds
+Warning: Store to address 0xfffff60b is outside memory bounds
+Warning: Store to address 0xfffff60f is outside memory bounds
+Warning: Store to address 0xfffff613 is outside memory bounds
+Warning: Store to address 0xfffff617 is outside memory bounds
+Warning: Store to address 0xfffff61b is outside memory bounds
+Warning: Store to address 0xfffff61f is outside memory bounds
+Warning: Store to address 0xfffff623 is outside memory bounds
+Warning: Store to address 0xfffff627 is outside memory bounds
+Warning: Store to address 0xfffff62b is outside memory bounds
+Warning: Store to address 0xfffff62f is outside memory bounds
+Warning: Store to address 0xfffff633 is outside memory bounds
+Warning: Store to address 0xfffff637 is outside memory bounds
+Warning: Store to address 0xfffff63b is outside memory bounds
+Warning: Store to address 0xfffff63f is outside memory bounds
+Warning: Store to address 0xfffff643 is outside memory bounds
+Warning: Store to address 0xfffff647 is outside memory bounds
+Warning: Store to address 0xfffff64b is outside memory bounds
+Warning: Store to address 0xfffff64f is outside memory bounds
+Warning: Store to address 0xfffff653 is outside memory bounds
+Warning: Store to address 0xfffff657 is outside memory bounds
+Warning: Store to address 0xfffff65b is outside memory bounds
+Warning: Store to address 0xfffff65f is outside memory bounds
+Warning: Store to address 0xfffff663 is outside memory bounds
+Warning: Store to address 0xfffff667 is outside memory bounds
+Warning: Store to address 0xfffff66b is outside memory bounds
+Warning: Store to address 0xfffff66f is outside memory bounds
+Warning: Store to address 0xfffff673 is outside memory bounds
+Warning: Store to address 0xfffff677 is outside memory bounds
+Warning: Store to address 0xfffff67b is outside memory bounds
+Warning: Store to address 0xfffff67f is outside memory bounds
+Warning: Store to address 0xfffff683 is outside memory bounds
+Warning: Store to address 0xfffff687 is outside memory bounds
+Warning: Store to address 0xfffff68b is outside memory bounds
+Warning: Store to address 0xfffff68f is outside memory bounds
+Warning: Store to address 0xfffff693 is outside memory bounds
+Warning: Store to address 0xfffff697 is outside memory bounds
+Warning: Store to address 0xfffff69b is outside memory bounds
+Warning: Store to address 0x3ffffce3 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/addi-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/addi-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/addi-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/addi-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/addi-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/addi-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                              /home/octonyte/OctoNyte/tests/riscof_work/src/addi-01.S/ref/ref.mem
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0x7ffffdaa is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/and-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/and-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/and-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/and-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/and-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/and-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                               /home/octonyte/OctoNyte/tests/riscof_work/src/and-01.S/ref/ref.mem
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffd70 is outside memory bounds
+Warning: Store to address 0xfffffd74 is outside memory bounds
+Warning: Store to address 0xfffffd78 is outside memory bounds
+Warning: Store to address 0xfffffd7c is outside memory bounds
+Warning: Store to address 0xfffffd80 is outside memory bounds
+Warning: Store to address 0xfffffd84 is outside memory bounds
+Warning: Store to address 0xfffffd88 is outside memory bounds
+Warning: Store to address 0xfffffd8c is outside memory bounds
+Warning: Store to address 0xfffffd90 is outside memory bounds
+Warning: Store to address 0xfffffd94 is outside memory bounds
+Warning: Store to address 0xfffffd98 is outside memory bounds
+Warning: Store to address 0xfffffd9c is outside memory bounds
+Warning: Store to address 0xfffffda0 is outside memory bounds
+Warning: Store to address 0xfffffda4 is outside memory bounds
+Warning: Store to address 0xfffffda8 is outside memory bounds
+Warning: Store to address 0xfffffdac is outside memory bounds
+Warning: Store to address 0xfffffdb0 is outside memory bounds
+Warning: Store to address 0xfffffdb4 is outside memory bounds
+Warning: Store to address 0xfffffdb8 is outside memory bounds
+Warning: Store to address 0xfffffdbc is outside memory bounds
+Warning: Store to address 0xfffffdc0 is outside memory bounds
+Warning: Store to address 0xfffffdc4 is outside memory bounds
+Warning: Store to address 0xfffffdc8 is outside memory bounds
+Warning: Store to address 0xfffffdcc is outside memory bounds
+Warning: Store to address 0xfffffdd0 is outside memory bounds
+Warning: Store to address 0xfffffdd4 is outside memory bounds
+Warning: Store to address 0xfffffdd8 is outside memory bounds
+Warning: Store to address 0xfffffddc is outside memory bounds
+Warning: Store to address 0xfffffde0 is outside memory bounds
+Warning: Store to address 0xfffffde4 is outside memory bounds
+Warning: Store to address 0xfffffde8 is outside memory bounds
+Warning: Store to address 0xfffffdec is outside memory bounds
+Warning: Store to address 0xfffffdf0 is outside memory bounds
+Warning: Store to address 0xfffffdf4 is outside memory bounds
+Warning: Store to address 0xfffffdf8 is outside memory bounds
+Warning: Store to address 0xfffffdfc is outside memory bounds
+Warning: Store to address 0xfffffe00 is outside memory bounds
+Warning: Store to address 0xfffffe04 is outside memory bounds
+Warning: Store to address 0xfffffe08 is outside memory bounds
+Warning: Store to address 0xfffffe0c is outside memory bounds
+Warning: Store to address 0xfffffe10 is outside memory bounds
+Warning: Store to address 0xfffffe14 is outside memory bounds
+Warning: Store to address 0xfffffe18 is outside memory bounds
+Warning: Store to address 0xfffffe1c is outside memory bounds
+Warning: Store to address 0xfffffe20 is outside memory bounds
+Warning: Store to address 0xfffffe24 is outside memory bounds
+Warning: Store to address 0xfffffe28 is outside memory bounds
+Warning: Store to address 0xfffffe2c is outside memory bounds
+Warning: Store to address 0xfffffe30 is outside memory bounds
+Warning: Store to address 0xfffffe34 is outside memory bounds
+Warning: Store to address 0xfffffe38 is outside memory bounds
+Warning: Store to address 0xfffffe3c is outside memory bounds
+Warning: Store to address 0xfffffe40 is outside memory bounds
+Warning: Store to address 0xfffffe44 is outside memory bounds
+Warning: Store to address 0xfffffe48 is outside memory bounds
+Warning: Store to address 0xfffffe4c is outside memory bounds
+Warning: Store to address 0xfffffe50 is outside memory bounds
+Warning: Store to address 0xfffffe54 is outside memory bounds
+Warning: Store to address 0xfffffe58 is outside memory bounds
+Warning: Store to address 0xfffffe5c is outside memory bounds
+Warning: Store to address 0xfffffe60 is outside memory bounds
+Warning: Store to address 0xfffffe64 is outside memory bounds
+Warning: Store to address 0xfffffe68 is outside memory bounds
+Warning: Store to address 0xfffffe6c is outside memory bounds
+Warning: Store to address 0xfffffe70 is outside memory bounds
+Warning: Store to address 0xfffffe74 is outside memory bounds
+Warning: Store to address 0xfffffe78 is outside memory bounds
+Warning: Store to address 0xfffffe7c is outside memory bounds
+Warning: Store to address 0xfffffe80 is outside memory bounds
+Warning: Store to address 0xfffffe84 is outside memory bounds
+Warning: Store to address 0xfffffe88 is outside memory bounds
+Warning: Store to address 0xfffffe8c is outside memory bounds
+Warning: Store to address 0xfffffe90 is outside memory bounds
+Warning: Store to address 0xfffffe94 is outside memory bounds
+Warning: Store to address 0xfffffe98 is outside memory bounds
+Warning: Store to address 0xfffffe9c is outside memory bounds
+Warning: Store to address 0xfffffea0 is outside memory bounds
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0xfffffefc is outside memory bounds
+Warning: Store to address 0xffffff00 is outside memory bounds
+Warning: Store to address 0xffffff04 is outside memory bounds
+Warning: Store to address 0xffffff08 is outside memory bounds
+Warning: Store to address 0xffffff0c is outside memory bounds
+Warning: Store to address 0xffffff10 is outside memory bounds
+Warning: Store to address 0xffffff14 is outside memory bounds
+Warning: Store to address 0xffffff18 is outside memory bounds
+Warning: Store to address 0xffffff1c is outside memory bounds
+Warning: Store to address 0xffffff20 is outside memory bounds
+Warning: Store to address 0xffffff24 is outside memory bounds
+Warning: Store to address 0xffffff28 is outside memory bounds
+Warning: Store to address 0xffffff2c is outside memory bounds
+Warning: Store to address 0xffffff30 is outside memory bounds
+Warning: Store to address 0xffffff34 is outside memory bounds
+Warning: Store to address 0xffffff38 is outside memory bounds
+Warning: Store to address 0xffffff3c is outside memory bounds
+Warning: Store to address 0xffffff40 is outside memory bounds
+Warning: Store to address 0xffffff44 is outside memory bounds
+Warning: Store to address 0xffffff48 is outside memory bounds
+Warning: Store to address 0xffffff4c is outside memory bounds
+Warning: Store to address 0xffffff50 is outside memory bounds
+Warning: Store to address 0xffffff54 is outside memory bounds
+Warning: Store to address 0xffffff58 is outside memory bounds
+Warning: Store to address 0xffffff5c is outside memory bounds
+Warning: Store to address 0xffffff60 is outside memory bounds
+Warning: Store to address 0xffffff64 is outside memory bounds
+Warning: Store to address 0xffffff68 is outside memory bounds
+Warning: Store to address 0xffffff6c is outside memory bounds
+Warning: Store to address 0xffffff70 is outside memory bounds
+Warning: Store to address 0xffffff74 is outside memory bounds
+Warning: Store to address 0xffffff78 is outside memory bounds
+Warning: Store to address 0xffffff7c is outside memory bounds
+Warning: Store to address 0xffffff80 is outside memory bounds
+Warning: Store to address 0xffffff84 is outside memory bounds
+Warning: Store to address 0xffffff88 is outside memory bounds
+Warning: Store to address 0xffffff8c is outside memory bounds
+Warning: Store to address 0xffffff90 is outside memory bounds
+Warning: Store to address 0xffffff94 is outside memory bounds
+Warning: Store to address 0xffffff98 is outside memory bounds
+Warning: Store to address 0xffffff9c is outside memory bounds
+Warning: Store to address 0xffffffa0 is outside memory bounds
+Warning: Store to address 0xffffffa4 is outside memory bounds
+Warning: Store to address 0xffffffa8 is outside memory bounds
+Warning: Store to address 0xffffffac is outside memory bounds
+Warning: Store to address 0xffffffb0 is outside memory bounds
+Warning: Store to address 0xffffffb4 is outside memory bounds
+Warning: Store to address 0xffffffb8 is outside memory bounds
+Warning: Store to address 0xffffffbc is outside memory bounds
+Warning: Store to address 0xffffffc0 is outside memory bounds
+Warning: Store to address 0xffffffc4 is outside memory bounds
+Warning: Store to address 0xffffffc8 is outside memory bounds
+Warning: Store to address 0xffffffcc is outside memory bounds
+Warning: Store to address 0xffffffd0 is outside memory bounds
+Warning: Store to address 0xffffffd4 is outside memory bounds
+Warning: Store to address 0xffffffd8 is outside memory bounds
+Warning: Store to address 0xffffffdc is outside memory bounds
+Warning: Store to address 0xffffffe0 is outside memory bounds
+Warning: Store to address 0xffffffe4 is outside memory bounds
+Warning: Store to address 0xffffffe8 is outside memory bounds
+Warning: Store to address 0xffffffec is outside memory bounds
+Warning: Store to address 0xfffffff0 is outside memory bounds
+Warning: Store to address 0xfffffff4 is outside memory bounds
+Warning: Store to address 0xfffffff8 is outside memory bounds
+Warning: Store to address 0xfffffffc is outside memory bounds
+Warning: Store to address 0xfffff820 is outside memory bounds
+Warning: Store to address 0xfffff824 is outside memory bounds
+Warning: Store to address 0xfffff828 is outside memory bounds
+Warning: Store to address 0xfffff82c is outside memory bounds
+Warning: Store to address 0xfffff830 is outside memory bounds
+Warning: Store to address 0xfffff834 is outside memory bounds
+Warning: Store to address 0xfffff838 is outside memory bounds
+Warning: Store to address 0xfffff83c is outside memory bounds
+Warning: Store to address 0xfffff840 is outside memory bounds
+Warning: Store to address 0xfffff844 is outside memory bounds
+Warning: Store to address 0xfffff848 is outside memory bounds
+Warning: Store to address 0xfffff84c is outside memory bounds
+Warning: Store to address 0xfffff850 is outside memory bounds
+Warning: Store to address 0xfffff854 is outside memory bounds
+Warning: Store to address 0xfffff858 is outside memory bounds
+Warning: Store to address 0xfffff85c is outside memory bounds
+Warning: Store to address 0xfffff860 is outside memory bounds
+Warning: Store to address 0xfffff864 is outside memory bounds
+Warning: Store to address 0xfffff868 is outside memory bounds
+Warning: Store to address 0xfffff86c is outside memory bounds
+Warning: Store to address 0xfffff870 is outside memory bounds
+Warning: Store to address 0xfffff874 is outside memory bounds
+Warning: Store to address 0xfffff878 is outside memory bounds
+Warning: Store to address 0xfffff87c is outside memory bounds
+Warning: Store to address 0xfffff880 is outside memory bounds
+Warning: Store to address 0xfffff884 is outside memory bounds
+Warning: Store to address 0xfffff888 is outside memory bounds
+Warning: Store to address 0xfffff88c is outside memory bounds
+Warning: Store to address 0xfffff890 is outside memory bounds
+Warning: Store to address 0xfffff894 is outside memory bounds
+Warning: Store to address 0xfffff898 is outside memory bounds
+Warning: Store to address 0xfffff89c is outside memory bounds
+Warning: Store to address 0xfffff8a0 is outside memory bounds
+Warning: Store to address 0xfffff8a4 is outside memory bounds
+Warning: Store to address 0xfffff8a8 is outside memory bounds
+Warning: Store to address 0xfffff8ac is outside memory bounds
+Warning: Store to address 0xfffff8b0 is outside memory bounds
+Warning: Store to address 0xfffff8b4 is outside memory bounds
+Warning: Store to address 0xfffff8b8 is outside memory bounds
+Warning: Store to address 0xfffff8bc is outside memory bounds
+Warning: Store to address 0xfffff8c0 is outside memory bounds
+Warning: Store to address 0xfffff8c4 is outside memory bounds
+Warning: Store to address 0xfffff8c8 is outside memory bounds
+Warning: Store to address 0xfffff8cc is outside memory bounds
+Warning: Store to address 0xfffff8d0 is outside memory bounds
+Warning: Store to address 0xfffff8d4 is outside memory bounds
+Warning: Store to address 0xfffff8d8 is outside memory bounds
+Warning: Store to address 0xfffff8dc is outside memory bounds
+Warning: Store to address 0xfffff8e0 is outside memory bounds
+Warning: Store to address 0xfffff8e4 is outside memory bounds
+Warning: Store to address 0xfffff8e8 is outside memory bounds
+Warning: Store to address 0xfffff8ec is outside memory bounds
+Warning: Store to address 0xfffff8f0 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/andi-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/andi-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/andi-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/andi-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/andi-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/andi-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                              /home/octonyte/OctoNyte/tests/riscof_work/src/andi-01.S/ref/ref.mem
+Warning: Store to address 0xfffffdb0 is outside memory bounds
+Warning: Store to address 0xfffffdb4 is outside memory bounds
+Warning: Store to address 0xfffffdb8 is outside memory bounds
+Warning: Store to address 0xfffffdbc is outside memory bounds
+Warning: Store to address 0xfffffdc0 is outside memory bounds
+Warning: Store to address 0xfffffdc4 is outside memory bounds
+Warning: Store to address 0xfffffdc8 is outside memory bounds
+Warning: Store to address 0xfffffdcc is outside memory bounds
+Warning: Store to address 0xfffffdd0 is outside memory bounds
+Warning: Store to address 0xfffffdd4 is outside memory bounds
+Warning: Store to address 0xfffffdd8 is outside memory bounds
+Warning: Store to address 0xfffffddc is outside memory bounds
+Warning: Store to address 0xfffffde0 is outside memory bounds
+Warning: Store to address 0xfffffde4 is outside memory bounds
+Warning: Store to address 0xfffffde8 is outside memory bounds
+Warning: Store to address 0xfffffdec is outside memory bounds
+Warning: Store to address 0xfffffdf0 is outside memory bounds
+Warning: Store to address 0xfffffdf4 is outside memory bounds
+Warning: Store to address 0xfffffdf8 is outside memory bounds
+Warning: Store to address 0xfffffdfc is outside memory bounds
+Warning: Store to address 0xfffffe00 is outside memory bounds
+Warning: Store to address 0xfffffe04 is outside memory bounds
+Warning: Store to address 0xfffffe08 is outside memory bounds
+Warning: Store to address 0xfffffe0c is outside memory bounds
+Warning: Store to address 0xfffffe10 is outside memory bounds
+Warning: Store to address 0xfffffe14 is outside memory bounds
+Warning: Store to address 0xfffffe18 is outside memory bounds
+Warning: Store to address 0xfffffe1c is outside memory bounds
+Warning: Store to address 0xfffffe20 is outside memory bounds
+Warning: Store to address 0xfffffe24 is outside memory bounds
+Warning: Store to address 0xfffffe28 is outside memory bounds
+Warning: Store to address 0xfffffe2c is outside memory bounds
+Warning: Store to address 0xfffffe30 is outside memory bounds
+Warning: Store to address 0xfffffe34 is outside memory bounds
+Warning: Store to address 0xfffffe38 is outside memory bounds
+Warning: Store to address 0xfffffe3c is outside memory bounds
+Warning: Store to address 0xfffffe40 is outside memory bounds
+Warning: Store to address 0xfffffe44 is outside memory bounds
+Warning: Store to address 0xfffffe48 is outside memory bounds
+Warning: Store to address 0xfffffe4c is outside memory bounds
+Warning: Store to address 0xfffffe50 is outside memory bounds
+Warning: Store to address 0xfffffe54 is outside memory bounds
+Warning: Store to address 0xfffffe58 is outside memory bounds
+Warning: Store to address 0xfffffe5c is outside memory bounds
+Warning: Store to address 0xfffffe60 is outside memory bounds
+Warning: Store to address 0xfffffe64 is outside memory bounds
+Warning: Store to address 0xfffffe68 is outside memory bounds
+Warning: Store to address 0xfffffe6c is outside memory bounds
+Warning: Store to address 0xfffffe70 is outside memory bounds
+Warning: Store to address 0xfffffe74 is outside memory bounds
+Warning: Store to address 0xfffffe78 is outside memory bounds
+Warning: Store to address 0xfffffe7c is outside memory bounds
+Warning: Store to address 0xfffffe80 is outside memory bounds
+Warning: Store to address 0xfffffe84 is outside memory bounds
+Warning: Store to address 0xfffffe88 is outside memory bounds
+Warning: Store to address 0xfffffe8c is outside memory bounds
+Warning: Store to address 0xfffffe90 is outside memory bounds
+Warning: Store to address 0xfffffe94 is outside memory bounds
+Warning: Store to address 0xfffffe98 is outside memory bounds
+Warning: Store to address 0xfffffe9c is outside memory bounds
+Warning: Store to address 0xfffffea0 is outside memory bounds
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0xfffffefc is outside memory bounds
+Warning: Store to address 0xffffff00 is outside memory bounds
+Warning: Store to address 0xffffff04 is outside memory bounds
+Warning: Store to address 0xffffff08 is outside memory bounds
+Warning: Store to address 0xffffff0c is outside memory bounds
+Warning: Store to address 0xffffff10 is outside memory bounds
+Warning: Store to address 0xffffff14 is outside memory bounds
+Warning: Store to address 0xffffff18 is outside memory bounds
+Warning: Store to address 0xffffff1c is outside memory bounds
+Warning: Store to address 0xffffff20 is outside memory bounds
+Warning: Store to address 0xffffff24 is outside memory bounds
+Warning: Store to address 0xffffff28 is outside memory bounds
+Warning: Store to address 0xffffff2c is outside memory bounds
+Warning: Store to address 0xffffff30 is outside memory bounds
+Warning: Store to address 0xffffff34 is outside memory bounds
+Warning: Store to address 0xffffff38 is outside memory bounds
+Warning: Store to address 0xffffff3c is outside memory bounds
+Warning: Store to address 0xffffff40 is outside memory bounds
+Warning: Store to address 0xffffff44 is outside memory bounds
+Warning: Store to address 0xffffff48 is outside memory bounds
+Warning: Store to address 0xffffff4c is outside memory bounds
+Warning: Store to address 0xffffff50 is outside memory bounds
+Warning: Store to address 0xffffff54 is outside memory bounds
+Warning: Store to address 0xffffff58 is outside memory bounds
+Warning: Store to address 0xffffff5c is outside memory bounds
+Warning: Store to address 0xffffff60 is outside memory bounds
+Warning: Store to address 0xffffff64 is outside memory bounds
+Warning: Store to address 0xffffff68 is outside memory bounds
+Warning: Store to address 0xffffff6c is outside memory bounds
+Warning: Store to address 0xffffff70 is outside memory bounds
+Warning: Store to address 0xffffff74 is outside memory bounds
+Warning: Store to address 0xffffff78 is outside memory bounds
+Warning: Store to address 0xffffff7c is outside memory bounds
+Warning: Store to address 0xffffff80 is outside memory bounds
+Warning: Store to address 0xffffff84 is outside memory bounds
+Warning: Store to address 0xffffff88 is outside memory bounds
+Warning: Store to address 0xffffff8c is outside memory bounds
+Warning: Store to address 0xffffff90 is outside memory bounds
+Warning: Store to address 0xffffff94 is outside memory bounds
+Warning: Store to address 0xffffff98 is outside memory bounds
+Warning: Store to address 0xffffff9c is outside memory bounds
+Warning: Store to address 0xffffffa0 is outside memory bounds
+Warning: Store to address 0xffffffa4 is outside memory bounds
+Warning: Store to address 0xffffffa8 is outside memory bounds
+Warning: Store to address 0xffffffac is outside memory bounds
+Warning: Store to address 0xffffffb0 is outside memory bounds
+Warning: Store to address 0xffffffb4 is outside memory bounds
+Warning: Store to address 0xffffffb8 is outside memory bounds
+Warning: Store to address 0xffffffbc is outside memory bounds
+Warning: Store to address 0xffffffc0 is outside memory bounds
+Warning: Store to address 0xffffffc4 is outside memory bounds
+Warning: Store to address 0xffffffc8 is outside memory bounds
+Warning: Store to address 0xffffffcc is outside memory bounds
+Warning: Store to address 0xffffffd0 is outside memory bounds
+Warning: Store to address 0xffffffd4 is outside memory bounds
+Warning: Store to address 0xffffffd8 is outside memory bounds
+Warning: Store to address 0xffffffdc is outside memory bounds
+Warning: Store to address 0xffffffe0 is outside memory bounds
+Warning: Store to address 0xffffffe4 is outside memory bounds
+Warning: Store to address 0xffffffe8 is outside memory bounds
+Warning: Store to address 0xffffffec is outside memory bounds
+Warning: Store to address 0xfffffff0 is outside memory bounds
+Warning: Store to address 0xfffffff4 is outside memory bounds
+Warning: Store to address 0xfffffff8 is outside memory bounds
+Warning: Store to address 0xfffffffc is outside memory bounds
+Warning: Store to address 0xfffffdd4 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/auipc-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/auipc-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/auipc-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/auipc-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/auipc-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/auipc-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                             /home/octonyte/OctoNyte/tests/riscof_work/src/auipc-01.S/ref/ref.mem
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0xfffffefc is outside memory bounds
+Warning: Store to address 0xffffff00 is outside memory bounds
+Warning: Store to address 0xffffff04 is outside memory bounds
+Warning: Store to address 0xffffff08 is outside memory bounds
+Warning: Store to address 0xffffff0c is outside memory bounds
+Warning: Store to address 0xffffff10 is outside memory bounds
+Warning: Store to address 0xffffff14 is outside memory bounds
+Warning: Store to address 0xfffffad5 is outside memory bounds
+Warning: Store to address 0xfffffad9 is outside memory bounds
+Warning: Store to address 0xfffffadd is outside memory bounds
+Warning: Store to address 0xfffffae1 is outside memory bounds
+Warning: Store to address 0xfffffae5 is outside memory bounds
+Warning: Store to address 0xfffffae9 is outside memory bounds
+Warning: Store to address 0xfffffaed is outside memory bounds
+Warning: Store to address 0xfffffaf1 is outside memory bounds
+Warning: Store to address 0xfffffaf5 is outside memory bounds
+Warning: Store to address 0xfffffaf9 is outside memory bounds
+Warning: Store to address 0xfffffafd is outside memory bounds
+Warning: Store to address 0xfffffb01 is outside memory bounds
+Warning: Store to address 0xfffffb05 is outside memory bounds
+Warning: Store to address 0xfffffb09 is outside memory bounds
+Warning: Store to address 0xfffffb0d is outside memory bounds
+Warning: Store to address 0xfffffb11 is outside memory bounds
+Warning: Store to address 0xfffffb15 is outside memory bounds
+Warning: Store to address 0xfffffb19 is outside memory bounds
+Warning: Store to address 0xfffffb1d is outside memory bounds
+Warning: Store to address 0xfffffb21 is outside memory bounds
+Warning: Store to address 0xfffffb25 is outside memory bounds
+Warning: Store to address 0xfffffb29 is outside memory bounds
+Warning: Store to address 0xfffffb2d is outside memory bounds
+Warning: Store to address 0xfffffb31 is outside memory bounds
+Warning: Store to address 0xfffffb35 is outside memory bounds
+Warning: Store to address 0xfffffb39 is outside memory bounds
+Warning: Store to address 0xfffffb3d is outside memory bounds
+Warning: Store to address 0xfffffb41 is outside memory bounds
+Warning: Store to address 0xfffffb45 is outside memory bounds
+Warning: Store to address 0xfffffb49 is outside memory bounds
+Warning: Store to address 0xfffffb4d is outside memory bounds
+Warning: Store to address 0xfffffb51 is outside memory bounds
+Warning: Store to address 0xfffffb55 is outside memory bounds
+Warning: Store to address 0xfffffb59 is outside memory bounds
+Warning: Store to address 0xfffffb5d is outside memory bounds
+Warning: Store to address 0xfffff878 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/beq-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/beq-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/beq-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/beq-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/beq-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/beq-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                               /home/octonyte/OctoNyte/tests/riscof_work/src/beq-01.S/ref/ref.mem
+Warning: Store to address 0xfffffeb3 is outside memory bounds
+Warning: Store to address 0xfffffeb7 is outside memory bounds
+Warning: Store to address 0xfffffebb is outside memory bounds
+Warning: Store to address 0xfffffebf is outside memory bounds
+Warning: Store to address 0xfffffec3 is outside memory bounds
+Warning: Store to address 0xfffffec7 is outside memory bounds
+Warning: Store to address 0xfffffecb is outside memory bounds
+Warning: Store to address 0xfffffecf is outside memory bounds
+Warning: Store to address 0xfffffed3 is outside memory bounds
+Warning: Store to address 0xfffffed7 is outside memory bounds
+Warning: Store to address 0xfffffedb is outside memory bounds
+Warning: Store to address 0xfffffedf is outside memory bounds
+Warning: Store to address 0xfffffee3 is outside memory bounds
+Warning: Store to address 0xfffffee7 is outside memory bounds
+Warning: Store to address 0xfffffeeb is outside memory bounds
+Warning: Store to address 0xfffffeef is outside memory bounds
+Warning: Store to address 0xfffffef3 is outside memory bounds
+Warning: Store to address 0xfffffef7 is outside memory bounds
+Warning: Store to address 0xfffffefb is outside memory bounds
+Warning: Store to address 0xfffffeff is outside memory bounds
+Warning: Store to address 0xffffff03 is outside memory bounds
+Warning: Store to address 0xfffffd84 is outside memory bounds
+Warning: Store to address 0xfffffd88 is outside memory bounds
+Warning: Store to address 0xfffffd8c is outside memory bounds
+Warning: Store to address 0xfffffd90 is outside memory bounds
+Warning: Store to address 0xfffffd94 is outside memory bounds
+Warning: Store to address 0xfffffd98 is outside memory bounds
+Warning: Store to address 0xfffffd9c is outside memory bounds
+Warning: Store to address 0xfffffda0 is outside memory bounds
+Warning: Store to address 0xfffffda4 is outside memory bounds
+Warning: Store to address 0xfffffda8 is outside memory bounds
+Warning: Store to address 0xfffffdac is outside memory bounds
+Warning: Store to address 0xfffffdb0 is outside memory bounds
+Warning: Store to address 0xfffffdb4 is outside memory bounds
+Warning: Store to address 0xfffffdb8 is outside memory bounds
+Warning: Store to address 0xfffffdbc is outside memory bounds
+Warning: Store to address 0xfffffdc0 is outside memory bounds
+Warning: Store to address 0xfffffdc4 is outside memory bounds
+Warning: Store to address 0xfffffdc8 is outside memory bounds
+Warning: Store to address 0xfffffdcc is outside memory bounds
+Warning: Store to address 0xfffffdd0 is outside memory bounds
+Warning: Store to address 0xfffffdd4 is outside memory bounds
+Warning: Store to address 0xfffffdd8 is outside memory bounds
+Warning: Store to address 0xfffffddc is outside memory bounds
+Warning: Store to address 0xfffffde0 is outside memory bounds
+Warning: Store to address 0xfffffde4 is outside memory bounds
+Warning: Store to address 0xfffffde8 is outside memory bounds
+Warning: Store to address 0xfffffdec is outside memory bounds
+Warning: Store to address 0xfffffdf0 is outside memory bounds
+Warning: Store to address 0xfffffdf4 is outside memory bounds
+Warning: Store to address 0xfffffdf8 is outside memory bounds
+Warning: Store to address 0xfffffdfc is outside memory bounds
+Warning: Store to address 0xfffffe00 is outside memory bounds
+Warning: Store to address 0xfffffe04 is outside memory bounds
+Warning: Store to address 0xfffffe08 is outside memory bounds
+Warning: Store to address 0xfffffe0c is outside memory bounds
+Warning: Store to address 0xfffffe10 is outside memory bounds
+Warning: Store to address 0xfffffe14 is outside memory bounds
+Warning: Store to address 0xfffffe18 is outside memory bounds
+Warning: Store to address 0xfffffe1c is outside memory bounds
+Warning: Store to address 0xfffffe20 is outside memory bounds
+Warning: Store to address 0xfffffe24 is outside memory bounds
+Warning: Store to address 0xfffffe28 is outside memory bounds
+Warning: Store to address 0xfffffe2c is outside memory bounds
+Warning: Store to address 0xfffffe30 is outside memory bounds
+Warning: Store to address 0xfffffe34 is outside memory bounds
+Warning: Store to address 0xfffffe38 is outside memory bounds
+Warning: Store to address 0xfffffe3c is outside memory bounds
+Warning: Store to address 0xfffffe40 is outside memory bounds
+Warning: Store to address 0xfffffe44 is outside memory bounds
+Warning: Store to address 0xfffffe48 is outside memory bounds
+Warning: Store to address 0xfffffe4c is outside memory bounds
+Warning: Store to address 0xfffffe50 is outside memory bounds
+Warning: Store to address 0xfffffe54 is outside memory bounds
+Warning: Store to address 0xfffffe58 is outside memory bounds
+Warning: Store to address 0xfffffe5c is outside memory bounds
+Warning: Store to address 0xfffffe60 is outside memory bounds
+Warning: Store to address 0xfffffe64 is outside memory bounds
+Warning: Store to address 0xfffffe68 is outside memory bounds
+Warning: Store to address 0xfffffe6c is outside memory bounds
+Warning: Store to address 0xfffffe70 is outside memory bounds
+Warning: Store to address 0xfffffe74 is outside memory bounds
+Warning: Store to address 0xfffffe78 is outside memory bounds
+Warning: Store to address 0xfffffe7c is outside memory bounds
+Warning: Store to address 0xfffffe80 is outside memory bounds
+Warning: Store to address 0xfffffe84 is outside memory bounds
+Warning: Store to address 0xfffffe88 is outside memory bounds
+Warning: Store to address 0xfffffe8c is outside memory bounds
+Warning: Store to address 0xfffffe90 is outside memory bounds
+Warning: Store to address 0xfffffe94 is outside memory bounds
+Warning: Store to address 0xfffffe98 is outside memory bounds
+Warning: Store to address 0xfffffe9c is outside memory bounds
+Warning: Store to address 0xfffffea0 is outside memory bounds
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0xfffffefc is outside memory bounds
+Warning: Store to address 0xffffff00 is outside memory bounds
+Warning: Store to address 0xffffff04 is outside memory bounds
+Warning: Store to address 0xffffff08 is outside memory bounds
+Warning: Store to address 0xffffff0c is outside memory bounds
+Warning: Store to address 0xffffff10 is outside memory bounds
+Warning: Store to address 0xffffff14 is outside memory bounds
+Warning: Store to address 0xffffff18 is outside memory bounds
+Warning: Store to address 0xffffff1c is outside memory bounds
+Warning: Store to address 0xffffff20 is outside memory bounds
+Warning: Store to address 0xffffff24 is outside memory bounds
+Warning: Store to address 0xffffff28 is outside memory bounds
+Warning: Store to address 0xffffff2c is outside memory bounds
+Warning: Store to address 0xffffff30 is outside memory bounds
+Warning: Store to address 0xffffff34 is outside memory bounds
+Warning: Store to address 0xffffff38 is outside memory bounds
+Warning: Store to address 0xffffff3c is outside memory bounds
+Warning: Store to address 0xffffff40 is outside memory bounds
+Warning: Store to address 0xffffff44 is outside memory bounds
+Warning: Store to address 0xffffff48 is outside memory bounds
+Warning: Store to address 0xffffff4c is outside memory bounds
+Warning: Store to address 0xffffff50 is outside memory bounds
+Warning: Store to address 0xffffff54 is outside memory bounds
+Warning: Store to address 0xffffff58 is outside memory bounds
+Warning: Store to address 0xffffff5c is outside memory bounds
+Warning: Store to address 0xffffff60 is outside memory bounds
+Warning: Store to address 0xffffff64 is outside memory bounds
+Warning: Store to address 0xffffff68 is outside memory bounds
+Warning: Store to address 0xffffff6c is outside memory bounds
+Warning: Store to address 0xffffff70 is outside memory bounds
+Warning: Store to address 0xffffff74 is outside memory bounds
+Warning: Store to address 0xffffff78 is outside memory bounds
+Warning: Store to address 0xffffff7c is outside memory bounds
+Warning: Store to address 0xffffff80 is outside memory bounds
+Warning: Store to address 0xffffff84 is outside memory bounds
+Warning: Store to address 0xffffff88 is outside memory bounds
+Warning: Store to address 0xffffff8c is outside memory bounds
+Warning: Store to address 0xffffff90 is outside memory bounds
+Warning: Store to address 0xffffff94 is outside memory bounds
+Warning: Store to address 0xffffff98 is outside memory bounds
+Warning: Store to address 0xffffff9c is outside memory bounds
+Warning: Store to address 0xffffffa0 is outside memory bounds
+Warning: Store to address 0xffffffa4 is outside memory bounds
+Warning: Store to address 0xffffffa8 is outside memory bounds
+Warning: Store to address 0xffffffac is outside memory bounds
+Warning: Store to address 0xffffffb0 is outside memory bounds
+Warning: Store to address 0xffffffb4 is outside memory bounds
+Warning: Store to address 0xffffffb8 is outside memory bounds
+Warning: Store to address 0xffffffbc is outside memory bounds
+Warning: Store to address 0xffffffc0 is outside memory bounds
+Warning: Store to address 0xffffffc4 is outside memory bounds
+Warning: Store to address 0xffffffc8 is outside memory bounds
+Warning: Store to address 0xffffffcc is outside memory bounds
+Warning: Store to address 0xffffffd0 is outside memory bounds
+Warning: Store to address 0xffffffd4 is outside memory bounds
+Warning: Store to address 0xffffffd8 is outside memory bounds
+Warning: Store to address 0xffffffdc is outside memory bounds
+Warning: Store to address 0xffffffe0 is outside memory bounds
+Warning: Store to address 0xffffffe4 is outside memory bounds
+Warning: Store to address 0xffffffe8 is outside memory bounds
+Warning: Store to address 0xffffffec is outside memory bounds
+Warning: Store to address 0xfffffff0 is outside memory bounds
+Warning: Store to address 0xfffffff4 is outside memory bounds
+Warning: Store to address 0xfffffff8 is outside memory bounds
+Warning: Store to address 0xfffffffc is outside memory bounds
+Warning: Store to address 0xfffffd3e is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bge-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/bge-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/bge-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/bge-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/bge-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/bge-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                               /home/octonyte/OctoNyte/tests/riscof_work/src/bge-01.S/ref/ref.mem
+Warning: Store to address 0xfffffd51 is outside memory bounds
+Warning: Store to address 0xfffffd55 is outside memory bounds
+Warning: Store to address 0xfffffd59 is outside memory bounds
+Warning: Store to address 0xfffffd5d is outside memory bounds
+Warning: Store to address 0xfffffd61 is outside memory bounds
+Warning: Store to address 0xfffffd65 is outside memory bounds
+Warning: Store to address 0xfffffd69 is outside memory bounds
+Warning: Store to address 0xfffffd6d is outside memory bounds
+Warning: Store to address 0xfffffd71 is outside memory bounds
+Warning: Store to address 0xfffffd75 is outside memory bounds
+Warning: Store to address 0xfffffd79 is outside memory bounds
+Warning: Store to address 0xfffffd7d is outside memory bounds
+Warning: Store to address 0xfffffd81 is outside memory bounds
+Warning: Store to address 0xfffffd85 is outside memory bounds
+Warning: Store to address 0xfffffd89 is outside memory bounds
+Warning: Store to address 0xfffffd8d is outside memory bounds
+Warning: Store to address 0xfffffd91 is outside memory bounds
+Warning: Store to address 0xfffffd95 is outside memory bounds
+Warning: Store to address 0xfffffd99 is outside memory bounds
+Warning: Store to address 0xfffffd9d is outside memory bounds
+Warning: Store to address 0xfffffda1 is outside memory bounds
+Warning: Store to address 0xfffff8f8 is outside memory bounds
+Warning: Store to address 0xfffff8fc is outside memory bounds
+Warning: Store to address 0xfffff900 is outside memory bounds
+Warning: Store to address 0xfffff904 is outside memory bounds
+Warning: Store to address 0xfffff908 is outside memory bounds
+Warning: Store to address 0xfffff90c is outside memory bounds
+Warning: Store to address 0xfffff910 is outside memory bounds
+Warning: Store to address 0xfffff914 is outside memory bounds
+Warning: Store to address 0xfffff918 is outside memory bounds
+Warning: Store to address 0xfffff91c is outside memory bounds
+Warning: Store to address 0xfffff920 is outside memory bounds
+Warning: Store to address 0xfffff924 is outside memory bounds
+Warning: Store to address 0xfffff928 is outside memory bounds
+Warning: Store to address 0xfffff92c is outside memory bounds
+Warning: Store to address 0xfffff930 is outside memory bounds
+Warning: Store to address 0xfffff934 is outside memory bounds
+Warning: Store to address 0xfffff938 is outside memory bounds
+Warning: Store to address 0xfffff93c is outside memory bounds
+Warning: Store to address 0xfffff940 is outside memory bounds
+Warning: Store to address 0xfffff944 is outside memory bounds
+Warning: Store to address 0xfffff948 is outside memory bounds
+Warning: Store to address 0xfffff94c is outside memory bounds
+Warning: Store to address 0xfffff950 is outside memory bounds
+Warning: Store to address 0xfffff954 is outside memory bounds
+Warning: Store to address 0xfffff958 is outside memory bounds
+Warning: Store to address 0xfffff95c is outside memory bounds
+Warning: Store to address 0xfffff960 is outside memory bounds
+Warning: Store to address 0xfffff964 is outside memory bounds
+Warning: Store to address 0xfffff968 is outside memory bounds
+Warning: Store to address 0xfffff96c is outside memory bounds
+Warning: Store to address 0xfffff970 is outside memory bounds
+Warning: Store to address 0xfffff974 is outside memory bounds
+Warning: Store to address 0xfffff978 is outside memory bounds
+Warning: Store to address 0xfffff97c is outside memory bounds
+Warning: Store to address 0xfffff980 is outside memory bounds
+Warning: Store to address 0xfffff984 is outside memory bounds
+Warning: Store to address 0xfffff988 is outside memory bounds
+Warning: Store to address 0xfffff98c is outside memory bounds
+Warning: Store to address 0xfffff990 is outside memory bounds
+Warning: Store to address 0xfffff994 is outside memory bounds
+Warning: Store to address 0xfffff998 is outside memory bounds
+Warning: Store to address 0xfffff99c is outside memory bounds
+Warning: Store to address 0xfffff9a0 is outside memory bounds
+Warning: Store to address 0xfffff9a4 is outside memory bounds
+Warning: Store to address 0xfffff9a8 is outside memory bounds
+Warning: Store to address 0xfffff9ac is outside memory bounds
+Warning: Store to address 0xfffff9b0 is outside memory bounds
+Warning: Store to address 0xfffff9b4 is outside memory bounds
+Warning: Store to address 0xfffff9b8 is outside memory bounds
+Warning: Store to address 0xfffff9bc is outside memory bounds
+Warning: Store to address 0xfffff9c0 is outside memory bounds
+Warning: Store to address 0xfffff9c4 is outside memory bounds
+Warning: Store to address 0xfffff9c8 is outside memory bounds
+Warning: Store to address 0xfffff9cc is outside memory bounds
+Warning: Store to address 0xfffff9d0 is outside memory bounds
+Warning: Store to address 0xfffff9d4 is outside memory bounds
+Warning: Store to address 0xfffff9d8 is outside memory bounds
+Warning: Store to address 0xfffff9dc is outside memory bounds
+Warning: Store to address 0xfffff9e0 is outside memory bounds
+Warning: Store to address 0xfffff9e4 is outside memory bounds
+Warning: Store to address 0xfffff9e8 is outside memory bounds
+Warning: Store to address 0xfffff9ec is outside memory bounds
+Warning: Store to address 0xfffff9f0 is outside memory bounds
+Warning: Store to address 0xfffff9f4 is outside memory bounds
+Warning: Store to address 0xfffff9f8 is outside memory bounds
+Warning: Store to address 0xfffff9fc is outside memory bounds
+Warning: Store to address 0xfffffa00 is outside memory bounds
+Warning: Store to address 0xfffffa04 is outside memory bounds
+Warning: Store to address 0xfffffa08 is outside memory bounds
+Warning: Store to address 0xfffffa0c is outside memory bounds
+Warning: Store to address 0xfffffa10 is outside memory bounds
+Warning: Store to address 0xfffffa14 is outside memory bounds
+Warning: Store to address 0xfffffa18 is outside memory bounds
+Warning: Store to address 0xfffffa1c is outside memory bounds
+Warning: Store to address 0xfffffa20 is outside memory bounds
+Warning: Store to address 0xfffffa24 is outside memory bounds
+Warning: Store to address 0xfffffa28 is outside memory bounds
+Warning: Store to address 0xfffffa2c is outside memory bounds
+Warning: Store to address 0xfffffa30 is outside memory bounds
+Warning: Store to address 0xfffffa34 is outside memory bounds
+Warning: Store to address 0xfffffa38 is outside memory bounds
+Warning: Store to address 0xfffffa3c is outside memory bounds
+Warning: Store to address 0xfffffa40 is outside memory bounds
+Warning: Store to address 0xfffffa44 is outside memory bounds
+Warning: Store to address 0xfffffa48 is outside memory bounds
+Warning: Store to address 0xfffffa4c is outside memory bounds
+Warning: Store to address 0xfffffa50 is outside memory bounds
+Warning: Store to address 0xfffffa54 is outside memory bounds
+Warning: Store to address 0xfffffa58 is outside memory bounds
+Warning: Store to address 0xfffffa5c is outside memory bounds
+Warning: Store to address 0xfffffa60 is outside memory bounds
+Warning: Store to address 0xfffffa64 is outside memory bounds
+Warning: Store to address 0xfffffa68 is outside memory bounds
+Warning: Store to address 0xfffffa6c is outside memory bounds
+Warning: Store to address 0xfffffa70 is outside memory bounds
+Warning: Store to address 0xfffffa74 is outside memory bounds
+Warning: Store to address 0xfffffa78 is outside memory bounds
+Warning: Store to address 0xfffffa7c is outside memory bounds
+Warning: Store to address 0xfffffa80 is outside memory bounds
+Warning: Store to address 0xfffffa84 is outside memory bounds
+Warning: Store to address 0xfffffa88 is outside memory bounds
+Warning: Store to address 0xfffffa8c is outside memory bounds
+Warning: Store to address 0xfffffa90 is outside memory bounds
+Warning: Store to address 0xfffffa94 is outside memory bounds
+Warning: Store to address 0xfffffa98 is outside memory bounds
+Warning: Store to address 0xfffffa9c is outside memory bounds
+Warning: Store to address 0xfffffaa0 is outside memory bounds
+Warning: Store to address 0xfffffaa4 is outside memory bounds
+Warning: Store to address 0xfffffaa8 is outside memory bounds
+Warning: Store to address 0xfffffaac is outside memory bounds
+Warning: Store to address 0xfffffab0 is outside memory bounds
+Warning: Store to address 0xfffffab4 is outside memory bounds
+Warning: Store to address 0xfffffab8 is outside memory bounds
+Warning: Store to address 0xfffffabc is outside memory bounds
+Warning: Store to address 0xfffffac0 is outside memory bounds
+Warning: Store to address 0xfffffac4 is outside memory bounds
+Warning: Store to address 0xfffffac8 is outside memory bounds
+Warning: Store to address 0xfffffacc is outside memory bounds
+Warning: Store to address 0xfffffad0 is outside memory bounds
+Warning: Store to address 0xfffffad4 is outside memory bounds
+Warning: Store to address 0xfffffad8 is outside memory bounds
+Warning: Store to address 0xfffffadc is outside memory bounds
+Warning: Store to address 0xfffffae0 is outside memory bounds
+Warning: Store to address 0xfffffae4 is outside memory bounds
+Warning: Store to address 0xfffffae8 is outside memory bounds
+Warning: Store to address 0xfffffaec is outside memory bounds
+Warning: Store to address 0xfffffaf0 is outside memory bounds
+Warning: Store to address 0xfffffaf4 is outside memory bounds
+Warning: Store to address 0xfffffaf8 is outside memory bounds
+Warning: Store to address 0xfffffafc is outside memory bounds
+Warning: Store to address 0xfffffb00 is outside memory bounds
+Warning: Store to address 0xfffffb04 is outside memory bounds
+Warning: Store to address 0xfffffb08 is outside memory bounds
+Warning: Store to address 0xfffffb0c is outside memory bounds
+Warning: Store to address 0xfffffb10 is outside memory bounds
+Warning: Store to address 0xfffffb14 is outside memory bounds
+Warning: Store to address 0xfffffb18 is outside memory bounds
+Warning: Store to address 0xfffffb1c is outside memory bounds
+Warning: Store to address 0xfffffb20 is outside memory bounds
+Warning: Store to address 0xfffffb24 is outside memory bounds
+Warning: Store to address 0xfffffb28 is outside memory bounds
+Warning: Store to address 0xfffffb2c is outside memory bounds
+Warning: Store to address 0xfffffb30 is outside memory bounds
+Warning: Store to address 0xfffffb34 is outside memory bounds
+Warning: Store to address 0xfffffb38 is outside memory bounds
+Warning: Store to address 0xfffffb3c is outside memory bounds
+Warning: Store to address 0xfffffb40 is outside memory bounds
+Warning: Store to address 0xfffffb44 is outside memory bounds
+Warning: Store to address 0xfffffb48 is outside memory bounds
+Warning: Store to address 0xfffffb4c is outside memory bounds
+Warning: Store to address 0xfffffb50 is outside memory bounds
+Warning: Store to address 0xfffffb54 is outside memory bounds
+Warning: Store to address 0xfffffb58 is outside memory bounds
+Warning: Store to address 0xfffffb5c is outside memory bounds
+Warning: Store to address 0xfffffb60 is outside memory bounds
+Warning: Store to address 0xfffffb64 is outside memory bounds
+Warning: Store to address 0xfffffb68 is outside memory bounds
+Warning: Store to address 0xfffffb6c is outside memory bounds
+Warning: Store to address 0xfffffb70 is outside memory bounds
+Warning: Store to address 0xfffffb74 is outside memory bounds
+Warning: Store to address 0xfffffb78 is outside memory bounds
+Warning: Store to address 0xfffffb7c is outside memory bounds
+Warning: Store to address 0xfffffb80 is outside memory bounds
+Warning: Store to address 0xfffffb84 is outside memory bounds
+Warning: Store to address 0xfffffb88 is outside memory bounds
+Warning: Store to address 0xfffffb8c is outside memory bounds
+Warning: Store to address 0xfffffb90 is outside memory bounds
+Warning: Store to address 0xfffffb94 is outside memory bounds
+Warning: Store to address 0xfffffb98 is outside memory bounds
+Warning: Store to address 0xfffffb9c is outside memory bounds
+Warning: Store to address 0xfffffba0 is outside memory bounds
+Warning: Store to address 0xfffffba4 is outside memory bounds
+Warning: Store to address 0xfffffba8 is outside memory bounds
+Warning: Store to address 0xfffffbac is outside memory bounds
+Warning: Store to address 0xfffffbb0 is outside memory bounds
+Warning: Store to address 0xfffffbb4 is outside memory bounds
+Warning: Store to address 0xfffffbb8 is outside memory bounds
+Warning: Store to address 0xfffffbbc is outside memory bounds
+Warning: Store to address 0xfffffbc0 is outside memory bounds
+Warning: Store to address 0xfffffbc4 is outside memory bounds
+Warning: Store to address 0xfffffbc8 is outside memory bounds
+Warning: Store to address 0xfffffbcc is outside memory bounds
+Warning: Store to address 0xfffffbd0 is outside memory bounds
+Warning: Store to address 0xfffffbd4 is outside memory bounds
+Warning: Store to address 0xfffffbd8 is outside memory bounds
+Warning: Store to address 0xfffffbdc is outside memory bounds
+Warning: Store to address 0xfffffbe0 is outside memory bounds
+Warning: Store to address 0xfffffbe4 is outside memory bounds
+Warning: Store to address 0xfffffbe8 is outside memory bounds
+Warning: Store to address 0xfffffbec is outside memory bounds
+Warning: Store to address 0xfffffbf0 is outside memory bounds
+Warning: Store to address 0xfffffbf4 is outside memory bounds
+Warning: Store to address 0xfffffbf8 is outside memory bounds
+Warning: Store to address 0xfffffbfc is outside memory bounds
+Warning: Store to address 0xfffffc00 is outside memory bounds
+Warning: Store to address 0xfffffc04 is outside memory bounds
+Warning: Store to address 0xfffffc08 is outside memory bounds
+Warning: Store to address 0xfffffc0c is outside memory bounds
+Warning: Store to address 0xfffffc10 is outside memory bounds
+Warning: Store to address 0xfffffc14 is outside memory bounds
+Warning: Store to address 0xfffffc18 is outside memory bounds
+Warning: Store to address 0xfffffc1c is outside memory bounds
+Warning: Store to address 0xfffffc20 is outside memory bounds
+Warning: Store to address 0xfffffc24 is outside memory bounds
+Warning: Store to address 0xfffffc28 is outside memory bounds
+Warning: Store to address 0xfffffc2c is outside memory bounds
+Warning: Store to address 0xfffffc30 is outside memory bounds
+Warning: Store to address 0xfffffc34 is outside memory bounds
+Warning: Store to address 0xfffffc38 is outside memory bounds
+Warning: Store to address 0xfffffc3c is outside memory bounds
+Warning: Store to address 0xfffffc40 is outside memory bounds
+Warning: Store to address 0xfffffc44 is outside memory bounds
+Warning: Store to address 0xfffffc48 is outside memory bounds
+Warning: Store to address 0xfffffc4c is outside memory bounds
+Warning: Store to address 0xfffffc50 is outside memory bounds
+Warning: Store to address 0xfffffc54 is outside memory bounds
+Warning: Store to address 0xfffffc58 is outside memory bounds
+Warning: Store to address 0xfffffc5c is outside memory bounds
+Warning: Store to address 0xfffffc60 is outside memory bounds
+Warning: Store to address 0xfffffc64 is outside memory bounds
+Warning: Store to address 0xfffffc68 is outside memory bounds
+Warning: Store to address 0xfffffc6c is outside memory bounds
+Warning: Store to address 0xfffffc70 is outside memory bounds
+Warning: Store to address 0xfffffc74 is outside memory bounds
+Warning: Store to address 0xfffffc78 is outside memory bounds
+Warning: Store to address 0xfffffc7c is outside memory bounds
+Warning: Store to address 0xfffffc80 is outside memory bounds
+Warning: Store to address 0xfffffc84 is outside memory bounds
+Warning: Store to address 0xfffffc88 is outside memory bounds
+Warning: Store to address 0xfffffc8c is outside memory bounds
+Warning: Store to address 0xfffffc90 is outside memory bounds
+Warning: Store to address 0xfffffc94 is outside memory bounds
+Warning: Store to address 0xfffffc98 is outside memory bounds
+Warning: Store to address 0xfffffc9c is outside memory bounds
+Warning: Store to address 0xfffffca0 is outside memory bounds
+Warning: Store to address 0xfffffca4 is outside memory bounds
+Warning: Store to address 0xfffffca8 is outside memory bounds
+Warning: Store to address 0xfffffcac is outside memory bounds
+Warning: Store to address 0xfffffcb0 is outside memory bounds
+Warning: Store to address 0xfffffcb4 is outside memory bounds
+Warning: Store to address 0xfffffcb8 is outside memory bounds
+Warning: Store to address 0xfffffcbc is outside memory bounds
+Warning: Store to address 0xfffffcc0 is outside memory bounds
+Warning: Store to address 0xfffffcc4 is outside memory bounds
+Warning: Store to address 0xfffffcc8 is outside memory bounds
+Warning: Store to address 0xfffffccc is outside memory bounds
+Warning: Store to address 0xfffffcd0 is outside memory bounds
+Warning: Store to address 0xfffffcd4 is outside memory bounds
+Warning: Store to address 0xfffffcd8 is outside memory bounds
+Warning: Store to address 0xfffffcdc is outside memory bounds
+Warning: Store to address 0xfffffce0 is outside memory bounds
+Warning: Store to address 0xfffffce4 is outside memory bounds
+Warning: Store to address 0xfffffce8 is outside memory bounds
+Warning: Store to address 0xfffffcec is outside memory bounds
+Warning: Store to address 0xfffffcf0 is outside memory bounds
+Warning: Store to address 0xfffffcf4 is outside memory bounds
+Warning: Store to address 0xfffffcf8 is outside memory bounds
+Warning: Store to address 0xfffffcfc is outside memory bounds
+Warning: Store to address 0xfffffd00 is outside memory bounds
+Warning: Store to address 0xfffffd04 is outside memory bounds
+Warning: Store to address 0xfffffd08 is outside memory bounds
+Warning: Store to address 0xfffffd0c is outside memory bounds
+Warning: Store to address 0xfffffd10 is outside memory bounds
+Warning: Store to address 0xfffffd14 is outside memory bounds
+Warning: Store to address 0xfffffd18 is outside memory bounds
+Warning: Store to address 0xfffffd1c is outside memory bounds
+Warning: Store to address 0xfffffd20 is outside memory bounds
+Warning: Store to address 0xfffffd24 is outside memory bounds
+Warning: Store to address 0xfffffd28 is outside memory bounds
+Warning: Store to address 0xfffffd2c is outside memory bounds
+Warning: Store to address 0xfffffd30 is outside memory bounds
+Warning: Store to address 0xfffffd34 is outside memory bounds
+Warning: Store to address 0xfffffd38 is outside memory bounds
+Warning: Store to address 0xfffffd3c is outside memory bounds
+Warning: Store to address 0xfffffd40 is outside memory bounds
+Warning: Store to address 0xfffffd44 is outside memory bounds
+Warning: Store to address 0xfffffd48 is outside memory bounds
+Warning: Store to address 0xfffffd4c is outside memory bounds
+Warning: Store to address 0xfffffd50 is outside memory bounds
+Warning: Store to address 0xfffffd54 is outside memory bounds
+Warning: Store to address 0xfffffd58 is outside memory bounds
+Warning: Store to address 0xfffffd5c is outside memory bounds
+Warning: Store to address 0xfffffd60 is outside memory bounds
+Warning: Store to address 0xfffffd64 is outside memory bounds
+Warning: Store to address 0xfffffd68 is outside memory bounds
+Warning: Store to address 0xfffffd6c is outside memory bounds
+Warning: Store to address 0xfffffd70 is outside memory bounds
+Warning: Store to address 0xfffffd74 is outside memory bounds
+Warning: Store to address 0xfffffd78 is outside memory bounds
+Warning: Store to address 0xfffffd7c is outside memory bounds
+Warning: Store to address 0xfffffd80 is outside memory bounds
+Warning: Store to address 0xfffffd84 is outside memory bounds
+Warning: Store to address 0xfffffd88 is outside memory bounds
+Warning: Store to address 0xfffffd8c is outside memory bounds
+Warning: Store to address 0xfffffd90 is outside memory bounds
+Warning: Store to address 0xfffffd94 is outside memory bounds
+Warning: Store to address 0xfffffd98 is outside memory bounds
+Warning: Store to address 0xfffffd9c is outside memory bounds
+Warning: Store to address 0xfffffda0 is outside memory bounds
+Warning: Store to address 0xfffffda4 is outside memory bounds
+Warning: Store to address 0xfffffda8 is outside memory bounds
+Warning: Store to address 0xfffffdac is outside memory bounds
+Warning: Store to address 0xfffffdb0 is outside memory bounds
+Warning: Store to address 0xfffffdb4 is outside memory bounds
+Warning: Store to address 0xfffffdb8 is outside memory bounds
+Warning: Store to address 0xfffffdbc is outside memory bounds
+Warning: Store to address 0xfffffdc0 is outside memory bounds
+Warning: Store to address 0xfffffdc4 is outside memory bounds
+Warning: Store to address 0xfffffdc8 is outside memory bounds
+Warning: Store to address 0xfffffdcc is outside memory bounds
+Warning: Store to address 0xfffffdd0 is outside memory bounds
+Warning: Store to address 0xfffffdd4 is outside memory bounds
+Warning: Store to address 0xfffffdd8 is outside memory bounds
+Warning: Store to address 0xfffffddc is outside memory bounds
+Warning: Store to address 0xfffffde0 is outside memory bounds
+Warning: Store to address 0xfffffde4 is outside memory bounds
+Warning: Store to address 0xfffffde8 is outside memory bounds
+Warning: Store to address 0xfffffdec is outside memory bounds
+Warning: Store to address 0xfffffdf0 is outside memory bounds
+Warning: Store to address 0xfffffdf4 is outside memory bounds
+Warning: Store to address 0xfffffdf8 is outside memory bounds
+Warning: Store to address 0xfffffdfc is outside memory bounds
+Warning: Store to address 0xfffffe00 is outside memory bounds
+Warning: Store to address 0xfffffe04 is outside memory bounds
+Warning: Store to address 0xfffffe08 is outside memory bounds
+Warning: Store to address 0xfffffe0c is outside memory bounds
+Warning: Store to address 0xfffffe10 is outside memory bounds
+Warning: Store to address 0xfffffe14 is outside memory bounds
+Warning: Store to address 0xfffffe18 is outside memory bounds
+Warning: Store to address 0xfffffe1c is outside memory bounds
+Warning: Store to address 0xfffffe20 is outside memory bounds
+Warning: Store to address 0xfffffe24 is outside memory bounds
+Warning: Store to address 0xfffffe28 is outside memory bounds
+Warning: Store to address 0xfffffe2c is outside memory bounds
+Warning: Store to address 0xfffffe30 is outside memory bounds
+Warning: Store to address 0xfffffe34 is outside memory bounds
+Warning: Store to address 0xfffffe38 is outside memory bounds
+Warning: Store to address 0xfffffe3c is outside memory bounds
+Warning: Store to address 0xfffffe40 is outside memory bounds
+Warning: Store to address 0xfffffe44 is outside memory bounds
+Warning: Store to address 0xfffffe48 is outside memory bounds
+Warning: Store to address 0xfffffe4c is outside memory bounds
+Warning: Store to address 0xfffffe50 is outside memory bounds
+Warning: Store to address 0xfffffe54 is outside memory bounds
+Warning: Store to address 0xfffffe58 is outside memory bounds
+Warning: Store to address 0xfffffe5c is outside memory bounds
+Warning: Store to address 0xfffffe60 is outside memory bounds
+Warning: Store to address 0xfffffe64 is outside memory bounds
+Warning: Store to address 0xfffffe68 is outside memory bounds
+Warning: Store to address 0xfffffe6c is outside memory bounds
+Warning: Store to address 0xfffffe70 is outside memory bounds
+Warning: Store to address 0xfffffe74 is outside memory bounds
+Warning: Store to address 0xfffffe78 is outside memory bounds
+Warning: Store to address 0xfffffe7c is outside memory bounds
+Warning: Store to address 0xfffffe80 is outside memory bounds
+Warning: Store to address 0xfffffe84 is outside memory bounds
+Warning: Store to address 0xfffffe88 is outside memory bounds
+Warning: Store to address 0xfffffe8c is outside memory bounds
+Warning: Store to address 0xfffffe90 is outside memory bounds
+Warning: Store to address 0xfffffe94 is outside memory bounds
+Warning: Store to address 0xfffffe98 is outside memory bounds
+Warning: Store to address 0xfffffe9c is outside memory bounds
+Warning: Store to address 0xfffffea0 is outside memory bounds
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0xfffffefc is outside memory bounds
+Warning: Store to address 0xffffff00 is outside memory bounds
+Warning: Store to address 0xffffff04 is outside memory bounds
+Warning: Store to address 0xffffff08 is outside memory bounds
+Warning: Store to address 0xffffff0c is outside memory bounds
+Warning: Store to address 0xffffff10 is outside memory bounds
+Warning: Store to address 0xffffff14 is outside memory bounds
+Warning: Store to address 0xffffff18 is outside memory bounds
+Warning: Store to address 0xffffff1c is outside memory bounds
+Warning: Store to address 0xffffff20 is outside memory bounds
+Warning: Store to address 0xffffff24 is outside memory bounds
+Warning: Store to address 0xffffff28 is outside memory bounds
+Warning: Store to address 0xffffff2c is outside memory bounds
+Warning: Store to address 0xffffff30 is outside memory bounds
+Warning: Store to address 0xffffff34 is outside memory bounds
+Warning: Store to address 0xffffff38 is outside memory bounds
+Warning: Store to address 0xffffff3c is outside memory bounds
+Warning: Store to address 0xffffff40 is outside memory bounds
+Warning: Store to address 0xffffff44 is outside memory bounds
+Warning: Store to address 0xffffff48 is outside memory bounds
+Warning: Store to address 0xffffff4c is outside memory bounds
+Warning: Store to address 0xffffff50 is outside memory bounds
+Warning: Store to address 0xffffff54 is outside memory bounds
+Warning: Store to address 0xffffff58 is outside memory bounds
+Warning: Store to address 0xffffff5c is outside memory bounds
+Warning: Store to address 0xffffff60 is outside memory bounds
+Warning: Store to address 0xffffff64 is outside memory bounds
+Warning: Store to address 0xffffff68 is outside memory bounds
+Warning: Store to address 0xffffff6c is outside memory bounds
+Warning: Store to address 0xffffff70 is outside memory bounds
+Warning: Store to address 0xffffff74 is outside memory bounds
+Warning: Store to address 0xffffff78 is outside memory bounds
+Warning: Store to address 0xffffff7c is outside memory bounds
+Warning: Store to address 0xffffff80 is outside memory bounds
+Warning: Store to address 0xffffff84 is outside memory bounds
+Warning: Store to address 0xffffff88 is outside memory bounds
+Warning: Store to address 0xffffff8c is outside memory bounds
+Warning: Store to address 0xffffff90 is outside memory bounds
+Warning: Store to address 0xffffff94 is outside memory bounds
+Warning: Store to address 0xffffff98 is outside memory bounds
+Warning: Store to address 0xffffff9c is outside memory bounds
+Warning: Store to address 0xffffffa0 is outside memory bounds
+Warning: Store to address 0xffffffa4 is outside memory bounds
+Warning: Store to address 0xffffffa8 is outside memory bounds
+Warning: Store to address 0xffffffac is outside memory bounds
+Warning: Store to address 0xffffffb0 is outside memory bounds
+Warning: Store to address 0xffffffb4 is outside memory bounds
+Warning: Store to address 0xffffffb8 is outside memory bounds
+Warning: Store to address 0xffffffbc is outside memory bounds
+Warning: Store to address 0xffffffc0 is outside memory bounds
+Warning: Store to address 0xffffffc4 is outside memory bounds
+Warning: Store to address 0xffffffc8 is outside memory bounds
+Warning: Store to address 0xffffffcc is outside memory bounds
+Warning: Store to address 0xffffffd0 is outside memory bounds
+Warning: Store to address 0xffffffd4 is outside memory bounds
+Warning: Store to address 0xffffffd8 is outside memory bounds
+Warning: Store to address 0xffffffdc is outside memory bounds
+Warning: Store to address 0xffffffe0 is outside memory bounds
+Warning: Store to address 0xffffffe4 is outside memory bounds
+Warning: Store to address 0xffffffe8 is outside memory bounds
+Warning: Store to address 0xffffffec is outside memory bounds
+Warning: Store to address 0xfffffff0 is outside memory bounds
+Warning: Store to address 0xfffffff4 is outside memory bounds
+Warning: Store to address 0xfffffff8 is outside memory bounds
+Warning: Store to address 0xfffffffc is outside memory bounds
+Warning: Store to address 0xfffff4b0 is outside memory bounds
+Warning: Store to address 0xfffff4b4 is outside memory bounds
+Warning: Store to address 0xfffff4b8 is outside memory bounds
+Warning: Store to address 0xfffff4bc is outside memory bounds
+Warning: Store to address 0xfffff4c0 is outside memory bounds
+Warning: Store to address 0xfffff4c4 is outside memory bounds
+Warning: Store to address 0xfffff4c8 is outside memory bounds
+Warning: Store to address 0xfffff4cc is outside memory bounds
+Warning: Store to address 0xfffff4d0 is outside memory bounds
+Warning: Store to address 0xfffff4d4 is outside memory bounds
+Warning: Store to address 0xfffff4d8 is outside memory bounds
+Warning: Store to address 0xfffff4dc is outside memory bounds
+Warning: Store to address 0xfffff4e0 is outside memory bounds
+Warning: Store to address 0xfffff4e4 is outside memory bounds
+Warning: Store to address 0xfffff4e8 is outside memory bounds
+Warning: Store to address 0xfffff4ec is outside memory bounds
+Warning: Store to address 0xfffff4f0 is outside memory bounds
+Warning: Store to address 0xfffff4f4 is outside memory bounds
+Warning: Store to address 0xfffff4f8 is outside memory bounds
+Warning: Store to address 0xfffff4fc is outside memory bounds
+Warning: Store to address 0xfffff500 is outside memory bounds
+Warning: Store to address 0xfffff504 is outside memory bounds
+Warning: Store to address 0xfffff508 is outside memory bounds
+Warning: Store to address 0xfffff50c is outside memory bounds
+Warning: Store to address 0xfffff510 is outside memory bounds
+Warning: Store to address 0xfffff514 is outside memory bounds
+Warning: Store to address 0xfffff518 is outside memory bounds
+Warning: Store to address 0xfffff51c is outside memory bounds
+Warning: Store to address 0xfffff520 is outside memory bounds
+Warning: Store to address 0xfffff524 is outside memory bounds
+Warning: Store to address 0xfffff528 is outside memory bounds
+Warning: Store to address 0xfffff52c is outside memory bounds
+Warning: Store to address 0xfffff530 is outside memory bounds
+Warning: Store to address 0xfffff534 is outside memory bounds
+Warning: Store to address 0xfffff538 is outside memory bounds
+Warning: Store to address 0xfffff53c is outside memory bounds
+Warning: Store to address 0xfffff540 is outside memory bounds
+Warning: Store to address 0xfffff544 is outside memory bounds
+Warning: Store to address 0xfffff548 is outside memory bounds
+Warning: Store to address 0xfffff54c is outside memory bounds
+Warning: Store to address 0xfffff550 is outside memory bounds
+Warning: Store to address 0xfffff554 is outside memory bounds
+Warning: Store to address 0xfffff558 is outside memory bounds
+Warning: Store to address 0xfffff55c is outside memory bounds
+Warning: Store to address 0xfffff560 is outside memory bounds
+Warning: Store to address 0xfffff564 is outside memory bounds
+Warning: Store to address 0xfffff568 is outside memory bounds
+Warning: Store to address 0xfffff56c is outside memory bounds
+Warning: Store to address 0xfffff570 is outside memory bounds
+Warning: Store to address 0xfffff574 is outside memory bounds
+Warning: Store to address 0xfffff578 is outside memory bounds
+Warning: Store to address 0xfffff57c is outside memory bounds
+Warning: Store to address 0xfffff580 is outside memory bounds
+Warning: Store to address 0xfffff584 is outside memory bounds
+Warning: Store to address 0xfffff588 is outside memory bounds
+Warning: Store to address 0xfffff58c is outside memory bounds
+Warning: Store to address 0xfffff590 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bgeu-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/bgeu-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/bgeu-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/bgeu-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/bgeu-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/bgeu-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                              /home/octonyte/OctoNyte/tests/riscof_work/src/bgeu-01.S/ref/ref.mem
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffff81c is outside memory bounds
+Warning: Store to address 0xfffff820 is outside memory bounds
+Warning: Store to address 0xfffff824 is outside memory bounds
+Warning: Store to address 0xfffff828 is outside memory bounds
+Warning: Store to address 0xfffff82c is outside memory bounds
+Warning: Store to address 0xfffff830 is outside memory bounds
+Warning: Store to address 0xfffff834 is outside memory bounds
+Warning: Store to address 0xfffff838 is outside memory bounds
+Warning: Store to address 0xfffff83c is outside memory bounds
+Warning: Store to address 0xfffff840 is outside memory bounds
+Warning: Store to address 0xfffff844 is outside memory bounds
+Warning: Store to address 0xfffff848 is outside memory bounds
+Warning: Store to address 0xfffff84c is outside memory bounds
+Warning: Store to address 0xfffff850 is outside memory bounds
+Warning: Store to address 0xfffff854 is outside memory bounds
+Warning: Store to address 0xfffff858 is outside memory bounds
+Warning: Store to address 0xfffff85c is outside memory bounds
+Warning: Store to address 0xfffff860 is outside memory bounds
+Warning: Store to address 0xfffff864 is outside memory bounds
+Warning: Store to address 0xfffff868 is outside memory bounds
+Warning: Store to address 0xfffff86c is outside memory bounds
+Warning: Store to address 0xfffff870 is outside memory bounds
+Warning: Store to address 0xfffff874 is outside memory bounds
+Warning: Store to address 0xfffff878 is outside memory bounds
+Warning: Store to address 0xfffff87c is outside memory bounds
+Warning: Store to address 0xfffff880 is outside memory bounds
+Warning: Store to address 0xfffff884 is outside memory bounds
+Warning: Store to address 0xfffff888 is outside memory bounds
+Warning: Store to address 0xfffff88c is outside memory bounds
+Warning: Store to address 0xfffff890 is outside memory bounds
+Warning: Store to address 0xfffff894 is outside memory bounds
+Warning: Store to address 0xfffff898 is outside memory bounds
+Warning: Store to address 0xfffff89c is outside memory bounds
+Warning: Store to address 0xfffff8a0 is outside memory bounds
+Warning: Store to address 0xfffff8a4 is outside memory bounds
+Warning: Store to address 0xfffff8a8 is outside memory bounds
+Warning: Store to address 0xfffff8ac is outside memory bounds
+Warning: Store to address 0xfffff8b0 is outside memory bounds
+Warning: Store to address 0xfffff8b4 is outside memory bounds
+Warning: Store to address 0xfffff8b8 is outside memory bounds
+Warning: Store to address 0xfffff8bc is outside memory bounds
+Warning: Store to address 0xfffff8c0 is outside memory bounds
+Warning: Store to address 0xfffff8c4 is outside memory bounds
+Warning: Store to address 0xfffff8c8 is outside memory bounds
+Warning: Store to address 0xfffff8cc is outside memory bounds
+Warning: Store to address 0xfffff8d0 is outside memory bounds
+Warning: Store to address 0xfffff8d4 is outside memory bounds
+Warning: Store to address 0xfffff8d8 is outside memory bounds
+Warning: Store to address 0xfffff8dc is outside memory bounds
+Warning: Store to address 0xfffff8e0 is outside memory bounds
+Warning: Store to address 0xfffff8e4 is outside memory bounds
+Warning: Store to address 0xfffff8e8 is outside memory bounds
+Warning: Store to address 0xfffff8ec is outside memory bounds
+Warning: Store to address 0xfffff8f0 is outside memory bounds
+Warning: Store to address 0xfffff8f4 is outside memory bounds
+Warning: Store to address 0xfffff8f8 is outside memory bounds
+Warning: Store to address 0xfffff8fc is outside memory bounds
+Warning: Store to address 0xfffff900 is outside memory bounds
+Warning: Store to address 0xfffff904 is outside memory bounds
+Warning: Store to address 0xfffff908 is outside memory bounds
+Warning: Store to address 0xfffff90c is outside memory bounds
+Warning: Store to address 0xfffff910 is outside memory bounds
+Warning: Store to address 0xfffff914 is outside memory bounds
+Warning: Store to address 0xfffff918 is outside memory bounds
+Warning: Store to address 0xfffff91c is outside memory bounds
+Warning: Store to address 0xfffff920 is outside memory bounds
+Warning: Store to address 0xfffff924 is outside memory bounds
+Warning: Store to address 0xfffff928 is outside memory bounds
+Warning: Store to address 0xfffff92c is outside memory bounds
+Warning: Store to address 0xfffff930 is outside memory bounds
+Warning: Store to address 0xfffff934 is outside memory bounds
+Warning: Store to address 0xfffff938 is outside memory bounds
+Warning: Store to address 0xfffff93c is outside memory bounds
+Warning: Store to address 0xfffff940 is outside memory bounds
+Warning: Store to address 0xfffff944 is outside memory bounds
+Warning: Store to address 0xfffff948 is outside memory bounds
+Warning: Store to address 0xfffff94c is outside memory bounds
+Warning: Store to address 0xfffff950 is outside memory bounds
+Warning: Store to address 0xfffff954 is outside memory bounds
+Warning: Store to address 0xfffff958 is outside memory bounds
+Warning: Store to address 0xfffff95c is outside memory bounds
+Warning: Store to address 0xfffff960 is outside memory bounds
+Warning: Store to address 0xfffff964 is outside memory bounds
+Warning: Store to address 0xfffff968 is outside memory bounds
+Warning: Store to address 0xfffff96c is outside memory bounds
+Warning: Store to address 0xfffff970 is outside memory bounds
+Warning: Store to address 0xfffff974 is outside memory bounds
+Warning: Store to address 0xfffff978 is outside memory bounds
+Warning: Store to address 0xfffff97c is outside memory bounds
+Warning: Store to address 0xfffff980 is outside memory bounds
+Warning: Store to address 0xfffff984 is outside memory bounds
+Warning: Store to address 0xfffff988 is outside memory bounds
+Warning: Store to address 0xfffff98c is outside memory bounds
+Warning: Store to address 0xfffff990 is outside memory bounds
+Warning: Store to address 0xfffff994 is outside memory bounds
+Warning: Store to address 0xfffff998 is outside memory bounds
+Warning: Store to address 0xfffff99c is outside memory bounds
+Warning: Store to address 0xfffff9a0 is outside memory bounds
+Warning: Store to address 0xfffff9a4 is outside memory bounds
+Warning: Store to address 0xfffff9a8 is outside memory bounds
+Warning: Store to address 0xfffff9ac is outside memory bounds
+Warning: Store to address 0xfffff9b0 is outside memory bounds
+Warning: Store to address 0xfffff9b4 is outside memory bounds
+Warning: Store to address 0xfffff9b8 is outside memory bounds
+Warning: Store to address 0xfffff9bc is outside memory bounds
+Warning: Store to address 0xfffff9c0 is outside memory bounds
+Warning: Store to address 0xfffff9c4 is outside memory bounds
+Warning: Store to address 0xfffff9c8 is outside memory bounds
+Warning: Store to address 0xfffff9cc is outside memory bounds
+Warning: Store to address 0xfffff9d0 is outside memory bounds
+Warning: Store to address 0xfffff9d4 is outside memory bounds
+Warning: Store to address 0xfffff9d8 is outside memory bounds
+Warning: Store to address 0xfffff9dc is outside memory bounds
+Warning: Store to address 0xfffff9e0 is outside memory bounds
+Warning: Store to address 0xfffff9e4 is outside memory bounds
+Warning: Store to address 0xfffff9e8 is outside memory bounds
+Warning: Store to address 0xfffff9ec is outside memory bounds
+Warning: Store to address 0xfffff9f0 is outside memory bounds
+Warning: Store to address 0xfffff9f4 is outside memory bounds
+Warning: Store to address 0xfffff9f8 is outside memory bounds
+Warning: Store to address 0xfffff9fc is outside memory bounds
+Warning: Store to address 0xfffffa00 is outside memory bounds
+Warning: Store to address 0xfffffa04 is outside memory bounds
+Warning: Store to address 0xfffffa08 is outside memory bounds
+Warning: Store to address 0xfffffa0c is outside memory bounds
+Warning: Store to address 0xfffffa10 is outside memory bounds
+Warning: Store to address 0xfffffa14 is outside memory bounds
+Warning: Store to address 0xfffffa18 is outside memory bounds
+Warning: Store to address 0xfffffa1c is outside memory bounds
+Warning: Store to address 0xfffffa20 is outside memory bounds
+Warning: Store to address 0xfffffa24 is outside memory bounds
+Warning: Store to address 0xfffffa28 is outside memory bounds
+Warning: Store to address 0xfffffa2c is outside memory bounds
+Warning: Store to address 0xfffffa30 is outside memory bounds
+Warning: Store to address 0xfffffa34 is outside memory bounds
+Warning: Store to address 0xfffffa38 is outside memory bounds
+Warning: Store to address 0xfffffa3c is outside memory bounds
+Warning: Store to address 0xfffffa40 is outside memory bounds
+Warning: Store to address 0xfffffa44 is outside memory bounds
+Warning: Store to address 0xfffffa48 is outside memory bounds
+Warning: Store to address 0xfffffa4c is outside memory bounds
+Warning: Store to address 0xfffffa50 is outside memory bounds
+Warning: Store to address 0xfffffa54 is outside memory bounds
+Warning: Store to address 0xfffffa58 is outside memory bounds
+Warning: Store to address 0xfffffa5c is outside memory bounds
+Warning: Store to address 0xfffffa60 is outside memory bounds
+Warning: Store to address 0xfffffa64 is outside memory bounds
+Warning: Store to address 0xfffffa68 is outside memory bounds
+Warning: Store to address 0xfffffa6c is outside memory bounds
+Warning: Store to address 0xfffffa70 is outside memory bounds
+Warning: Store to address 0xfffffa74 is outside memory bounds
+Warning: Store to address 0xfffffa78 is outside memory bounds
+Warning: Store to address 0xfffffa7c is outside memory bounds
+Warning: Store to address 0xfffffa80 is outside memory bounds
+Warning: Store to address 0xfffffa84 is outside memory bounds
+Warning: Store to address 0xfffffa88 is outside memory bounds
+Warning: Store to address 0xfffffa8c is outside memory bounds
+Warning: Store to address 0xfffffa90 is outside memory bounds
+Warning: Store to address 0xfffffa94 is outside memory bounds
+Warning: Store to address 0xfffffa98 is outside memory bounds
+Warning: Store to address 0xfffffa9c is outside memory bounds
+Warning: Store to address 0xfffffaa0 is outside memory bounds
+Warning: Store to address 0xfffffaa4 is outside memory bounds
+Warning: Store to address 0xfffffaa8 is outside memory bounds
+Warning: Store to address 0xfffffaac is outside memory bounds
+Warning: Store to address 0xfffffab0 is outside memory bounds
+Warning: Store to address 0xfffffab4 is outside memory bounds
+Warning: Store to address 0xfffffab8 is outside memory bounds
+Warning: Store to address 0xfffffabc is outside memory bounds
+Warning: Store to address 0xfffffac0 is outside memory bounds
+Warning: Store to address 0xfffffac4 is outside memory bounds
+Warning: Store to address 0xfffffac8 is outside memory bounds
+Warning: Store to address 0xfffffacc is outside memory bounds
+Warning: Store to address 0xfffffad0 is outside memory bounds
+Warning: Store to address 0xfffffad4 is outside memory bounds
+Warning: Store to address 0xfffffad8 is outside memory bounds
+Warning: Store to address 0xfffffadc is outside memory bounds
+Warning: Store to address 0xfffffae0 is outside memory bounds
+Warning: Store to address 0xfffffae4 is outside memory bounds
+Warning: Store to address 0xfffffae8 is outside memory bounds
+Warning: Store to address 0xfffffaec is outside memory bounds
+Warning: Store to address 0xfffffaf0 is outside memory bounds
+Warning: Store to address 0xfffffaf4 is outside memory bounds
+Warning: Store to address 0xfffffaf8 is outside memory bounds
+Warning: Store to address 0xfffffafc is outside memory bounds
+Warning: Store to address 0xfffffb00 is outside memory bounds
+Warning: Store to address 0xfffffb04 is outside memory bounds
+Warning: Store to address 0xfffffb08 is outside memory bounds
+Warning: Store to address 0xfffffb0c is outside memory bounds
+Warning: Store to address 0xfffffb10 is outside memory bounds
+Warning: Store to address 0xfffffb14 is outside memory bounds
+Warning: Store to address 0xfffffb18 is outside memory bounds
+Warning: Store to address 0xfffffb1c is outside memory bounds
+Warning: Store to address 0xfffffb20 is outside memory bounds
+Warning: Store to address 0xfffffb24 is outside memory bounds
+Warning: Store to address 0xfffffb28 is outside memory bounds
+Warning: Store to address 0xfffffb2c is outside memory bounds
+Warning: Store to address 0xfffffb30 is outside memory bounds
+Warning: Store to address 0xfffffb34 is outside memory bounds
+Warning: Store to address 0xfffffb38 is outside memory bounds
+Warning: Store to address 0xfffffb3c is outside memory bounds
+Warning: Store to address 0xfffffb40 is outside memory bounds
+Warning: Store to address 0xfffffb44 is outside memory bounds
+Warning: Store to address 0xfffffb48 is outside memory bounds
+Warning: Store to address 0xfffffb4c is outside memory bounds
+Warning: Store to address 0xfffffb50 is outside memory bounds
+Warning: Store to address 0xfffffb54 is outside memory bounds
+Warning: Store to address 0xfffffb58 is outside memory bounds
+Warning: Store to address 0xfffffb5c is outside memory bounds
+Warning: Store to address 0xfffffb60 is outside memory bounds
+Warning: Store to address 0xfffffb64 is outside memory bounds
+Warning: Store to address 0xfffffb68 is outside memory bounds
+Warning: Store to address 0xfffffb6c is outside memory bounds
+Warning: Store to address 0xfffffb70 is outside memory bounds
+Warning: Store to address 0xfffffb74 is outside memory bounds
+Warning: Store to address 0xfffffb78 is outside memory bounds
+Warning: Store to address 0xfffffb7c is outside memory bounds
+Warning: Store to address 0xfffffb80 is outside memory bounds
+Warning: Store to address 0xfffffb84 is outside memory bounds
+Warning: Store to address 0xfffffb88 is outside memory bounds
+Warning: Store to address 0xfffffb8c is outside memory bounds
+Warning: Store to address 0xfffffb90 is outside memory bounds
+Warning: Store to address 0xfffffb94 is outside memory bounds
+Warning: Store to address 0xfffffb98 is outside memory bounds
+Warning: Store to address 0xfffffb9c is outside memory bounds
+Warning: Store to address 0xfffffba0 is outside memory bounds
+Warning: Store to address 0xfffffba4 is outside memory bounds
+Warning: Store to address 0xfffffba8 is outside memory bounds
+Warning: Store to address 0xfffffbac is outside memory bounds
+Warning: Store to address 0xfffffbb0 is outside memory bounds
+Warning: Store to address 0xfffffbb4 is outside memory bounds
+Warning: Store to address 0xfffffbb8 is outside memory bounds
+Warning: Store to address 0xfffffbbc is outside memory bounds
+Warning: Store to address 0xfffffbc0 is outside memory bounds
+Warning: Store to address 0xfffffbc4 is outside memory bounds
+Warning: Store to address 0xfffffbc8 is outside memory bounds
+Warning: Store to address 0xfffffbcc is outside memory bounds
+Warning: Store to address 0xfffffbd0 is outside memory bounds
+Warning: Store to address 0xfffffbd4 is outside memory bounds
+Warning: Store to address 0xfffffbd8 is outside memory bounds
+Warning: Store to address 0xfffffbdc is outside memory bounds
+Warning: Store to address 0xfffffbe0 is outside memory bounds
+Warning: Store to address 0xfffffbe4 is outside memory bounds
+Warning: Store to address 0xfffffbe8 is outside memory bounds
+Warning: Store to address 0xfffffbec is outside memory bounds
+Warning: Store to address 0xfffffbf0 is outside memory bounds
+Warning: Store to address 0xfffffbf4 is outside memory bounds
+Warning: Store to address 0xfffffbf8 is outside memory bounds
+Warning: Store to address 0xfffffbfc is outside memory bounds
+Warning: Store to address 0xfffffc00 is outside memory bounds
+Warning: Store to address 0xfffffc04 is outside memory bounds
+Warning: Store to address 0xfffffc08 is outside memory bounds
+Warning: Store to address 0xfffffc0c is outside memory bounds
+Warning: Store to address 0xfffffc10 is outside memory bounds
+Warning: Store to address 0xfffffc14 is outside memory bounds
+Warning: Store to address 0xfffffc18 is outside memory bounds
+Warning: Store to address 0xfffffc1c is outside memory bounds
+Warning: Store to address 0xfffffc20 is outside memory bounds
+Warning: Store to address 0xfffffc24 is outside memory bounds
+Warning: Store to address 0xfffffc28 is outside memory bounds
+Warning: Store to address 0xfffffc2c is outside memory bounds
+Warning: Store to address 0xfffffc30 is outside memory bounds
+Warning: Store to address 0xfffffc34 is outside memory bounds
+Warning: Store to address 0xfffffc38 is outside memory bounds
+Warning: Store to address 0xfffffc3c is outside memory bounds
+Warning: Store to address 0xfffffc40 is outside memory bounds
+Warning: Store to address 0xfffffc44 is outside memory bounds
+Warning: Store to address 0xfffffc48 is outside memory bounds
+Warning: Store to address 0xfffffc4c is outside memory bounds
+Warning: Store to address 0xfffffc50 is outside memory bounds
+Warning: Store to address 0xfffffc54 is outside memory bounds
+Warning: Store to address 0xfffffc58 is outside memory bounds
+Warning: Store to address 0xfffffc5c is outside memory bounds
+Warning: Store to address 0xfffffc60 is outside memory bounds
+Warning: Store to address 0xfffffc64 is outside memory bounds
+Warning: Store to address 0xfffffc68 is outside memory bounds
+Warning: Store to address 0xfffffc6c is outside memory bounds
+Warning: Store to address 0xfffffc70 is outside memory bounds
+Warning: Store to address 0xfffffc74 is outside memory bounds
+Warning: Store to address 0xfffffc78 is outside memory bounds
+Warning: Store to address 0xfffffc7c is outside memory bounds
+Warning: Store to address 0xfffffc80 is outside memory bounds
+Warning: Store to address 0xfffffc84 is outside memory bounds
+Warning: Store to address 0xfffffc88 is outside memory bounds
+Warning: Store to address 0xfffffc8c is outside memory bounds
+Warning: Store to address 0xfffffc90 is outside memory bounds
+Warning: Store to address 0xfffffc94 is outside memory bounds
+Warning: Store to address 0xfffffc98 is outside memory bounds
+Warning: Store to address 0xfffffc9c is outside memory bounds
+Warning: Store to address 0xfffffca0 is outside memory bounds
+Warning: Store to address 0xfffffca4 is outside memory bounds
+Warning: Store to address 0xfffffca8 is outside memory bounds
+Warning: Store to address 0xfffffcac is outside memory bounds
+Warning: Store to address 0xfffffcb0 is outside memory bounds
+Warning: Store to address 0xfffffcb4 is outside memory bounds
+Warning: Store to address 0xfffffcb8 is outside memory bounds
+Warning: Store to address 0xfffffcbc is outside memory bounds
+Warning: Store to address 0xfffffcc0 is outside memory bounds
+Warning: Store to address 0xfffffcc4 is outside memory bounds
+Warning: Store to address 0xfffffcc8 is outside memory bounds
+Warning: Store to address 0xfffffccc is outside memory bounds
+Warning: Store to address 0xfffffcd0 is outside memory bounds
+Warning: Store to address 0xfffffcd4 is outside memory bounds
+Warning: Store to address 0xfffffcd8 is outside memory bounds
+Warning: Store to address 0xfffffcdc is outside memory bounds
+Warning: Store to address 0xfffffce0 is outside memory bounds
+Warning: Store to address 0xfffffce4 is outside memory bounds
+Warning: Store to address 0xfffffce8 is outside memory bounds
+Warning: Store to address 0xfffffcec is outside memory bounds
+Warning: Store to address 0xfffffcf0 is outside memory bounds
+Warning: Store to address 0xfffffcf4 is outside memory bounds
+Warning: Store to address 0xfffffcf8 is outside memory bounds
+Warning: Store to address 0xfffffcfc is outside memory bounds
+Warning: Store to address 0xfffffd00 is outside memory bounds
+Warning: Store to address 0xfffffd04 is outside memory bounds
+Warning: Store to address 0xfffffd08 is outside memory bounds
+Warning: Store to address 0xfffffd0c is outside memory bounds
+Warning: Store to address 0xfffffd10 is outside memory bounds
+Warning: Store to address 0xfffffd14 is outside memory bounds
+Warning: Store to address 0xfffffd18 is outside memory bounds
+Warning: Store to address 0xfffffd1c is outside memory bounds
+Warning: Store to address 0xfffffd20 is outside memory bounds
+Warning: Store to address 0xfffffd24 is outside memory bounds
+Warning: Store to address 0xfffffd28 is outside memory bounds
+Warning: Store to address 0xfffffd2c is outside memory bounds
+Warning: Store to address 0xfffffd30 is outside memory bounds
+Warning: Store to address 0xfffffd34 is outside memory bounds
+Warning: Store to address 0xfffffd38 is outside memory bounds
+Warning: Store to address 0xfffffd3c is outside memory bounds
+Warning: Store to address 0xfffffd40 is outside memory bounds
+Warning: Store to address 0xfffffd44 is outside memory bounds
+Warning: Store to address 0xfffffd48 is outside memory bounds
+Warning: Store to address 0xfffffd4c is outside memory bounds
+Warning: Store to address 0xfffffd50 is outside memory bounds
+Warning: Store to address 0xfffffd54 is outside memory bounds
+Warning: Store to address 0xfffffd58 is outside memory bounds
+Warning: Store to address 0xfffffd5c is outside memory bounds
+Warning: Store to address 0xfffffd60 is outside memory bounds
+Warning: Store to address 0xfffffd64 is outside memory bounds
+Warning: Store to address 0xfffffd68 is outside memory bounds
+Warning: Store to address 0xfffffd6c is outside memory bounds
+Warning: Store to address 0xfffffd70 is outside memory bounds
+Warning: Store to address 0xfffffd74 is outside memory bounds
+Warning: Store to address 0xfffffd78 is outside memory bounds
+Warning: Store to address 0xfffffd7c is outside memory bounds
+Warning: Store to address 0xfffffd80 is outside memory bounds
+Warning: Store to address 0xfffffd84 is outside memory bounds
+Warning: Store to address 0xfffffd88 is outside memory bounds
+Warning: Store to address 0xfffffd8c is outside memory bounds
+Warning: Store to address 0xfffffd90 is outside memory bounds
+Warning: Store to address 0xfffffd94 is outside memory bounds
+Warning: Store to address 0xfffffd98 is outside memory bounds
+Warning: Store to address 0xfffffd9c is outside memory bounds
+Warning: Store to address 0xfffffda0 is outside memory bounds
+Warning: Store to address 0xfffffda4 is outside memory bounds
+Warning: Store to address 0xfffffda8 is outside memory bounds
+Warning: Store to address 0xfffffdac is outside memory bounds
+Warning: Store to address 0xfffffdb0 is outside memory bounds
+Warning: Store to address 0xfffffdb4 is outside memory bounds
+Warning: Store to address 0xfffffdb8 is outside memory bounds
+Warning: Store to address 0xfffffdbc is outside memory bounds
+Warning: Store to address 0xfffffdc0 is outside memory bounds
+Warning: Store to address 0xfffffdc4 is outside memory bounds
+Warning: Store to address 0xfffffdc8 is outside memory bounds
+Warning: Store to address 0xfffffdcc is outside memory bounds
+Warning: Store to address 0xfffffdd0 is outside memory bounds
+Warning: Store to address 0xfffffdd4 is outside memory bounds
+Warning: Store to address 0xfffffdd8 is outside memory bounds
+Warning: Store to address 0xfffffddc is outside memory bounds
+Warning: Store to address 0xfffffde0 is outside memory bounds
+Warning: Store to address 0xfffffde4 is outside memory bounds
+Warning: Store to address 0xfffffde8 is outside memory bounds
+Warning: Store to address 0xfffffdec is outside memory bounds
+Warning: Store to address 0xfffffdf0 is outside memory bounds
+Warning: Store to address 0xfffffdf4 is outside memory bounds
+Warning: Store to address 0xfffffdf8 is outside memory bounds
+Warning: Store to address 0xfffffdfc is outside memory bounds
+Warning: Store to address 0xfffffe00 is outside memory bounds
+Warning: Store to address 0xfffffe04 is outside memory bounds
+Warning: Store to address 0xfffffe08 is outside memory bounds
+Warning: Store to address 0xfffffe0c is outside memory bounds
+Warning: Store to address 0xfffffe10 is outside memory bounds
+Warning: Store to address 0xfffffe14 is outside memory bounds
+Warning: Store to address 0xfffffe18 is outside memory bounds
+Warning: Store to address 0xfffffe1c is outside memory bounds
+Warning: Store to address 0xfffffe20 is outside memory bounds
+Warning: Store to address 0xfffffe24 is outside memory bounds
+Warning: Store to address 0xfffffe28 is outside memory bounds
+Warning: Store to address 0xfffffe2c is outside memory bounds
+Warning: Store to address 0xfffffe30 is outside memory bounds
+Warning: Store to address 0xfffffe34 is outside memory bounds
+Warning: Store to address 0xfffffe38 is outside memory bounds
+Warning: Store to address 0xfffffe3c is outside memory bounds
+Warning: Store to address 0xfffffe40 is outside memory bounds
+Warning: Store to address 0xfffffe44 is outside memory bounds
+Warning: Store to address 0xfffffe48 is outside memory bounds
+Warning: Store to address 0xfffffe4c is outside memory bounds
+Warning: Store to address 0xfffffe50 is outside memory bounds
+Warning: Store to address 0xfffffe54 is outside memory bounds
+Warning: Store to address 0xfffffe58 is outside memory bounds
+Warning: Store to address 0xfffffe5c is outside memory bounds
+Warning: Store to address 0xfffffe60 is outside memory bounds
+Warning: Store to address 0xfffffe64 is outside memory bounds
+Warning: Store to address 0xfffffe68 is outside memory bounds
+Warning: Store to address 0xfffffe6c is outside memory bounds
+Warning: Store to address 0xfffffe70 is outside memory bounds
+Warning: Store to address 0xfffffe74 is outside memory bounds
+Warning: Store to address 0xfffffe78 is outside memory bounds
+Warning: Store to address 0xfffffe7c is outside memory bounds
+Warning: Store to address 0xfffffe80 is outside memory bounds
+Warning: Store to address 0xfffffe84 is outside memory bounds
+Warning: Store to address 0xfffffe88 is outside memory bounds
+Warning: Store to address 0xfffffe8c is outside memory bounds
+Warning: Store to address 0xfffffe90 is outside memory bounds
+Warning: Store to address 0xfffffe94 is outside memory bounds
+Warning: Store to address 0xfffffe98 is outside memory bounds
+Warning: Store to address 0xfffffe9c is outside memory bounds
+Warning: Store to address 0xfffffea0 is outside memory bounds
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0xfffffefc is outside memory bounds
+Warning: Store to address 0xffffff00 is outside memory bounds
+Warning: Store to address 0xffffff04 is outside memory bounds
+Warning: Store to address 0xffffff08 is outside memory bounds
+Warning: Store to address 0xffffff0c is outside memory bounds
+Warning: Store to address 0xffffff10 is outside memory bounds
+Warning: Store to address 0xffffff14 is outside memory bounds
+Warning: Store to address 0xffffff18 is outside memory bounds
+Warning: Store to address 0xffffff1c is outside memory bounds
+Warning: Store to address 0xffffff20 is outside memory bounds
+Warning: Store to address 0xffffff24 is outside memory bounds
+Warning: Store to address 0xffffff28 is outside memory bounds
+Warning: Store to address 0xffffff2c is outside memory bounds
+Warning: Store to address 0xffffff30 is outside memory bounds
+Warning: Store to address 0xffffff34 is outside memory bounds
+Warning: Store to address 0xffffff38 is outside memory bounds
+Warning: Store to address 0xffffff3c is outside memory bounds
+Warning: Store to address 0xffffff40 is outside memory bounds
+Warning: Store to address 0xffffff44 is outside memory bounds
+Warning: Store to address 0xffffff48 is outside memory bounds
+Warning: Store to address 0xffffff4c is outside memory bounds
+Warning: Store to address 0xffffff50 is outside memory bounds
+Warning: Store to address 0xffffff54 is outside memory bounds
+Warning: Store to address 0xffffff58 is outside memory bounds
+Warning: Store to address 0xffffff5c is outside memory bounds
+Warning: Store to address 0xffffff60 is outside memory bounds
+Warning: Store to address 0xffffff64 is outside memory bounds
+Warning: Store to address 0xffffff68 is outside memory bounds
+Warning: Store to address 0xffffff6c is outside memory bounds
+Warning: Store to address 0xffffff70 is outside memory bounds
+Warning: Store to address 0xffffff74 is outside memory bounds
+Warning: Store to address 0xffffff78 is outside memory bounds
+Warning: Store to address 0xffffff7c is outside memory bounds
+Warning: Store to address 0xffffff80 is outside memory bounds
+Warning: Store to address 0xffffff84 is outside memory bounds
+Warning: Store to address 0xffffff88 is outside memory bounds
+Warning: Store to address 0xffffff8c is outside memory bounds
+Warning: Store to address 0xffffff90 is outside memory bounds
+Warning: Store to address 0xffffff94 is outside memory bounds
+Warning: Store to address 0xffffff98 is outside memory bounds
+Warning: Store to address 0xffffff9c is outside memory bounds
+Warning: Store to address 0xffffffa0 is outside memory bounds
+Warning: Store to address 0xffffffa4 is outside memory bounds
+Warning: Store to address 0xffffffa8 is outside memory bounds
+Warning: Store to address 0xffffffac is outside memory bounds
+Warning: Store to address 0xffffffb0 is outside memory bounds
+Warning: Store to address 0xffffffb4 is outside memory bounds
+Warning: Store to address 0xffffffb8 is outside memory bounds
+Warning: Store to address 0xffffffbc is outside memory bounds
+Warning: Store to address 0xffffffc0 is outside memory bounds
+Warning: Store to address 0xffffffc4 is outside memory bounds
+Warning: Store to address 0xffffffc8 is outside memory bounds
+Warning: Store to address 0xffffffcc is outside memory bounds
+Warning: Store to address 0xffffffd0 is outside memory bounds
+Warning: Store to address 0xffffffd4 is outside memory bounds
+Warning: Store to address 0xffffffd8 is outside memory bounds
+Warning: Store to address 0xffffffdc is outside memory bounds
+Warning: Store to address 0xffffffe0 is outside memory bounds
+Warning: Store to address 0xffffffe4 is outside memory bounds
+Warning: Store to address 0xffffffe8 is outside memory bounds
+Warning: Store to address 0xffffffec is outside memory bounds
+Warning: Store to address 0xfffffff0 is outside memory bounds
+Warning: Store to address 0xfffffff4 is outside memory bounds
+Warning: Store to address 0xfffffff8 is outside memory bounds
+Warning: Store to address 0xfffffffc is outside memory bounds
+Warning: Store to address 0xffffff70 is outside memory bounds
+Warning: Store to address 0xffffff74 is outside memory bounds
+Warning: Store to address 0xffffff78 is outside memory bounds
+Warning: Store to address 0xffffff7c is outside memory bounds
+Warning: Store to address 0xffffff80 is outside memory bounds
+Warning: Store to address 0xffffff84 is outside memory bounds
+Warning: Store to address 0xffffff88 is outside memory bounds
+Warning: Store to address 0xffffff8c is outside memory bounds
+Warning: Store to address 0xffffff90 is outside memory bounds
+Warning: Store to address 0xffffff94 is outside memory bounds
+Warning: Store to address 0xffffff98 is outside memory bounds
+Warning: Store to address 0xffffff9c is outside memory bounds
+Warning: Store to address 0xffffffa0 is outside memory bounds
+Warning: Store to address 0xffffffa4 is outside memory bounds
+Warning: Store to address 0xffffffa8 is outside memory bounds
+Warning: Store to address 0xffffffac is outside memory bounds
+Warning: Store to address 0xffffffb0 is outside memory bounds
+Warning: Store to address 0xffffffb4 is outside memory bounds
+Warning: Store to address 0xffffffb8 is outside memory bounds
+Warning: Store to address 0xffffffbc is outside memory bounds
+Warning: Store to address 0xffffffc0 is outside memory bounds
+Warning: Store to address 0xffffffc4 is outside memory bounds
+Warning: Store to address 0xffffffc8 is outside memory bounds
+Warning: Store to address 0xffffffcc is outside memory bounds
+Warning: Store to address 0xffffffd0 is outside memory bounds
+Warning: Store to address 0xffffffd4 is outside memory bounds
+Warning: Store to address 0xffffffd8 is outside memory bounds
+Warning: Store to address 0xffffffdc is outside memory bounds
+Warning: Store to address 0xffffffe0 is outside memory bounds
+Warning: Store to address 0xffffffe4 is outside memory bounds
+Warning: Store to address 0xffffffe8 is outside memory bounds
+Warning: Store to address 0xffffffec is outside memory bounds
+Warning: Store to address 0xfffffff0 is outside memory bounds
+Warning: Store to address 0xfffffff4 is outside memory bounds
+Warning: Store to address 0xfffffff8 is outside memory bounds
+Warning: Store to address 0xfffffffc is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/blt-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/blt-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/blt-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/blt-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/blt-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/blt-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                               /home/octonyte/OctoNyte/tests/riscof_work/src/blt-01.S/ref/ref.mem
+Warning: Store to address 0xfffffeb3 is outside memory bounds
+Warning: Store to address 0xfffffeb7 is outside memory bounds
+Warning: Store to address 0xfffffebb is outside memory bounds
+Warning: Store to address 0xfffffebf is outside memory bounds
+Warning: Store to address 0xfffffec3 is outside memory bounds
+Warning: Store to address 0xfffffec7 is outside memory bounds
+Warning: Store to address 0xfffffecb is outside memory bounds
+Warning: Store to address 0xfffffecf is outside memory bounds
+Warning: Store to address 0xfffffed3 is outside memory bounds
+Warning: Store to address 0xfffffed7 is outside memory bounds
+Warning: Store to address 0xfffffedb is outside memory bounds
+Warning: Store to address 0xfffffedf is outside memory bounds
+Warning: Store to address 0xfffffee3 is outside memory bounds
+Warning: Store to address 0xfffffee7 is outside memory bounds
+Warning: Store to address 0xfffffeeb is outside memory bounds
+Warning: Store to address 0xfffffeef is outside memory bounds
+Warning: Store to address 0xfffffef3 is outside memory bounds
+Warning: Store to address 0xfffffef7 is outside memory bounds
+Warning: Store to address 0xfffffefb is outside memory bounds
+Warning: Store to address 0xfffffeff is outside memory bounds
+Warning: Store to address 0xffffff03 is outside memory bounds
+Warning: Store to address 0xfffffc34 is outside memory bounds
+Warning: Store to address 0xfffffc38 is outside memory bounds
+Warning: Store to address 0xfffffc3c is outside memory bounds
+Warning: Store to address 0xfffffc40 is outside memory bounds
+Warning: Store to address 0xfffffc44 is outside memory bounds
+Warning: Store to address 0xfffffc48 is outside memory bounds
+Warning: Store to address 0xfffffc4c is outside memory bounds
+Warning: Store to address 0xfffffc50 is outside memory bounds
+Warning: Store to address 0xfffffc54 is outside memory bounds
+Warning: Store to address 0xfffffc58 is outside memory bounds
+Warning: Store to address 0xfffffc5c is outside memory bounds
+Warning: Store to address 0xfffffc60 is outside memory bounds
+Warning: Store to address 0xfffffc64 is outside memory bounds
+Warning: Store to address 0xfffffc68 is outside memory bounds
+Warning: Store to address 0xfffffc6c is outside memory bounds
+Warning: Store to address 0xfffffc70 is outside memory bounds
+Warning: Store to address 0xfffffc74 is outside memory bounds
+Warning: Store to address 0xfffffc78 is outside memory bounds
+Warning: Store to address 0xfffffc7c is outside memory bounds
+Warning: Store to address 0xfffffc80 is outside memory bounds
+Warning: Store to address 0xfffffc84 is outside memory bounds
+Warning: Store to address 0xfffffc88 is outside memory bounds
+Warning: Store to address 0xfffffc8c is outside memory bounds
+Warning: Store to address 0xfffffc90 is outside memory bounds
+Warning: Store to address 0xfffffc94 is outside memory bounds
+Warning: Store to address 0xfffffc98 is outside memory bounds
+Warning: Store to address 0xfffffc9c is outside memory bounds
+Warning: Store to address 0xfffffca0 is outside memory bounds
+Warning: Store to address 0xfffffca4 is outside memory bounds
+Warning: Store to address 0xfffffca8 is outside memory bounds
+Warning: Store to address 0xfffffcac is outside memory bounds
+Warning: Store to address 0xfffffcb0 is outside memory bounds
+Warning: Store to address 0xfffffcb4 is outside memory bounds
+Warning: Store to address 0xfffffcb8 is outside memory bounds
+Warning: Store to address 0xfffffcbc is outside memory bounds
+Warning: Store to address 0xfffffcc0 is outside memory bounds
+Warning: Store to address 0xfffffcc4 is outside memory bounds
+Warning: Store to address 0xfffffcc8 is outside memory bounds
+Warning: Store to address 0xfffffccc is outside memory bounds
+Warning: Store to address 0xfffffcd0 is outside memory bounds
+Warning: Store to address 0xfffffcd4 is outside memory bounds
+Warning: Store to address 0xfffffcd8 is outside memory bounds
+Warning: Store to address 0xfffffcdc is outside memory bounds
+Warning: Store to address 0xfffffce0 is outside memory bounds
+Warning: Store to address 0xfffffce4 is outside memory bounds
+Warning: Store to address 0xfffffce8 is outside memory bounds
+Warning: Store to address 0xfffffcec is outside memory bounds
+Warning: Store to address 0x020000a0 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bltu-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/bltu-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/bltu-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/bltu-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/bltu-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/bltu-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+
+Aborted!
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                              /home/octonyte/OctoNyte/tests/riscof_work/src/bltu-01.S/ref/ref.mem
+Warning: Store to address 0xfffffea4 is outside memory bounds
+Warning: Store to address 0xfffffea8 is outside memory bounds
+Warning: Store to address 0xfffffeac is outside memory bounds
+Warning: Store to address 0xfffffeb0 is outside memory bounds
+Warning: Store to address 0xfffffeb4 is outside memory bounds
+Warning: Store to address 0xfffffeb8 is outside memory bounds
+Warning: Store to address 0xfffffebc is outside memory bounds
+Warning: Store to address 0xfffffec0 is outside memory bounds
+Warning: Store to address 0xfffffec4 is outside memory bounds
+Warning: Store to address 0xfffffec8 is outside memory bounds
+Warning: Store to address 0xfffffecc is outside memory bounds
+Warning: Store to address 0xfffffed0 is outside memory bounds
+Warning: Store to address 0xfffffed4 is outside memory bounds
+Warning: Store to address 0xfffffed8 is outside memory bounds
+Warning: Store to address 0xfffffedc is outside memory bounds
+Warning: Store to address 0xfffffee0 is outside memory bounds
+Warning: Store to address 0xfffffee4 is outside memory bounds
+Warning: Store to address 0xfffffee8 is outside memory bounds
+Warning: Store to address 0xfffffeec is outside memory bounds
+Warning: Store to address 0xfffffef0 is outside memory bounds
+Warning: Store to address 0xfffffef4 is outside memory bounds
+Warning: Store to address 0xfffffef8 is outside memory bounds
+Warning: Store to address 0xfffffefc is outside memory bounds
+Warning: Store to address 0xffffff00 is outside memory bounds
+Warning: Store to address 0xfffff9a8 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bne-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/bne-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/bne-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/bne-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/bne-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/bne-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                               /home/octonyte/OctoNyte/tests/riscof_work/src/bne-01.S/ref/ref.mem
+Warning: Store to address 0xfffffeb3 is outside memory bounds
+Warning: Store to address 0xfffffeb7 is outside memory bounds
+Warning: Store to address 0xfffffebb is outside memory bounds
+Warning: Store to address 0xfffffebf is outside memory bounds
+Warning: Store to address 0xfffffec3 is outside memory bounds
+Warning: Store to address 0xfffffec7 is outside memory bounds
+Warning: Store to address 0xfffffecb is outside memory bounds
+Warning: Store to address 0xfffffecf is outside memory bounds
+Warning: Store to address 0xfffffed3 is outside memory bounds
+Warning: Store to address 0xfffffed7 is outside memory bounds
+Warning: Store to address 0xfffffedb is outside memory bounds
+Warning: Store to address 0xfffffedf is outside memory bounds
+Warning: Store to address 0xfffffee3 is outside memory bounds
+Warning: Store to address 0xfffffee7 is outside memory bounds
+Warning: Store to address 0xfffffeeb is outside memory bounds
+Warning: Store to address 0xfffffeef is outside memory bounds
+Warning: Store to address 0xfffffef3 is outside memory bounds
+Warning: Store to address 0xfffffef7 is outside memory bounds
+Warning: Store to address 0xfffffefb is outside memory bounds
+Warning: Store to address 0xfffffeff is outside memory bounds
+Warning: Store to address 0xffffff03 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/fence-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/fence-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/fence-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/fence-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/fence-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/fence-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893
+[tetranyte] sim stdout:\nMemory configuration: 1048576 words (4096 KB) from 0x00000000 to 0xffffffff
+Loaded memory from file:                                                                                                                                                                                             /home/octonyte/OctoNyte/tests/riscof_work/src/fence-01.S/ref/ref.mem
+Warning: Store to address 0xfffffea0 is outside memory bounds
+Warning: Load from address 0xfffffea0 is outside memory bounds
+Warning: Load from address 0xfffffea0 is outside memory bounds
+Warning: Load from address 0xfffffea0 is outside memory bounds
+Warning: Store to address 0xfffffd04 is outside memory bounds
+Warning: Store to address 0xfffffe18 is outside memory bounds
+
+[tetranyte] sim stderr:\n
+\n[tetranyte] ==== running test /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jal-01.S ====
+[tetranyte] DUT work_dir = /home/octonyte/OctoNyte/tests/riscof_work/src/jal-01.S/dut
+[tetranyte] contents of work_dir: []
+[tetranyte] ELF candidates: ['/home/octonyte/OctoNyte/tests/riscof_work/src/jal-01.S/ref/ref.elf']
+[tetranyte] Using ELF file: /home/octonyte/OctoNyte/tests/riscof_work/src/jal-01.S/ref/ref.elf
+[tetranyte] expected .mem = /home/octonyte/OctoNyte/tests/riscof_work/src/jal-01.S/ref/ref.mem
+[tetranyte] objcopy stdout:\n
+[tetranyte] objcopy stderr:\n
+[tetranyte] Memory file created successfully (pure hex format)
+[tetranyte] Memory file created successfully
+[tetranyte] First 3 lines of /home/octonyte/OctoNyte/tests/riscof_work/src/jal-01.S/ref/ref.mem:
+[tetranyte]   1: 7d5c0837
+[tetranyte]   2: ddb80813
+[tetranyte]   3: 00785893

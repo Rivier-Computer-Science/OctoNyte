@@ -1,0 +1,13 @@
+# testlist generated on 2025-08-05 10:31 GMT
+/home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S:
+  commit_id: '-'
+  work_dir: /home/octonyte/OctoNyte/tests/riscof_work/src/add-01.S
+  macros:
+  - TEST_CASE_1=True
+  - XLEN=32
+  isa: RV32I
+  mac: []
+  coverage_labels:
+  - add
+  test_path: 
+    /home/octonyte/OctoNyte/tests/external/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S

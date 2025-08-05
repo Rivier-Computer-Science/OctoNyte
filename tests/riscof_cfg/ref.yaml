@@ -1,0 +1,36 @@
+hart_ids: [0]
+hart0:
+  ISA: RV32I
+  physical_addr_sz: 32
+  User_Spec_Version: '2.3'
+  supported_xlen: [32]
+  misa:
+    reset-val: 0x40001100
+    rv32:
+      accessible: true
+      type:
+        ro_constant: 0x40001100
+  mvendorid:
+    reset-val: 0x0
+    rv32:
+      accessible: true
+      type:
+        ro_constant: 0x0
+  marchid:
+    reset-val: 0x0
+    rv32:
+      accessible: true
+      type:
+        ro_constant: 0x0
+  mimpid:
+    reset-val: 0x0
+    rv32:
+      accessible: true
+      type:
+        ro_constant: 0x0
+  mhartid:
+    reset-val: 0x0
+    rv32:
+      accessible: true
+      type:
+        ro_constant: 0x0

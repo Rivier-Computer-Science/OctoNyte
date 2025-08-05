@@ -1,0 +1,7 @@
+riscv-config @ https://github.com/riscv/riscv-config.git 
+riscv-isac @ https://github.com/riscv/riscv-isac.git 
+riscof @ https://github.com/riscv/riscof.git 
+
+#riscv-config==3.12.0
+#riscv-isac==0.17.0
+#riscof
